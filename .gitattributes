@@ -1,0 +1,9 @@
+# Normalise to LF in the repository, matching .editorconfig. Without this,
+# Windows checkouts rewrite every line ending and every diff becomes noise.
+* text=auto eol=lf
+
+pnpm-lock.yaml -diff
+*.woff2 binary
+*.jpg binary
+*.png binary
+*.ico binary

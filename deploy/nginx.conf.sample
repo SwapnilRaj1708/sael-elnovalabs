@@ -1,0 +1,149 @@
+# nginx in front of both SAEL applications on one VM: the website (this repository) and the
+# admin panel backend (sael-backend). The reference for what was sent to SAEL's infrastructure
+# team on 2 Oct 2026. If you change a route here, tell them: they implement it literally.
+# Copy to /etc/nginx/sites-available/sael and adjust the certificate paths.
+#
+# THE TWO PROCESSES BEHIND IT, both systemd units, both bound to loopback:
+#   website   127.0.0.1:3000   one `node server.js` process (README.md → Deployment)
+#   backend   127.0.0.1:8082   the Spring Boot jar (sael-backend/deploy/prod/sael-prod.env.TEMPLATE)
+#   The backend's management port, 127.0.0.1:8083, is NEVER proxied. Only the VM itself may reach
+#   it. Nothing it serves is on 8082, and nothing on 8082 is on it.
+#
+# THE ROUTE TABLE, in the order the location blocks below appear:
+#
+#   #   location           goes to   internet  notes
+#   1   ^~ /swagger-ui     BLOCK     blocked   no trailing slash: also catches /swagger-ui.html
+#   2   ^~ /v3/api-docs    BLOCK     blocked   no trailing slash: catches .yaml and /swagger-config
+#   3   ^~ /internal       BLOCK     blocked   neither application serves anything here on its
+#                                              public port, so blocking it breaks nothing
+#   4   ^~ /admin/         backend   yes       the panel (/admin/ui/) and its API (/admin/v1/),
+#                                              including the Entra callback and uploads
+#   5   ^~ /app/v1/        backend   yes       the website's content API and the contact form
+#   6   ^~ /css/           backend   yes       } the panel's stylesheets, scripts, Inter fonts and
+#   7   ^~ /js/            backend   yes       } logo, served without a session. The sign-in page
+#   8   ^~ /fonts/         backend   yes       } needs all four
+#   9   ^~ /brand/         backend   yes       }
+#   10  ^~ /api/           WEBSITE   yes       /api/revalidate/ is how the backend tells the site
+#                                              content was published. NEVER send /api/ to Java
+#   11  /                  website   yes       everything else: pages, /_next/static/, /_next/image,
+#                                              /images/, /news/
+#
+# WHY ^~ ON ROWS 1–10. Plain prefix locations are matched longest-first whatever their order, but
+# any regex location beats them. A typical `location ~* \.(css|js|svg|woff2)$` caching rule sent to
+# the website would take the panel's CSS, scripts, fonts and logo, and the panel would render
+# unstyled. Sent to the backend instead, it would serve Swagger's own files. ^~ stops regex
+# locations being checked for those paths. Rows 1–3 carry no trailing slash on purpose. Row 4 does:
+# a bare /admin would also match website paths that merely begin with "admin".
+#
+# STRICT-TRANSPORT-SECURITY IS OWNED HERE, for both applications. Neither sends it (the backend
+# stopped in its row 5.25; the website never did). No includeSubDomains, no preload.
+#
+# THE INHERITANCE TRAP. add_header, proxy_hide_header and proxy_set_header are each inherited from
+# the server block ONLY by a location that sets none of its own. A location that adds a single
+# add_header loses the server's HSTS header. One that adds a proxy_set_header loses Host and
+# X-Forwarded-*, and the backend then builds redirects for the wrong host and scheme. So no location
+# below sets any of the three. If you add one that must, repeat every server-level line of that
+# directive inside it.
+
+upstream sael_web {
+    server 127.0.0.1:3000;
+    keepalive 32;
+}
+
+upstream sael_backend {
+    server 127.0.0.1:8082;
+    keepalive 16;
+}
+
+server {
+    listen 80;
+    server_name prod2-preview.sael.co;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    # nginx 1.25.1 and later prefer `listen 443 ssl;` with `http2 on;`. This form works on both.
+    listen 443 ssl http2;
+    server_name prod2-preview.sael.co;
+
+    # The wildcard certificate covering *.sael.co and sael.co.
+    ssl_certificate     /etc/ssl/certs/sael.crt;
+    ssl_certificate_key /etc/ssl/private/sael.key;
+
+    add_header Strict-Transport-Security "max-age=31536000" always;
+    proxy_hide_header Strict-Transport-Security;
+
+    proxy_http_version 1.1;
+    proxy_set_header Connection        "";
+    proxy_set_header Host              $host;
+    proxy_set_header X-Real-IP         $remote_addr;
+    # Appends to what the client sent rather than passing it through. The backend believes this
+    # header only from 127.0.0.1 (SAEL_WEB_TRUSTED_PROXIES).
+    proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+    # The backend's session cookies are Secure; without this it believes the request was plain HTTP.
+    proxy_set_header X-Forwarded-Proto $scheme;
+
+    gzip on;
+    gzip_vary on;
+    gzip_min_length 1024;
+    gzip_types text/plain text/css application/javascript application/json
+               image/svg+xml application/rss+xml;
+
+    client_max_body_size 4m;
+
+    # 1–3: blocked from the internet.
+    location ^~ /swagger-ui  { return 404; }
+    location ^~ /v3/api-docs { return 404; }
+    location ^~ /internal    { return 404; }
+
+    # 4: the admin panel and its API. Uploads go up to 500 MB and are streamed to storage before
+    # the response, so the body limit, buffering and timeout all apply here.
+    location ^~ /admin/ {
+        proxy_pass http://sael_backend;
+        client_max_body_size 520m;
+        proxy_request_buffering off;
+        proxy_read_timeout 300s;
+    }
+
+    # 5–9: the rest of the backend.
+    location ^~ /app/v1/ {
+        proxy_pass http://sael_backend;
+        proxy_read_timeout 300s;
+    }
+    location ^~ /css/ {
+        proxy_pass http://sael_backend;
+        proxy_read_timeout 300s;
+    }
+    location ^~ /js/ {
+        proxy_pass http://sael_backend;
+        proxy_read_timeout 300s;
+    }
+    location ^~ /fonts/ {
+        proxy_pass http://sael_backend;
+        proxy_read_timeout 300s;
+    }
+    location ^~ /brand/ {
+        proxy_pass http://sael_backend;
+        proxy_read_timeout 300s;
+    }
+
+    # 10: the website's API routes, including the publish webhook and /api/health/.
+    location ^~ /api/ {
+        proxy_pass http://sael_web;
+    }
+
+    # 11: everything else is the website. Next sets its own long-lived Cache-Control on
+    # /_next/static/, so no location adds one here (and so none loses the HSTS header).
+    location / {
+        proxy_pass http://sael_web;
+        proxy_read_timeout 60s;
+    }
+}
+
+# WHEN DNS MOVES TO PRODUCTION (sael-backend docs/tenant-cutover-checklist.md §1.11):
+#   - server_name in both blocks becomes the production host, and the other host redirects to it.
+#     The website treats https://www.sael.co as its only production origin, with the apex
+#     301-redirecting to it (docs/accessibility-and-seo.md). The backend's checklist §1.7 records
+#     https://sael.co. That conflict is open: settle it before writing this line.
+#   - The website must be REBUILT with NEXT_PUBLIC_SITE_URL set to that origin, then restarted.
+#     Changing its environment file is not enough: the value is compiled in.

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="27 27 66 66" width="120" height="120">
+<defs><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="31" y1="56.7" x2="89" y2="63.300000000000004"><stop offset="0" stop-color="#e40f14"/><stop offset="1" stop-color="#45258d"/></linearGradient></defs>
+
+<g fill="none" stroke="url(#g)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" transform="translate(60 60) scale(1) translate(-60 -59)">
+
+<g transform="translate(60 60)"><g transform="scale(0.001)"><animateTransform attributeName="transform" type="scale" values="0.001;0.001;1.15;1;1" keyTimes="0;0;0.09;0.1286;1" dur="3.5s" repeatCount="indefinite"/><path d="M-6-8h12v16h-12zM-3-3h6M-3 1h6"/></g></g>
+<g transform="translate(60 32)"><g transform="scale(0.001)"><animateTransform attributeName="transform" type="scale" values="0.001;0.001;1.15;1;1" keyTimes="0;0.1071;0.1821;0.2143;1" dur="3.5s" repeatCount="indefinite"/><path d="M3.4 0a3.4 3.4 0 1 1-6.8 0a3.4 3.4 0 1 1 6.8 0M-6.46 12.24a6.46 6.46 0 0 1 12.92 0"/></g></g><g transform="translate(38 68)"><g transform="scale(0.001)"><animateTransform attributeName="transform" type="scale" values="0.001;0.001;1.15;1;1" keyTimes="0;0.15;0.225;0.2571;1" dur="3.5s" repeatCount="indefinite"/><path d="M3.4 0a3.4 3.4 0 1 1-6.8 0a3.4 3.4 0 1 1 6.8 0M-6.46 12.24a6.46 6.46 0 0 1 12.92 0"/></g></g><g transform="translate(82 68)"><g transform="scale(0.001)"><animateTransform attributeName="transform" type="scale" values="0.001;0.001;1.15;1;1" keyTimes="0;0.1929;0.2679;0.3;1" dur="3.5s" repeatCount="indefinite"/><path d="M3.4 0a3.4 3.4 0 1 1-6.8 0a3.4 3.4 0 1 1 6.8 0M-6.46 12.24a6.46 6.46 0 0 1 12.92 0"/></g></g>
+</g></svg>

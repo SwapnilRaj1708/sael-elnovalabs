@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="27 27 66 66" width="120" height="120">
+<defs><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="31" y1="56.7" x2="89" y2="63.300000000000004"><stop offset="0" stop-color="#e40f14"/><stop offset="1" stop-color="#45258d"/></linearGradient></defs>
+
+<g fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" transform="translate(60 60) scale(1) translate(-58 -60)">
+
+<g transform="translate(52 52)"><g transform="scale(0.001)"><animateTransform attributeName="transform" type="scale" values="0.001;0.001;1.15;1;1" keyTimes="0;0;0.105;0.15;1" dur="3.5s" repeatCount="indefinite"/><path d="M6 0a6 6 0 1 1-12 0a6 6 0 1 1 12 0M-11.4 21.6a11.4 11.4 0 0 1 22.8 0"/></g></g>
+<path pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M74 80L74 44"><animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.15;0.3;1" dur="3.5s" repeatCount="indefinite"/></path><g transform="translate(74 44)"><g transform="scale(0.001)"><animateTransform attributeName="transform" type="scale" values="0.001;0.001;1.15;1;1" keyTimes="0;0.2786;0.3236;0.3429;1" dur="3.5s" repeatCount="indefinite"/><path transform="rotate(-90)" d="M-4-3.5L0 0-4 3.5"/></g></g>
+<g transform="translate(74 36)"><g transform="scale(0.001)"><animateTransform attributeName="transform" type="scale" values="0.001;0.001;1.15;1;1" keyTimes="0;0.3086;0.3686;0.3943;1" dur="3.5s" repeatCount="indefinite"/><path d="M-6.062 -3.5L-8.66 -5M6.062 -3.5L8.66 -5M-7 0L-10 0M7 0L10 0"/></g></g>
+</g></svg>

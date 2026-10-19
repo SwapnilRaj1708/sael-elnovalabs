@@ -1,0 +1,12 @@
+.next/
+node_modules/
+dist/
+release/
+pnpm-lock.yaml
+next-env.d.ts
+src/__verify__/
+
+# Hand-authored specifications. Reformatting these produces enormous, meaningless
+# diffs and obscures the actual content changes — leave them exactly as written.
+CLAUDE.md
+docs/

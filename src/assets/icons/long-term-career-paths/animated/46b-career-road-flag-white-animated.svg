@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="27 27 66 66" width="120" height="120">
+<defs><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="31" y1="56.7" x2="89" y2="63.300000000000004"><stop offset="0" stop-color="#e40f14"/><stop offset="1" stop-color="#45258d"/></linearGradient></defs>
+
+<g fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" transform="translate(60 60) scale(1) translate(-60 -60)">
+
+<path pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M40 82c0-10 20-8 20-18s-14-8-14-16 10-8 18-8"><animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0;0.1929;1" dur="3.5s" repeatCount="indefinite"/></path>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1286;0.1329;1" dur="3.5s" repeatCount="indefinite"/><animateMotion path="M40 82c0-10 20-8 20-18s-14-8-14-16 10-8 18-8" keyPoints="0;0;1;1" keyTimes="0;0.1286;0.3214;1" calcMode="linear"  dur="3.5s" repeatCount="indefinite"/><circle r="2.2" fill="#fff" stroke="none"/></g>
+<path pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M68 40V28"><animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.2786;0.3214;1" dur="3.5s" repeatCount="indefinite"/></path><g transform="translate(68 28)"><g transform="scale(0.001)"><animateTransform attributeName="transform" type="scale" values="0.001;0.001;1.15;1;1" keyTimes="0;0.3086;0.3686;0.3943;1" dur="3.5s" repeatCount="indefinite"/><path d="M0 0h10l-3 3.5 3 3.5H0"/></g></g>
+</g></svg>

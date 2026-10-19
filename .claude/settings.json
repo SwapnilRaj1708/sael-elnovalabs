@@ -1,0 +1,108 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "Bash(rm -f src/assets/fonts/.gitkeep)",
+      "Bash(pnpm add *)",
+      "Bash(node \"C:/Users/rajsw/AppData/Local/Temp/claude/d--El-Nova-Labs-SAEL-SAEL-Frontend/876672bf-e82a-4a24-8019-3dd5352c002c/scratchpad/clamp.mjs\")",
+      "Bash(pnpm verify:guardrails)",
+      "Bash(pnpm typecheck *)",
+      "Bash(pnpm lint *)",
+      "Bash(pnpm build *)",
+      "Bash(rm -f src/assets/icons/__svgr-probe.svg src/app/dev/design-system/__probe.tsx)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }; \"killed\")",
+      "Bash(pnpm check *)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }; \"stopped\")",
+      "Bash(pnpm exec *)",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(PYTHONIOENCODING=utf-8 python -c ' *)",
+      "Bash(awk '{print $5, $9}')",
+      "Bash(sort -t/ -k1,1)",
+      "Bash(awk '{printf \"%-11s %s\\\\n\", $1, substr\\($0, index\\($0,$2\\)\\)}')",
+      "Bash(python -m pip install --quiet pypdfium2)",
+      "Bash(python -c \"import pypdfium2; print\\('pypdfium2', pypdfium2.__version__\\)\")",
+      "Bash(python -m pip install --quiet pillow)",
+      "Bash(grep -oiE \"\\(https?://[^ ,;\\)\\\\\"]+|@[A-Za-z0-9_.]{3,}|linkedin[^ ]*|instagram[^ ]*|facebook[^ ]*|twitter[^ ]*|x\\\\.com[^ ]*\\)\" \"Social Media Architecture final Report.txt\")",
+      "Bash(python -m pip install --quiet svgelements)",
+      "Bash(ls -la \"C:/Users/rajsw/.claude/projects/d--El-Nova-Labs-SAEL-SAEL-Frontend/memory/\" 2>/dev/null && echo \"--- MEMORY.md ---\" && cat \"C:/Users/rajsw/.claude/projects/d--El-Nova-Labs-SAEL-SAEL-Frontend/memory/MEMORY.md\" 2>/dev/null || echo \"\\(no memory yet\\)\")",
+      "Read(//c/Users/rajsw/.claude/projects/d--El-Nova-Labs-SAEL-SAEL-Frontend/**)",
+      "Bash('/c/Program Files/Google/Chrome/Application/chrome.exe' --headless --disable-gpu --virtual-time-budget=5000 --window-size=1920,1080 --dump-dom file:///C:/Users/rajsw/AppData/Local/Temp/claude/d--El-Nova-Labs-SAEL-SAEL-Frontend/876672bf-e82a-4a24-8019-3dd5352c002c/scratchpad/probe.html)",
+      "Bash('/c/Program Files/Google/Chrome/Application/chrome.exe' --headless --disable-gpu --virtual-time-budget=4000 --window-size=1920,1080 --dump-dom file:///C:/Users/rajsw/AppData/Local/Temp/claude/d--El-Nova-Labs-SAEL-SAEL-Frontend/876672bf-e82a-4a24-8019-3dd5352c002c/scratchpad/probe.html)",
+      "Bash(PYTHONIOENCODING=utf-8 python -)",
+      "Bash(cp src/styles/globals.css /tmp/g.bak)",
+      "Bash(cp /tmp/g.bak src/styles/globals.css)",
+      "Bash(rm -rf .next/types)",
+      "Bash(echo \"build exit: $?\")",
+      "Bash(node -e \"console.log\\('node', process.version, '| WebSocket:', typeof globalThis.WebSocket\\)\")",
+      "Bash(node \"C:/Users/rajsw/AppData/Local/Temp/claude/d--El-Nova-Labs-SAEL-SAEL-Frontend/876672bf-e82a-4a24-8019-3dd5352c002c/scratchpad/a11y-check.mjs\")",
+      "Bash(mkdir -p C:/Users/rajsw/AppData/Local/Temp/claude/d--El-Nova-Labs-SAEL-SAEL-Frontend/876672bf-e82a-4a24-8019-3dd5352c002c/scratchpad/axe)",
+      "Bash(npm install *)",
+      "Bash(node \"C:/Users/rajsw/AppData/Local/Temp/claude/d--El-Nova-Labs-SAEL-SAEL-Frontend/876672bf-e82a-4a24-8019-3dd5352c002c/scratchpad/axe-check.mjs\")",
+      "Bash(node C:/Users/rajsw/AppData/Local/Temp/claude/d--El-Nova-Labs-SAEL-SAEL-Frontend/876672bf-e82a-4a24-8019-3dd5352c002c/scratchpad/axe-check.mjs)",
+      "Bash(node C:/Users/rajsw/AppData/Local/Temp/claude/d--El-Nova-Labs-SAEL-SAEL-Frontend/876672bf-e82a-4a24-8019-3dd5352c002c/scratchpad/motion-check.mjs)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 3000,9222 -State Listen -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }; \"stopped\")",
+      "PowerShell($c = Get-Command az -ErrorAction SilentlyContinue; if \\($c\\) { \"FOUND: \" + $c.Source } else { \"not on PATH\" }; foreach \\($p in @\\(\"C:\\\\Program Files\\\\Microsoft SDKs\\\\Azure\\\\CLI2\\\\wbin\\\\az.cmd\",\"C:\\\\Program Files \\(x86\\)\\\\Microsoft SDKs\\\\Azure\\\\CLI2\\\\wbin\\\\az.cmd\",\"$env:LOCALAPPDATA\\\\Programs\\\\Microsoft SDKs\\\\Azure\\\\CLI2\\\\wbin\\\\az.cmd\"\\)\\) { if \\(Test-Path $p\\) { \"EXISTS: $p\" } })",
+      "PowerShell($az = \"C:\\\\Program Files\\\\Microsoft SDKs\\\\Azure\\\\CLI2\\\\wbin\\\\az.cmd\"; & $az version --output json 2>$null | Select-Object -First 12; \"--- extensions ---\"; & $az extension list --query \"[].name\" -o tsv 2>$null; \"--- account ---\"; & $az account show --query \"user.name\" -o tsv 2>$null; \"exit=$LASTEXITCODE\")",
+      "PowerShell($az = \"C:\\\\Program Files\\\\Microsoft SDKs\\\\Azure\\\\CLI2\\\\wbin\\\\az.cmd\"; \"--- PAT env var set? ---\"; if \\($env:AZURE_DEVOPS_EXT_PAT\\) { \"yes \\(length \" + $env:AZURE_DEVOPS_EXT_PAT.Length + \"\\)\" } else { \"no\" }; \"--- devops defaults ---\"; & $az devops configure --list 2>$null; \"--- can it reach the project? ---\"; & $az repos list --organization https://dev.azure.com/elnovalabs --project SAEL-Code --query \"[].name\" -o tsv 2>&1 | Select-Object -First 5)",
+      "Bash(git push *)",
+      "Bash(git ls-remote *)",
+      "Bash(git fetch *)",
+      "Bash(sort -k2)",
+      "Bash(rm -f src/components/sections/hero-carousel/.gitkeep)",
+      "Bash(pnpm lint:fix)",
+      "Bash(grep -E \"First Load|Route|^┌|^├ ○ /$|Size|shared|✓|error|warn\")",
+      "Bash(echo \"pnpm check exit code: $?\")",
+      "Bash(echo \"pnpm check exit: $?\")",
+      "Bash(node -e ' *)",
+      "Bash(rm -f /tmp/cntest.mjs 2>/dev/null; echo done)",
+      "Bash(echo \"check exit: $?\")",
+      "Bash(node \"C:/Users/rajsw/AppData/Local/Temp/claude/d--El-Nova-Labs-SAEL-SAEL-Frontend/6ac10691-c832-43a5-8712-049311bfbc5f/scratchpad/audit-block.mjs\")",
+      "Bash(node \"C:/Users/rajsw/AppData/Local/Temp/claude/d--El-Nova-Labs-SAEL-SAEL-Frontend/6ac10691-c832-43a5-8712-049311bfbc5f/scratchpad/rename-block.mjs\")",
+      "Bash(cd \"d:/El Nova Labs/SAEL/SAEL-Frontend\")",
+      "Bash(node __TRACKED_VAR__/pdf-text.mjs __TRACKED_VAR__/content.txt 1660 1945)"
+    ],
+    "additionalDirectories": ["\\tmp"]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "(New-Object Media.SoundPlayer 'C:\\Windows\\Media\\tada.wav').PlaySync()",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "(New-Object Media.SoundPlayer 'C:\\Windows\\Media\\Windows Notify System Generic.wav').PlaySync()",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "AskUserQuestion",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "(New-Object Media.SoundPlayer 'C:\\Windows\\Media\\chimes.wav').PlaySync()",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}

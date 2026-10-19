@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="27 27 66 66" width="120" height="120">
+<defs><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="31" y1="56.7" x2="89" y2="63.300000000000004"><stop offset="0" stop-color="#e40f14"/><stop offset="1" stop-color="#45258d"/></linearGradient></defs>
+
+<g fill="none" stroke="url(#g)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" transform="translate(60 60) scale(1) translate(-60 -60)">
+
+<g transform="translate(60 48)"><g transform="scale(0.001)"><animateTransform attributeName="transform" type="scale" values="0.001;0.001;1.15;1;1" keyTimes="0;0;0.21;0.3;1" dur="1.5s" fill="freeze"/><path d="M-22 0l22-10 22 10z"/></g></g>
+<path d="M45 74V74"><animate attributeName="d" values="M45 74V74;M45 74V74;M45 74V50;M45 74V53;M45 74V53" keyTimes="0;0.25;0.425;0.5;1" dur="1.5s" fill="freeze"/></path><path d="M55 74V74"><animate attributeName="d" values="M55 74V74;M55 74V74;M55 74V50;M55 74V53;M55 74V53" keyTimes="0;0.32;0.495;0.57;1" dur="1.5s" fill="freeze"/></path><path d="M65 74V74"><animate attributeName="d" values="M65 74V74;M65 74V74;M65 74V50;M65 74V53;M65 74V53" keyTimes="0;0.39;0.565;0.64;1" dur="1.5s" fill="freeze"/></path><path d="M75 74V74"><animate attributeName="d" values="M75 74V74;M75 74V74;M75 74V50;M75 74V53;M75 74V53" keyTimes="0;0.46;0.635;0.71;1" dur="1.5s" fill="freeze"/></path>
+<path pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M40 76h40M36 80h48"><animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.1;0.3;1" dur="1.5s" fill="freeze"/></path>
+<g transform="translate(60 43)"><g transform="scale(0.001)"><animateTransform attributeName="transform" type="scale" values="0.001;0.001;1.15;1;1" keyTimes="0;0.75;0.869;0.92;1" dur="1.5s" fill="freeze"/><circle cx="0" cy="0" r="1.6" fill="url(#g)" stroke="none"/></g></g>
+</g></svg>

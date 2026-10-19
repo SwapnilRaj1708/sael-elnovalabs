@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="27 27 66 66" width="120" height="120">
+<defs><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="31" y1="56.7" x2="89" y2="63.300000000000004"><stop offset="0" stop-color="#e40f14"/><stop offset="1" stop-color="#45258d"/></linearGradient></defs>
+
+<g fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" transform="translate(60 60) scale(1) translate(-60 -61)">
+
+<path pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M58 52a8 8 0 1 1-16 0a8 8 0 1 1 16 0"><animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0;0.12;1" dur="3.5s" repeatCount="indefinite"/></path>
+<path pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M36 84a14 14 0 0 1 28 0M50 70l-2.5 4 2.5 8 2.5-8z"><animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.0429;0.1629;1" dur="3.5s" repeatCount="indefinite"/></path>
+<g transform="translate(74 46)"><g transform="scale(0.001)"><animateTransform attributeName="transform" type="scale" values="0.001;0.001;1.15;1;1" keyTimes="0;0.1286;0.2036;0.2357;1" dur="3.5s" repeatCount="indefinite"/><path transform="translate(-74 -46)" d="M70 56v-2c-3-2-5-5-5-8a9 9 0 0 1 18 0c0 3-2 6-5 8v2zM70 60h8"/></g></g>
+<g transform="translate(74 46)"><g opacity="0"><animateTransform attributeName="transform" type="scale" values="1;1;1.4;1.4" keyTimes="0;0.2571;0.4071;1" dur="3.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0;0.8;0;0" keyTimes="0;0.2571;0.2614;0.4071;1" dur="3.5s" repeatCount="indefinite"/><path transform="translate(-74 -46)" d="M83 46a9 9 0 1 1-18 0a9 9 0 1 1 18 0"/></g></g>
+<g transform="translate(74 46)"><g transform="scale(0.001)"><animateTransform attributeName="transform" type="scale" values="0.001;0.001;1.15;1;1" keyTimes="0;0.2571;0.3171;0.3429;1" dur="3.5s" repeatCount="indefinite"/><path d="M0 -12L0 -15.5M9.193 -7.713L11.874 -9.963M-9.193 -7.713L-11.874 -9.963M12 0L15.5 0"/></g></g>
+</g></svg>

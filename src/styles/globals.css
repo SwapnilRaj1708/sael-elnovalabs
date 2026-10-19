@@ -1,0 +1,676 @@
+/*
+ * The application's only stylesheet entry point, imported once by
+ * src/app/layout.tsx. Order matters: theme.css pulls in Tailwind and declares
+ * the tokens, animations.css consumes them.
+ *
+ * This file carries the document reset and base element styling only. Anything
+ * reusable belongs in a token (theme.css) or a primitive
+ * (src/components/ui/). See src/styles/README.md.
+ *
+ * ---------------------------------------------------------------------------
+ * EVERY RULE BELOW MUST STAY INSIDE `@layer base`. This is not stylistic.
+ *
+ * Tailwind sorts itself into `theme → base → components → utilities`, but the
+ * cascade treats *unlayered* author styles as higher priority than every
+ * layer, whatever the specificity. So a bare `* { padding: 0 }` here does not
+ * merely compete with `.px-gutter` — it beats it, and it beats every other
+ * padding, margin and gap utility in the codebase, silently, with no build
+ * error and no console warning. The symptom is a site that has all its
+ * colours and type but none of its spacing.
+ *
+ * That exact bug shipped in FE-01 and survived FE-02. `pnpm verify:guardrails`
+ * now fails on any unlayered rule in this file.
+ * ---------------------------------------------------------------------------
+ */
+
+@import './theme.css';
+@import './animations.css';
+
+@layer base {
+  /* Tailwind's preflight already sets `box-sizing: border-box` and zeroes
+     margin and padding on `*`, so none of that is repeated here. */
+
+  html {
+    /* Clears the fixed header when a jump link lands. Without this the SDG
+       deep links (/sustainable-development-goals#sdg-7) put their target
+       underneath the bar. Same token as the header's own height, so the two
+       cannot disagree. docs/accessibility-and-seo.md §1. */
+    scroll-padding-top: var(--spacing-header);
+  }
+
+  body {
+    min-height: 100svh;
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    color: var(--color-body-base);
+    background-color: var(--color-surface);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* DIN ships 400 and 700 only. Without this, a browser asked for a weight
+       it does not have will synthesise one by smearing the outlines.
+       docs/design-guidelines.md §2. */
+    font-synthesis-weight: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    overflow-wrap: break-word;
+  }
+
+  /* Headings inherit the ink colour; their size comes from a token applied at
+     the call site, because the same level renders at different sizes in
+     different sections. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
+
+  /* A visible focus ring on everything, everywhere. Primitives may restyle it
+     — `focus-visible:outline-white` on a dark surface — but none of them may
+     remove it. Being in a layer is what lets a utility win. /CLAUDE.md §5. */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-blue);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /*
+   * Section snapping, scoped to whichever page opts in by rendering an element
+   * marked `data-snap-sections`. Nothing else on the site is affected, and no
+   * page has to reach into the root layout to turn it on.
+   *
+   * **This is the whole mechanism.** It used to be a fallback: a GSAP
+   * `Observer` on the window replaced scrolling with one-gesture-per-section
+   * paging, and switched this rule off while it ran. That was removed on
+   * 2026-08-06 because it made the site worse on the devices most people use
+   * it on.
+   *
+   * `Observer` needs `preventDefault: true` to page — that is what stops a
+   * wheel tick also scrolling normally. On touch it takes the same gesture,
+   * which costs the browser's own momentum and rubber-banding, and a section
+   * taller than the viewport then advances only by the raw touch delta. The
+   * result on a phone is a page you have to swipe at repeatedly and that
+   * appears to stick. No amount of tuning fixes that: the cost is inherent in
+   * replacing native scrolling rather than correcting it.
+   *
+   * So scrolling is the browser's again, and snapping is what it always should
+   * have been — the browser correcting the rest position, never fighting the
+   * gesture.
+   *
+   * Four choices are deliberate:
+   *
+   * 1. **The document is the scroll container.** The obvious alternative — a
+   *    `height: 100dvh; overflow-y: scroll` wrapper — snaps just as well and
+   *    breaks everything around it: mobile browsers only collapse their
+   *    address bar for the *document* scroller, `Home`/`End` and find-in-page
+   *    stop behaving, and the footer ends up inside the scrolling box.
+   *
+   * 2. **`mandatory`, not `proximity`.** The client wants one scroll to land
+   *    you on the next section, every time; proximity only corrects when you
+   *    happen to stop near a boundary, and reads as "sometimes it snaps".
+   *    Mandatory is safe here *because the spec handles the tall-section case
+   *    for us*: a snap area larger than the snapport may rest at any position
+   *    that keeps it covering the viewport (css-scroll-snap-1 §6.2), so the
+   *    Solutions carousel — taller than a screen by the client's decision —
+   *    scrolls freely inside itself and only snaps at its own edges. That is
+   *    the requested behaviour exactly, and it is why no scroll-hijacking
+   *    library is needed to get it.
+   *
+   * 3. **`scroll-snap-stop: always` on every section**, so a hard fling stops
+   *    at the *next* boundary instead of sailing through three sections —
+   *    without it, mandatory only guarantees where you land, not how far.
+   *
+   * 4. `scroll-padding-top` is already set to the header height on `html`
+   *    above, so a `snap-start` section aligns under the fixed bar rather than
+   *    behind it. The two must stay in step.
+   *
+   * **The footer snaps too, so the page behaves the same all the way down** —
+   * the client's decision on 2026-08-27, reversing the one below it.
+   *
+   * It was a deliberate exception until then: the *last* section's snap area
+   * was extended past the end of the document with
+   * `scroll-margin-bottom: 150dvh`, making news-to-end one oversized area, and
+   * an oversized area may rest anywhere that keeps it covering the viewport
+   * (css-scroll-snap-1 §6.2), so the whole tail scrolled normally. The reason
+   * was the pixel strip: snapping from news straight to the footer flung a
+   * 182px divider past too fast to see (2026-08-06).
+   *
+   * **That reason is gone.** The strip is no longer a band between the page
+   * and the footer — it *is* the footer's top edge, mirrored, as of
+   * 2026-08-27, so landing on the footer is landing on the strip. With the
+   * exception removed the last section snaps like every other one, and the
+   * footer takes `scroll-snap-align: start` to become the final stop.
+   *
+   * The footer is short enough at most widths that its aligned position sits
+   * past the maximum scroll offset. That needs no special handling: snap
+   * positions are clamped to the scrollable range, so the last stop is simply
+   * the end of the document with the footer fully in view. Where the viewport
+   * is short enough that the footer is *taller* than it, §6.2 applies to the
+   * footer exactly as it does to the tall Solutions carousel — free scrolling
+   * inside it, snapping at its edges. Both readings are correct and neither
+   * needs a rule.
+   */
+  html:has([data-snap-sections]) {
+    scroll-snap-type: y mandatory;
+  }
+
+  html:has([data-snap-sections]) [data-snap-section] {
+    scroll-snap-stop: always;
+  }
+
+  /*
+   * The alignment is set here rather than with `snap-start` at the call site,
+   * because <Footer> is in the root layout and renders on every page — a
+   * `snap-start` class on it would be a property of the footer, when it is
+   * really a property of *this page* snapping. Sections can carry the class
+   * because they take a `snap` prop and are only asked for it by a page that
+   * snaps; the footer has no such prop and no page to ask.
+   *
+   * `scroll-snap-stop: always` it already gets, from the rule above: it opts
+   * in with the same `data-snap-section` attribute every section uses.
+   */
+  html:has([data-snap-sections]) footer[data-snap-section] {
+    scroll-snap-align: start;
+  }
+
+  /*
+   * Below `lg` the masthead *overlays* the page instead of offsetting it.
+   *
+   * The bar auto-hides on a downward scroll on mobile — see header-shell.tsx —
+   * and a bar that hides has to leave nothing behind it. If a section still
+   * began 68px down, hiding the bar would swap it for 68px of empty page and
+   * the section would read as never having reached the top of the screen.
+   *
+   * The fix is *not* to animate that offset in step with the bar. That is a
+   * re-layout in the middle of a scroll, and under `scroll-snap-type:
+   * mandatory` a re-layout moves every snap position while the user's finger
+   * is still on the glass. The geometry is instead static and header-less: a
+   * section always starts at the viewport top and is always a whole screen
+   * tall, and the bar slides across it. Nothing reflows, ever.
+   *
+   * So scrolling down leaves a full-viewport section, and scrolling up brings
+   * the bar back over the top of it. That crop is the client's 2026-09-03
+   * decision and the trade it names: you scroll *down* to read, and *up* to
+   * navigate.
+   *
+   * Three declarations, one decision:
+   *
+   *   - `scroll-padding-top: 0` — a `snap-start` section aligns its own top
+   *     with the viewport top rather than with the bar's underside.
+   *   - `--spacing-viewport` becomes the whole screen, so `min-h-viewport`
+   *     stops reserving the bar's height. Without it every section would sit
+   *     at the top and leave a 68px sliver of the next one at the bottom.
+   *   - the third is <main>'s `pt-header`, cancelled by `-mt-header` on the
+   *     page's own snap wrapper. It lives in page.tsx and not here because
+   *     `@layer base` cannot outrank a utility whatever its specificity — see
+   *     the warning at the top of this file.
+   *
+   * **A second opt-in shares this geometry.** `[data-viewport-hero]` is set by
+   * <PageHero> on any inner page whose banner fills the screen. It is the same
+   * problem in a smaller frame — that hero also starts at the viewport top below
+   * `lg` and also has to be a whole screen tall — so it takes the same swap
+   * rather than a parallel one. It does not snap; nothing here makes it.
+   *
+   * All of it is scoped to a page that opts in. Everywhere else the
+   * bar still offsets, so an anchor landing on a non-snapping page keeps its
+   * `scroll-padding-top` — which is what stops the SDG deep links putting
+   * their target underneath the bar.
+   */
+  html:has([data-snap-sections]),
+  html:has([data-viewport-hero]) {
+    scroll-padding-top: 0;
+    --spacing-viewport: var(--spacing-viewport-full);
+  }
+
+  /* From `lg` the bar never hides, so it goes back to offsetting the page. */
+  @media (width >= theme(--breakpoint-lg)) {
+    html:has([data-snap-sections]),
+    html:has([data-viewport-hero]) {
+      scroll-padding-top: var(--spacing-header);
+      --spacing-viewport: var(--spacing-viewport-offset);
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Utilities
+ *
+ * Custom utilities live here rather than in a component, because Tailwind can
+ * only see `@utility` at the top level of a stylesheet. `@utility` registers
+ * into the utilities layer itself, so these are not the unlayered rules the
+ * warning above is about. Keep this list short — if a pattern needs more than
+ * a couple of declarations it is a primitive in src/components/ui/, not a
+ * utility.
+ * ------------------------------------------------------------------------ */
+
+/*
+ * Fill text with the current background-image. Used by the section eyebrow,
+ * and by anything else that needs a gradient clipped to glyphs.
+ *
+ * `-webkit-` first for Safari < 14, which only ever shipped the prefixed
+ * property. docs/design-guidelines.md §1.
+ */
+@utility gradient-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/*
+ * A 1px border in the bright ramp, round a box of any radius, on the black
+ * ground — the ESG Report pill on Our Core Beliefs and the second group of
+ * boxes on Our Key ESG Metrics' stakeholder map.
+ *
+ * Two background layers rather than `border-image`, which ignores
+ * `border-radius` and would square the pill's ends off: the ground is painted
+ * to the padding box, the ramp to the border box, and the transparent border
+ * is the strip where only the ramp shows. Declared on the element, so the
+ * ramp is whatever --gradient-eyebrow-bright is *there* — a business page's
+ * ramp, if one is ever set round it.
+ */
+@utility gradient-outline {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--color-surface-black) 0 0) padding-box,
+    var(--gradient-eyebrow-bright) border-box;
+}
+
+/*
+ * The same on paper: the paper ground inside, the `deep` ramp round it — the
+ * ESG Report pill under Our Core Beliefs' last belief, which went to paper on
+ * 2026-10-14.
+ */
+@utility gradient-outline-paper {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--color-paper) 0 0) padding-box,
+    var(--gradient-eyebrow-deep) border-box;
+}
+
+/*
+ * A business page's own colour, set once on the page and inherited by every
+ * section in it (client, 2026-10-06). Each re-points the shared gradient
+ * tokens at that business's ledger ramp, so the eyebrows and their underline,
+ * the display headings, the accent bar that fills across a card's top edge,
+ * the outlined card's hover glow and the accented card's dotted glow all carry the homepage Business
+ * Portfolio colour without a prop threaded through any of them.
+ *
+ * A paper section on the page (2026-10-14) reads the `-deep` and `-paper`
+ * tokens — the eyebrow ramp, the paper glow and the paper dot light — so it
+ * carries the business's colour rather than falling back to the site's own.
+ *
+ * **On trial: the eyebrow ramp on paper is the business's own ledger ramp,
+ * the one its dark sections use**, on the user's instruction of 2026-10-14, to
+ * judge whether it reads on paper before the client is asked to approve a
+ * darkened one. Solar's and agri's yellow ends are 1.2–1.3:1 there. If it
+ * does not read, point `--gradient-eyebrow-deep` here at
+ * `--gradient-ledger-*-deep` (theme.css), and give `<DisplayHeading>`'s
+ * `business` branch the same ramp on paper — it hard-codes the ledger class.
+ *
+ * Scoped by inheritance, so it reaches only what is inside the element that
+ * carries it: the masthead and footer are outside the page and keep the
+ * site's own ramp. The hero title is the exception that does not read these
+ * tokens — it is white elsewhere — and takes `titleGradient` instead.
+ */
+@utility business-ramp-solar {
+  --gradient-eyebrow-bright: var(--gradient-ledger-solar);
+  --gradient-heading-bright: var(--gradient-ledger-solar);
+  --gradient-eyebrow-deep: var(--gradient-ledger-solar);
+  --gradient-bg-glow: var(--gradient-bg-glow-solar);
+  --gradient-bg-glow-paper: var(--gradient-bg-glow-solar-paper);
+  --dotted-glow-light: var(--color-figure-solar-bright);
+  --dotted-glow-light-paper: var(--color-figure-solar-deep);
+}
+
+@utility business-ramp-cell {
+  --gradient-eyebrow-bright: var(--gradient-ledger-cell);
+  --gradient-heading-bright: var(--gradient-ledger-cell);
+  --gradient-eyebrow-deep: var(--gradient-ledger-cell);
+  --gradient-bg-glow: var(--gradient-bg-glow-cell);
+  --gradient-bg-glow-paper: var(--gradient-bg-glow-cell-paper);
+  --dotted-glow-light: var(--color-figure-cell-bright);
+  --dotted-glow-light-paper: var(--color-figure-cell-deep);
+}
+
+@utility business-ramp-module {
+  --gradient-eyebrow-bright: var(--gradient-ledger-module);
+  --gradient-heading-bright: var(--gradient-ledger-module);
+  --gradient-eyebrow-deep: var(--gradient-ledger-module);
+  --gradient-bg-glow: var(--gradient-bg-glow-module);
+  --gradient-bg-glow-paper: var(--gradient-bg-glow-module-paper);
+  --dotted-glow-light: var(--color-figure-module-bright);
+  --dotted-glow-light-paper: var(--color-figure-module-deep);
+}
+
+@utility business-ramp-agri {
+  --gradient-eyebrow-bright: var(--gradient-ledger-agri);
+  --gradient-heading-bright: var(--gradient-ledger-agri);
+  --gradient-eyebrow-deep: var(--gradient-ledger-agri);
+  --gradient-bg-glow: var(--gradient-bg-glow-agri);
+  --gradient-bg-glow-paper: var(--gradient-bg-glow-agri-paper);
+  --dotted-glow-light: var(--color-figure-agri-bright);
+  --dotted-glow-light-paper: var(--color-figure-agri-deep);
+}
+
+/*
+ * A full-bleed rail whose cards come to rest on the page gutter.
+ *
+ * The two spacers stand in for the padding the rail cannot have: padding on a
+ * scroll container is not honoured at its scroll end in every engine, so the
+ * last card would stop short of the gutter on some and past it on others. A
+ * flex spacer is a real box and behaves the same everywhere.
+ *
+ * The gap is subtracted because the spacer sits beside one, and the rail's gap
+ * is set per section — hence `--rail-gap` rather than the token directly. See
+ * components/ui/rail/rail-track.tsx.
+ */
+@utility rail-inset {
+  scroll-padding-inline-start: var(--spacing-gutter);
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 0 0 calc(var(--spacing-gutter) - var(--rail-gap, var(--spacing-rail-gap)));
+  }
+}
+
+/*
+ * Stop a rail from becoming a *vertical* scroller.
+ *
+ * A rail is `overflow-x: auto`, and CSS gives no way to scroll one axis and
+ * leave the other alone — an `overflow-x` of `auto` forces `overflow-y` to
+ * compute to `auto` as well (css-overflow-3 §3). So anything overflowing the
+ * track downward makes the track scrollable *down*, by exactly that much.
+ *
+ * `<Reveal>` overflows it downward. A card that has not entered yet sits
+ * `--reveal-shift` low, and a rail always holds cards that have not entered:
+ * the ones off the right-hand end. Every rail therefore carried 28px of
+ * vertical slack at all times, and 28px is taller than a news card's date
+ * line — one diagonal swipe on a phone scrolled the rail down and the date
+ * disappeared under its own top edge. That is the bug this exists to fix, and
+ * it is a rail-wide one rather than that card's: the date was simply the only
+ * thing sitting in the top 28px of anything.
+ *
+ * The fix is to give the transform somewhere to land that is already inside
+ * the scrollport. End padding counts as part of a scroll container's
+ * scrollable overflow region, so a card translated `--reveal-shift` down now
+ * stops exactly on the padding edge and contributes nothing of its own:
+ * `scrollHeight` equals `clientHeight`, and there is no vertical scrolling
+ * left to do. The matching negative end margin takes the padding back out of
+ * the flow, so the correction costs no layout.
+ *
+ * Preferred over `overflow-y: clip`, which also stops the scrolling but shaves
+ * the bottom off every card for as long as it is animating in. Under
+ * `prefers-reduced-motion: reduce` there is no transform to absorb and this
+ * pair is inert, which is correct rather than merely harmless.
+ */
+@utility rail-reveal-slack {
+  padding-block-end: var(--reveal-shift);
+  margin-block-end: calc(var(--reveal-shift) * -1);
+}
+
+/*
+ * The two grounds of `SAEL Home v2`, each with its dot grid.
+ *
+ * A utility rather than three classes repeated in two places, because there
+ * *are* two places: <Section>'s `paper-dots` / `black-dots` variants, and the
+ * pixel strip above the footer, which is a bare <div> and not a Section at all.
+ * The client asked on 2026-08-26 for the strip to carry the grid so it stops
+ * reading as a separate band — and a ground defined twice is a ground that
+ * drifts the first time one of the three declarations is touched.
+ *
+ * The colour is part of it deliberately. The grid is drawn *in* the ground, not
+ * over it: the dot alphas are tuned against these two colours and against
+ * nothing else, so letting a caller pair the image with some other background
+ * would silently break the one thing being tuned.
+ */
+@utility ground-dots-paper {
+  background-color: var(--color-paper);
+  background-image: var(--gradient-dot-paper);
+  background-size: var(--spacing-dot-grid) var(--spacing-dot-grid);
+}
+
+@utility ground-dots-dark {
+  background-color: var(--color-surface-black);
+  background-image: var(--gradient-dot-dark);
+  background-size: var(--spacing-dot-grid) var(--spacing-dot-grid);
+}
+
+/*
+ * Hide a scroll container's scrollbar without taking away its scrolling.
+ *
+ * Only for a rail that ships its own affordance — the solutions carousel has
+ * paging arrows that disable at each end, so the bar is redundant rather than
+ * missing. Do not reach for this to tidy up a scroller with no other control:
+ * the bar would be the only thing telling the user there is more to see.
+ *
+ * `overflow` stays `auto`, so keyboard scrolling, `scrollIntoView` and
+ * find-in-page all still work. Firefox and the WebKit/Blink pseudo-element are
+ * both needed; neither covers the other.
+ */
+@utility scrollbar-none {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/*
+ * The fallback. Without it, a browser that cannot clip a background to text
+ * renders `color: transparent` literally — an invisible heading, which is a
+ * far worse outcome than a flat-coloured one.
+ */
+@layer utilities {
+  @supports not ((background-clip: text) or (-webkit-background-clip: text)) {
+    .gradient-text {
+      background-image: none;
+      color: var(--color-brand-red-deep);
+    }
+  }
+}
+
+/*
+ * `hover-hover:` — applies only where the pointer can actually hover.
+ *
+ * Tailwind's `hover:` fires on touch too, on the tap that precedes a click, so
+ * a card that hides its content behind `group-hover` becomes a card a phone
+ * user has to tap to read. This variant scopes such rules to devices that
+ * really have a hover-capable pointer; the touch case then falls through to
+ * whatever the resting styles say, which is where the content should live.
+ */
+@custom-variant hover-hover (@media (hover: hover) and (pointer: fine));
+
+/*
+ * Rhythm for a block of backend-supplied HTML.
+ *
+ * One consumer today: a team member's biography in its dialog, which arrives
+ * from the repository as markup rather than as text. The preflight reset
+ * strips margins and list markers from everything, which is right for a page
+ * built out of components and wrong for a paragraph the frontend did not
+ * author — so the handful of tags docs/api-contracts.md §4 permits get their
+ * spacing back here, and only inside this class.
+ *
+ * Type, colour and measure stay on the element that carries this utility, so
+ * the same markup can be set at --text-body-sm in a dialog and at --text-body
+ * somewhere else without this file knowing about either.
+ *
+ * Not a general-purpose prose class. If a second surface needs richer markup —
+ * headings, tables, figures — widen the sanitiser's allowlist and this
+ * together, or the tag will render unstyled.
+ */
+@utility rich-text {
+  p + p,
+  ul,
+  ol {
+    margin-top: var(--spacing-stack);
+  }
+
+  ul,
+  ol {
+    padding-left: var(--spacing-inset);
+    list-style: revert;
+  }
+
+  li + li {
+    margin-top: var(--spacing-tight);
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}
+
+/*
+ * A Newsroom article's body — the "second surface" the note above asks for,
+ * so a utility of its own rather than `rich-text` widened: an article has
+ * headings, a figure and links that must be visible as links, and a
+ * biography has none of them. Its tags are exactly `sanitize-article.ts`'s
+ * allowlist; widen the two together.
+ *
+ * Dark ground only — every Newsroom page sits on the investor template's
+ * black. The body text's own size and colour stay on the element, as with
+ * `rich-text`; what is here is rhythm, the headings' scale, and the link
+ * treatment the legacy articles had (accent-coloured and underlined).
+ *
+ * The headings take the site's own h2/h3 sizes, so an article's sections sit
+ * under its title at the step the rest of the site uses. A heading gets the
+ * larger gap above it and the smaller below, which is what ties it to the
+ * paragraph it introduces.
+ */
+@utility article-prose {
+  & > * + * {
+    margin-top: var(--spacing-stack);
+  }
+
+  & > * + :is(h2, h3, h4) {
+    margin-top: var(--spacing-flow);
+  }
+
+  h2,
+  h3,
+  h4 {
+    color: var(--color-white);
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-size: var(--text-h2);
+    line-height: var(--text-h2--line-height);
+  }
+
+  h3 {
+    font-size: var(--text-h3);
+    line-height: var(--text-h3--line-height);
+  }
+
+  h4 {
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+  }
+
+  ul,
+  ol {
+    padding-left: var(--spacing-inset);
+    list-style: revert;
+  }
+
+  li + li {
+    margin-top: var(--spacing-tight);
+  }
+
+  strong,
+  b {
+    font-weight: 700;
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  a {
+    color: var(--color-brand-red-bright);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    overflow-wrap: anywhere;
+  }
+
+  a:hover {
+    color: var(--color-white);
+  }
+
+  /* The global ring is --color-brand-blue, 1.84:1 on this ground. */
+  a:focus-visible {
+    outline-color: var(--color-white);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* An editor's highlight: the panel shows it, so the public must see it. */
+  mark {
+    background-color: var(--color-brand-yellow);
+    color: var(--color-surface-black);
+  }
+
+  /* sup and sub keep preflight's treatment, which leaves line height alone. */
+
+  /* `sanitize-article.ts` wraps each table in this, so a wide one scrolls
+     inside the article rather than widening a phone's page. */
+  .article-table {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .article-table:focus-visible {
+    outline-color: var(--color-white);
+  }
+
+  table {
+    min-width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+
+  th,
+  td {
+    border: 1px solid var(--color-hairline-dark);
+    padding: var(--spacing-tight);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    color: var(--color-white);
+    font-weight: 700;
+  }
+}

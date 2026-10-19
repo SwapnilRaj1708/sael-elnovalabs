@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="27 27 66 66" width="120" height="120">
+<defs><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="31" y1="56.7" x2="89" y2="63.300000000000004"><stop offset="0" stop-color="#e40f14"/><stop offset="1" stop-color="#45258d"/></linearGradient></defs>
+
+<g fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" transform="translate(60 60) scale(1) translate(-60 -61)">
+
+<path pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M36 80h48"><animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0;0.0643;1" dur="3.5s" repeatCount="indefinite"/></path><path d="M40 80V80H48V80Z"><animate attributeName="d" values="M40 80V80H48V80Z;M40 80V80H48V80Z;M40 80V66H48V80Z;M40 80V70H48V80Z;M40 80V70H48V80Z" keyTimes="0;0.0429;0.1269;0.1629;1" dur="3.5s" repeatCount="indefinite"/></path><path d="M52 80V80H60V80Z"><animate attributeName="d" values="M52 80V80H60V80Z;M52 80V80H60V80Z;M52 80V59H60V80Z;M52 80V63H60V80Z;M52 80V63H60V80Z" keyTimes="0;0.0771;0.1611;0.1971;1" dur="3.5s" repeatCount="indefinite"/></path><path d="M64 80V80H72V80Z"><animate attributeName="d" values="M64 80V80H72V80Z;M64 80V80H72V80Z;M64 80V52H72V80Z;M64 80V56H72V80Z;M64 80V56H72V80Z" keyTimes="0;0.1114;0.1954;0.2314;1" dur="3.5s" repeatCount="indefinite"/></path>
+<path pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M36 46h10l4-7 5 13 4-6h25"><animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.1929;0.3214;1" dur="3.5s" repeatCount="indefinite"/></path>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2571;0.2614;1" dur="3.5s" repeatCount="indefinite"/><animateMotion path="M36 46h10l4-7 5 13 4-6h25" keyPoints="0;0;1;1" keyTimes="0;0.2571;0.42;1" calcMode="linear"  dur="3.5s" repeatCount="indefinite"/><circle r="1.8" fill="#fff" stroke="none"/></g>
+</g></svg>

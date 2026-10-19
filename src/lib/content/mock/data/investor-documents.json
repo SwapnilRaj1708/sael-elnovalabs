@@ -1,0 +1,2900 @@
+[
+  {
+    "id": "drhp",
+    "title": "Draft Red Herring Prospectus",
+    "section": "offer-documents",
+    "tile": "drhp",
+    "heading": null,
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/offer-documents/drhp/SAEL_DRHP.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 13489413
+    },
+    "legacyPath": "/documents/investors/offer-documents/drhp/SAEL_DRHP.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corrigendum-to-drhp",
+    "title": "Corrigendum to DRHP",
+    "section": "offer-documents",
+    "tile": "corrigendum-to-drhp",
+    "heading": null,
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/offer-documents/corrigendum-to-drhp/corrigendum-to-drh.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 550149
+    },
+    "legacyPath": "/documents/investors/offer-documents/corrigendum-to-drhp/corrigendum-to-drh.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "addendum-to-drhp",
+    "title": "Addendum to DRHP",
+    "section": "offer-documents",
+    "tile": "addendum-to-drhp",
+    "heading": null,
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/offer-documents/addendum-to-drhp/Addendum-to-DRHP.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 627753
+    },
+    "legacyPath": "/documents/investors/offer-documents/addendum-to-drhp/Addendum-to-DRHP.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "industry-report-india-re-market-assessment",
+    "title": "Final Report India RE Market Assessment SAEL 03112025",
+    "section": "offer-documents",
+    "tile": "industry-report",
+    "heading": null,
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/offer-documents/industry-reports/Final-Report-India-RE-Market-Assessment-SAEL-03112025.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2839816
+    },
+    "legacyPath": "/documents/investors/offer-documents/industry-reports/Final-Report-India-RE-Market-Assessment-SAEL-03112025.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "drhp-audio-visuals-english",
+    "title": "DRHP - Audio Visual (English)",
+    "section": "offer-documents",
+    "tile": "drhp-audio-visuals-english",
+    "heading": null,
+    "subheading": null,
+    "kind": "video",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/media/offer-documents/SAEL-DRHP-English.mp4",
+      "mimeType": "video/mp4",
+      "sizeBytes": 111001343
+    },
+    "legacyPath": "/video/SAEL-DRHP-English.mp4",
+    "externalUrl": null
+  },
+  {
+    "id": "drhp-audio-visuals-hindi",
+    "title": "DRHP - Audio Visual (Hindi)",
+    "section": "offer-documents",
+    "tile": "drhp-audio-visuals-hindi",
+    "heading": null,
+    "subheading": null,
+    "kind": "video",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/media/offer-documents/SAEL-DRHP-Hindi.mp4",
+      "mimeType": "video/mp4",
+      "sizeBytes": 106541645
+    },
+    "legacyPath": "/video/SAEL-DRHP-Hindi.mp4",
+    "externalUrl": null
+  },
+  {
+    "id": "group-companies-fy2025-dr-hs-awla-foundation",
+    "title": "Dr. HS Awla Foundation",
+    "section": "offer-documents",
+    "tile": "information-with-respect-to-group-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2025/Dr-HS-Awla-Foundation.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 8026910
+    },
+    "legacyPath": "/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2025/Dr-HS-Awla-Foundation.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "group-companies-fy2025-sapphire-agri-warehousing",
+    "title": "Sapphire Agri Warehousing Private Limited",
+    "section": "offer-documents",
+    "tile": "information-with-respect-to-group-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2025/Sapphire-Agri-Warehousing-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2995880
+    },
+    "legacyPath": "/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2025/Sapphire-Agri-Warehousing-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "group-companies-fy2025-sun-layer-energy",
+    "title": "Sun Layer Energy Private Limited",
+    "section": "offer-documents",
+    "tile": "information-with-respect-to-group-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2025/Sun-Layer-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 12194000
+    },
+    "legacyPath": "/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2025/Sun-Layer-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "group-companies-fy2024-dr-hs-awla-foundation",
+    "title": "Dr. HS Awla Foundation",
+    "section": "offer-documents",
+    "tile": "information-with-respect-to-group-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2024/Dr-HS-Awla-Foundation.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 6933934
+    },
+    "legacyPath": "/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2024/Dr-HS-Awla-Foundation.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "group-companies-fy2024-sapphire-agri-warehousing",
+    "title": "Sapphire Agri Warehousing Private Limited",
+    "section": "offer-documents",
+    "tile": "information-with-respect-to-group-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2024/Sapphire-Agri-Warehousing-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1513884
+    },
+    "legacyPath": "/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2024/Sapphire-Agri-Warehousing-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "group-companies-fy2024-sun-layer-energy",
+    "title": "Sun Layer Energy Private Limited",
+    "section": "offer-documents",
+    "tile": "information-with-respect-to-group-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2024/Sun-Layer-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 7208449
+    },
+    "legacyPath": "/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2024/Sun-Layer-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "group-companies-fy2023-dr-hs-awla-foundation",
+    "title": "Dr. HS Awla Foundation",
+    "section": "offer-documents",
+    "tile": "information-with-respect-to-group-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2023/Dr-HS-Awla-Foundation.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2231861
+    },
+    "legacyPath": "/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2023/Dr-HS-Awla-Foundation.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "group-companies-fy2023-sapphire-agri-warehousing",
+    "title": "Sapphire Agri Warehousing Private Limited",
+    "section": "offer-documents",
+    "tile": "information-with-respect-to-group-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2023/Sapphire-Agri-Warehousing-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 11268615
+    },
+    "legacyPath": "/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2023/Sapphire-Agri-Warehousing-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "group-companies-fy2023-sun-layer-energy",
+    "title": "Sun Layer Energy Private Limited",
+    "section": "offer-documents",
+    "tile": "information-with-respect-to-group-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2023/Sun-Layer-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1641679
+    },
+    "legacyPath": "/documents/investors/offer-documents/information-with-respect-to-group-companies/FY-2023/Sun-Layer-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-whistleblower-policy-feb-2026",
+    "title": "Whistleblower Policy",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/whistleblower-policy-feb-2026.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 348516
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/whistleblower-policy-feb-2026.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-risk-management-policy-new",
+    "title": "Risk Management Policy",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/risk-management-policy-new.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 383260
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/risk-management-policy-new.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-code-of-practices-and-procedures-for-fair-disclosure-of-unpublished-price-sensitive-information",
+    "title": "Code of practices and procedures for fair disclosure of unpublished price sensitive information",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/code-of-practices-and-procedures-for-fair-disclosure-of-unpublished-price-sensitive-information.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 650298
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/code-of-practices-and-procedures-for-fair-disclosure-of-unpublished-price-sensitive-information.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-policy-and-procedure-for-enquiry-in-case-of-leak-suspected-leak-of-unpublished-price-sensitive-information",
+    "title": "Policy and procedure for enquiry in case of leak suspected leak of unpublished price sensitive information",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/policy-and-procedure-for-enquiry-in-case-of-leak-suspected-leak-of-unpublished-price-sensitive-information.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 325395
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/policy-and-procedure-for-enquiry-in-case-of-leak-suspected-leak-of-unpublished-price-sensitive-information.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-code-of-conduct-to-regulate-monitor-and-report-trading-by-designated-persons",
+    "title": "Code of conduct to regulate, monitor, and report trading by designated persons",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/code-of-conduct-to-regulate-monitor-and-report-trading-by-designated-persons.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 696100
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/code-of-conduct-to-regulate-monitor-and-report-trading-by-designated-persons.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-code-of-conduct-for-board-of-members-key-managerial-personnel-and-the-senior-management",
+    "title": "Code of conduct for Board of members key managerial personnel & the senior management",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/code-of-conduct-for-board-of-members-key-managerial-personnel-and-the-senior-management.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 251160
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/code-of-conduct-for-board-of-members-key-managerial-personnel-and-the-senior-management.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-policy-on-diversity-of-board-of-directors",
+    "title": "Policy on diversity of Board of Directors",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/policy-on-diversity-of-board-of-directors.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 506417
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/policy-on-diversity-of-board-of-directors.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-policy-on-materiality-of-related-party-transactions-and-on-dealing-with-related-party-transactions",
+    "title": "Policy on materiality of related party transactions and on dealing with related party transactions",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/policy-on-materiality-of-related-party-transactions-and-on-dealing-with-related-party-transactions.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 304516
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/policy-on-materiality-of-related-party-transactions-and-on-dealing-with-related-party-transactions.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-policy-on-determining-material-subsidiaries",
+    "title": "Policy on determining material subsidiaries",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/policy-on-determining-material-subsidiaries.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 484802
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/policy-on-determining-material-subsidiaries.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-corporate-social-responsibility-policy",
+    "title": "Corporate social responsibility policy",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/corporate-social-responsibility-policy.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 358567
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/corporate-social-responsibility-policy.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-nomination-and-remuneration-policy",
+    "title": "Nomination and Remuneration Policy",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/nomination-and-remuneration-policy.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 527291
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/nomination-and-remuneration-policy.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-policy-on-succession-planning-for-the-board-senior-management",
+    "title": "Policy on succession planning for the Board senior management",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/policy-on-succession-planning-for-the-board-senior-management.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 613260
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/policy-on-succession-planning-for-the-board-senior-management.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-policy-on-familiarization-programmes-for-independent-directors",
+    "title": "Policy on Familiarization programmes for independent directors",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/policy-on-familiarization-programmes-for-independent-directors.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 465743
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/policy-on-familiarization-programmes-for-independent-directors.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-archival-policy",
+    "title": "Archival Policy",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/archival-policy.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 514663
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/archival-policy.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-policy-on-determination-of-material-events-and-information-for-disclosures",
+    "title": "Policy on Determination of Material Events and Information for Disclosures",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/policy-on-determination-of-material-events-and-information-for-disclosures.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 391008
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/policy-on-determination-of-material-events-and-information-for-disclosures.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-dividend-distribution-policy",
+    "title": "Dividend Distribution Policy",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/dividend-distribution-policy.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 673816
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/dividend-distribution-policy.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-terms-of-reference-for-the-committees",
+    "title": "Terms of Reference for the Committees",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "statutorypolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/terms-of-reference-for-the-committees.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 232356
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/terms-of-reference-for-the-committees.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-environment-and-social-policy",
+    "title": "Environment and Social (E&S) Policy",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "corporatepolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/environment-and-social-policy.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2420500
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/environment-and-social-policy.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-esms-new",
+    "title": "Environment & Social Management System",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "corporatepolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/esms-new.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1436294
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/esms-new.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-appendixs-sael-esms",
+    "title": "Applicable Appendix’s to Environment & Social Management System",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "corporatepolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/Appendixs_SAEL_ESMS.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3863382
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/Appendixs_SAEL_ESMS.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-stakeholder-engagement-and-communication-policy",
+    "title": "Stakeholder Engagement and Communication Policy",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "corporatepolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/stakeholder-engagement-and-communication-policy.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2257271
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/stakeholder-engagement-and-communication-policy.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-anti-bribery-and-corruption-policy",
+    "title": "Anti-Bribery and Corruption Policy",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "corporatepolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/anti-bribery-and-corruption-policy.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 942439
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/anti-bribery-and-corruption-policy.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-policy-on-prevention-of-sexual-harrasment-of-employees",
+    "title": "Policy On Prevention of Sexual Harassment of Employees",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "corporatepolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/policy-on-prevention-of-sexual-harrasment-of-employees.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1185521
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/policy-on-prevention-of-sexual-harrasment-of-employees.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-codes-and-policies-terms-condition-of-independent-directors",
+    "title": "Terms & Conditions of Independent Directors",
+    "section": "corporate-governance",
+    "tile": "codes-and-policies",
+    "heading": "corporatepolicies",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/codes-and-policies/Terms-&-condition-of-Independent-Directors.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 493735
+    },
+    "legacyPath": "/documents/investors/corporate-governance/codes-and-policies/Terms-&-condition-of-Independent-Directors.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-sustainability-reports-7th-version-sael-esg-report-23-24",
+    "title": "ESG Report CY24",
+    "section": "corporate-governance",
+    "tile": "sustainability-reports",
+    "heading": "esgandghgreports",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/sustainability-reports/7th-version_SAEL-ESG-Report-23-24.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 11859549
+    },
+    "legacyPath": "/documents/investors/corporate-governance/sustainability-reports/7th-version_SAEL-ESG-Report-23-24.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-sustainability-reports-sael-esg-report-cy-2023",
+    "title": "ESG Report CY23",
+    "section": "corporate-governance",
+    "tile": "sustainability-reports",
+    "heading": "esgandghgreports",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/sustainability-reports/sael-esg-report-cy-2023.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 8143097
+    },
+    "legacyPath": "/documents/investors/corporate-governance/sustainability-reports/sael-esg-report-cy-2023.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-sustainability-reports-environmental-and-social-impact-assessment-esia-300mw-solar-power-plant-ysr-kadapa-anantapur-districts-andhra-pradesh",
+    "title": "Environmental and Social Impact Assessment (ESIA)",
+    "section": "corporate-governance",
+    "tile": "sustainability-reports",
+    "heading": "saelsolar300mwmhp1projectsenvironmentsocialreports",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/sustainability-reports/environmental-and-social-impact-assessment-esia-300mw-solar-power-plant-ysr-kadapa-anantapur-districts-andhra-pradesh.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 16530982
+    },
+    "legacyPath": "/documents/investors/corporate-governance/sustainability-reports/environmental-and-social-impact-assessment-esia-300mw-solar-power-plant-ysr-kadapa-anantapur-districts-andhra-pradesh.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-sustainability-reports-critical-habitat-assesment-cha-or-300mw-solar-power-plant",
+    "title": "Critical Habitat Assessment for a Proposed Solar Power Project in YSR (Kadapa) and Anantapur Districts",
+    "section": "corporate-governance",
+    "tile": "sustainability-reports",
+    "heading": "saelsolar300mwmhp1projectsenvironmentsocialreports",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/sustainability-reports/Critical-Habitat-Assesment-CHA-or-300MW-Solar-Power-Plant.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2973766
+    },
+    "legacyPath": "/documents/investors/corporate-governance/sustainability-reports/Critical-Habitat-Assesment-CHA-or-300MW-Solar-Power-Plant.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-sustainability-reports-climate-risk-and-adaption-assessment-cra-for-300mw-solar-power-plant",
+    "title": "Climate Risk and Adaption Assessment (CRA) for 300MW Solar Power Plant",
+    "section": "corporate-governance",
+    "tile": "sustainability-reports",
+    "heading": "saelsolar300mwmhp1projectsenvironmentsocialreports",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/sustainability-reports/climate-risk-and-adaption-assessment-cra-for-300mw-solar-power-plant.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 7164209
+    },
+    "legacyPath": "/documents/investors/corporate-governance/sustainability-reports/climate-risk-and-adaption-assessment-cra-for-300mw-solar-power-plant.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-csr-sil-csr-altered-annual-action-plan-for-fy-2025-26",
+    "title": "SIL_CSR Altered Annual Action Plan for FY 2025-26",
+    "section": "corporate-governance",
+    "tile": "csr",
+    "heading": "fy2026",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/csr/sil-csr-altered-annual-action-plan-for-fy-2025-26.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 127280
+    },
+    "legacyPath": "/documents/investors/corporate-governance/csr/sil-csr-altered-annual-action-plan-for-fy-2025-26.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-csr-sil-csr-annual-action-plan-for-fy-2025-26",
+    "title": "SIL_CSR Annual Action Plan for FY 2025-26",
+    "section": "corporate-governance",
+    "tile": "csr",
+    "heading": "fy2026",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/csr/SIL-CSR-Annual-Action-Plan-for-FY-2025-26.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 108730
+    },
+    "legacyPath": "/documents/investors/corporate-governance/csr/SIL-CSR-Annual-Action-Plan-for-FY-2025-26.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-csr-sil-csr-annual-action-plan-for-fy-2026-27",
+    "title": "SIL_CSR Annual Action Plan for FY 2026-27",
+    "section": "corporate-governance",
+    "tile": "csr",
+    "heading": "fy2027",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/csr/sil-csr-annual-action-plan-for-fy-2026-27.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 125998
+    },
+    "legacyPath": "/documents/investors/corporate-governance/csr/sil-csr-annual-action-plan-for-fy-2026-27.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-gm-notice-of-4th-agm-held-in-2026",
+    "title": "Notice of 4th AGM held in 2026",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "annualgeneral",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/gm-notice-of-4th-agm-held-in-2026.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 301354
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/gm-notice-of-4th-agm-held-in-2026.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-gm-notice-of-3rd-agm-held-in-2025",
+    "title": "Notice of 3rd AGM held in 2025",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "annualgeneral",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/gm-notice-of-3rd-agm-held-in-2025.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 559859
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/gm-notice-of-3rd-agm-held-in-2025.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-gm-notice-of-2nd-agm-held-in-2024",
+    "title": "Notice of 2nd AGM held in 2024",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "annualgeneral",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/gm-notice-of-2nd-agm-held-in-2024.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 467853
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/gm-notice-of-2nd-agm-held-in-2024.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-gm-notice-of-1st-agm-held-in-2023",
+    "title": "Notice of 1st AGM held in 2023",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "annualgeneral",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/gm-notice-of-1st-agm-held-in-2023.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 436430
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/gm-notice-of-1st-agm-held-in-2023.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2026-notice-of-4th-egm-for-fy-2025-26-dt-31-10-2025",
+    "title": "Notice of 4th EGM for FY 2025-26 dt. 31.10.2025",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2026",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2026/Notice-of-4th-EGM-for-FY-2025-26-dt-31-10-2025.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 629361
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2026/Notice-of-4th-EGM-for-FY-2025-26-dt-31-10-2025.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2026-notice-of-3rd-egm-for-fy-2025-26-dt-04-10-2025",
+    "title": "Notice of 3rd EGM for FY 2025-26 dt. 04.10.2025",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2026",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2026/Notice-of-3rd-EGM-for-FY-2025-26-dt-04-10-2025.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 547000
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2026/Notice-of-3rd-EGM-for-FY-2025-26-dt-04-10-2025.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2026-notice-of-2nd-egm-for-fy-2025-26-dt-22-09-2025",
+    "title": "Notice of 2nd EGM for FY 2025-26 dt. 22.09.2025",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2026",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2026/Notice-of-2nd-EGM-for-FY-2025-26-dt-22-09-2025.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 520581
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2026/Notice-of-2nd-EGM-for-FY-2025-26-dt-22-09-2025.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2026-notice-of-1st-egm-for-fy-2025-26-dt-25-08-2025",
+    "title": "Notice of 1st EGM for FY 2025-26 dt. 25.08.2025",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2026",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2026/Notice-of-1st-EGM-for-FY-2025-26-dt-25-08-2025.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 292013
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2026/Notice-of-1st-EGM-for-FY-2025-26-dt-25-08-2025.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2025-notice-of-2nd-egm-for-fy-2024-25-dt-23-01-2025",
+    "title": "Notice of 2nd EGM for FY 2024-25 dt. 23.01.2025.pdf",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2025",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2025/Notice-of-2nd-EGM-for-FY-2024-25-dt-23-01-2025.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1424880
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2025/Notice-of-2nd-EGM-for-FY-2024-25-dt-23-01-2025.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2025-notice-of-1st-egm-for-fy-2024-25-dt-30-12-2024",
+    "title": "Notice of 1st EGM for FY 2024-25 dt. 30.12.2024.pdf",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2025",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2025/Notice-of-1st-EGM-for-FY-2024-25-dt-30-12-2024.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 979415
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2025/Notice-of-1st-EGM-for-FY-2024-25-dt-30-12-2024.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2024-notice-of-4th-egm-for-fy-2023-24-dt-16-02-2024",
+    "title": "Notice of 4th EGM for FY 2023-24 dt. 16.02.2024.pdf",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2024",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2024/Notice-of-4th-EGM-for-FY-2023-24-dt-16-02-2024.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1096966
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2024/Notice-of-4th-EGM-for-FY-2023-24-dt-16-02-2024.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2024-notice-of-3rd-egm-for-fy-2023-24-dt-20-01-2024",
+    "title": "Notice of 3rd EGM for FY 2023-24 dt. 20.01.2024.pdf",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2024",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2024/Notice-of-3rd-EGM-for-FY-2023-24-dt-20-01-2024.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1437931
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2024/Notice-of-3rd-EGM-for-FY-2023-24-dt-20-01-2024.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2024-notice-of-2nd-egm-for-fy-2023-24-dt-06-12-2023",
+    "title": "Notice of 2nd EGM for FY 2023-24 dt. 06.12.2023.pdf",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2024",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2024/Notice-of-2nd-EGM-for-FY-2023-24-dt-06-12-2023.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1088629
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2024/Notice-of-2nd-EGM-for-FY-2023-24-dt-06-12-2023.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2024-notice-of-1st-egm-for-fy-2023-24-dt-19-04-2023",
+    "title": "Notice of 1st EGM for FY 2023-24 dt. 19.04.2023.pdf",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2024",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2024/Notice-of-1st-EGM-for-FY-2023-24-dt-19-04-2023.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 690926
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2024/Notice-of-1st-EGM-for-FY-2023-24-dt-19-04-2023.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2023-notice-of-7th-egm-for-fy-2022-23-dt-21-03-2023",
+    "title": "Notice of 7th EGM for FY 2022-23 dt. 21.03.2023.pdf",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2023",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2023/Notice-of-7th-EGM-for-FY-2022-23-dt-21-03-2023.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1004846
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2023/Notice-of-7th-EGM-for-FY-2022-23-dt-21-03-2023.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2023-notice-of-6th-egm-for-fy-2022-23-dt-17-02-2023",
+    "title": "Notice of 6th EGM for FY 2022-23 dt. 17.02.2023.pdf",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2023",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2023/Notice-of-6th-EGM-for-FY-2022-23-dt-17-02-2023.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1010650
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2023/Notice-of-6th-EGM-for-FY-2022-23-dt-17-02-2023.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2023-notice-of-5th-egm-for-fy-2022-23-dt-24-01-2023",
+    "title": "Notice of 5th EGM for FY 2022-23 dt. 24.01.2023.pdf",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2023",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2023/Notice-of-5th-EGM-for-FY-2022-23-dt-24-01-2023.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1159887
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2023/Notice-of-5th-EGM-for-FY-2022-23-dt-24-01-2023.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2023-notice-of-4th-egm-for-fy-2022-23-dt-24-01-2023",
+    "title": "Notice of 4th EGM for FY 2022-23 dt. 24.01.2023.pdf",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2023",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2023/Notice-of-4th-EGM-for-FY-2022-23-dt-24-01-2023.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 979643
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2023/Notice-of-4th-EGM-for-FY-2022-23-dt-24-01-2023.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2023-notice-of-3rd-egm-for-fy-2022-23-dt-02-06-2022",
+    "title": "Notice of 3rd EGM for FY 2022-23 dt. 02.06.2022.pdf",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2023",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2023/Notice-of-3rd-EGM-for-FY-2022-23-dt-02-06-2022.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 994180
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2023/Notice-of-3rd-EGM-for-FY-2022-23-dt-02-06-2022.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2023-notice-of-2nd-egm-for-fy-2022-23-dt-02-06-2022",
+    "title": "Notice of 2nd EGM for FY 2022-23 dt. 02.06.2022.pdf",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2023",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2023/Notice-of-2nd-EGM-for-FY-2022-23-dt-02-06-2022.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 930402
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2023/Notice-of-2nd-EGM-for-FY-2022-23-dt-02-06-2022.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-general-meeting-fy-2023-notice-of-1st-egm-for-fy-2022-23-dt-30-04-2022",
+    "title": "Notice of 1st EGM for FY 2022-23 dt. 30.04.2022.pdf",
+    "section": "corporate-governance",
+    "tile": "general-meeting",
+    "heading": "extra-ordinarygeneralmeeting",
+    "subheading": "extra-ordinarygeneralmeeting-fy2023",
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/general-meeting/FY-2023/Notice-of-1st-EGM-for-FY-2022-23-dt-30-04-2022.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 949328
+    },
+    "legacyPath": "/documents/investors/corporate-governance/general-meeting/FY-2023/Notice-of-1st-EGM-for-FY-2022-23-dt-30-04-2022.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-familiarization-programme-fy-2026-familiarization-programme-fy-2025-26",
+    "title": "Familiarization Programme_FY-2025-26",
+    "section": "corporate-governance",
+    "tile": "familiarization-programme",
+    "heading": "fy2026",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/familiarization-programme/FY-2026/familiarization-programme-fy-2025-26.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 88446
+    },
+    "legacyPath": "/documents/investors/corporate-governance/familiarization-programme/FY-2026/familiarization-programme-fy-2025-26.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-other-documents-moa-aoa-sael-industries-limited",
+    "title": "Memorandum of Association and Articles of Association",
+    "section": "corporate-governance",
+    "tile": "other-documents",
+    "heading": "otherdocuments",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/other-documents/MOA-AOA-SAEL-Industries-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 6883941
+    },
+    "legacyPath": "/documents/investors/corporate-governance/other-documents/MOA-AOA-SAEL-Industries-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-other-documents-composite-scheme-of-arrangement",
+    "title": "Composite Scheme of Arrangement",
+    "section": "corporate-governance",
+    "tile": "other-documents",
+    "heading": "compositeschemeofarrangement",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/other-documents/composite-scheme-of-arrangement.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 5988382
+    },
+    "legacyPath": "/documents/investors/corporate-governance/other-documents/composite-scheme-of-arrangement.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-other-documents-jagbani-advertisement",
+    "title": "Jagbani Advertisement",
+    "section": "corporate-governance",
+    "tile": "other-documents",
+    "heading": "compositeschemeofarrangement",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/other-documents/jagbani-advertisement.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 661143
+    },
+    "legacyPath": "/documents/investors/corporate-governance/other-documents/jagbani-advertisement.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "corporate-governance-other-documents-tribune-advertisement",
+    "title": "Tribune Advertisement",
+    "section": "corporate-governance",
+    "tile": "other-documents",
+    "heading": "compositeschemeofarrangement",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/corporate-governance/other-documents/tribune-advertisement.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 601031
+    },
+    "legacyPath": "/documents/investors/corporate-governance/other-documents/tribune-advertisement.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-annual-return-fy-2026-mgt-7-mar-26",
+    "title": "MGT 7 Mar'26",
+    "section": "financials-and-reports",
+    "tile": "annual-return",
+    "heading": "fy2026",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/annual-return/FY-2026/MGT-7-Mar-26.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": null
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/annual-return/FY-2026/MGT-7-Mar-26.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-annual-return-fy-2025-mgt-7-mar-25",
+    "title": "MGT 7 Mar'25",
+    "section": "financials-and-reports",
+    "tile": "annual-return",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/annual-return/FY-2025/MGT-7-Mar-25.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2446335
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/annual-return/FY-2025/MGT-7-Mar-25.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-annual-return-fy-2024-mgt-7-march-24",
+    "title": "MGT 7 Mar'24",
+    "section": "financials-and-reports",
+    "tile": "annual-return",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/annual-return/FY-2024/MGT-7-March-24.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 4812984
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/annual-return/FY-2024/MGT-7-March-24.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-annual-return-fy-2023-mgt-7-march-23",
+    "title": "MGT 7 Mar'23",
+    "section": "financials-and-reports",
+    "tile": "annual-return",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/annual-return/FY-2023/MGT-7-March-23.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2485821
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/annual-return/FY-2023/MGT-7-March-23.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-consolidated-financials-of-the-company-fy-2025-sael-industries-limited-consolidated-financial-statements",
+    "title": "SAEL Industries Limited Consolidated Financial Statements",
+    "section": "financials-and-reports",
+    "tile": "consolidated-financials-of-the-company",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/consolidated-financials-of-the-company/FY-2025/SAEL-Industries-Limited-Consolidated-Financial-Statements.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 7846659
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/consolidated-financials-of-the-company/FY-2025/SAEL-Industries-Limited-Consolidated-Financial-Statements.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-consolidated-financials-of-the-company-fy-2024-sael-industries-limited-consolidated-financial-statements",
+    "title": "SAEL Industries Limited Consolidated Financial Statements",
+    "section": "financials-and-reports",
+    "tile": "consolidated-financials-of-the-company",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/consolidated-financials-of-the-company/FY-2024/SAEL-Industries-Limited-Consolidated-Financial-Statements.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 7785375
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/consolidated-financials-of-the-company/FY-2024/SAEL-Industries-Limited-Consolidated-Financial-Statements.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-consolidated-financials-of-the-company-fy-2023-sael-industries-limited-consolidated-financial-statements",
+    "title": "SAEL Industries Limited Consolidated Financial Statements",
+    "section": "financials-and-reports",
+    "tile": "consolidated-financials-of-the-company",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/consolidated-financials-of-the-company/FY-2023/SAEL-Industries-Limited-Consolidated-Financial-Statements.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 5576415
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/consolidated-financials-of-the-company/FY-2023/SAEL-Industries-Limited-Consolidated-Financial-Statements.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-the-company-fy-2025-sael-industries-limited",
+    "title": "SAEL Industries Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-the-company",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-the-company/FY-2025/SAEL-Industries-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 4998361
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-the-company/FY-2025/SAEL-Industries-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-the-company-fy-2024-sael-industries-ltd",
+    "title": "SAEL Industries Ltd.",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-the-company",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-the-company/FY-2024/SAEL-Industries-Ltd.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 4040351
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-the-company/FY-2024/SAEL-Industries-Ltd.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-the-company-fy-2023-sael-industries-ltd",
+    "title": "SAEL Industries Ltd.",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-the-company",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-the-company/FY-2023/SAEL-Industries-Ltd.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3522628
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-the-company/FY-2023/SAEL-Industries-Ltd.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-canal-solar-energy-private-limited",
+    "title": "Canal Solar Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Canal-Solar-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3273616
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Canal-Solar-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-chattargarh-renewable-energy-private-limited",
+    "title": "Chattargarh Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Chattargarh-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3231587
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Chattargarh-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-jasrasar-green-power-energy-private-limited",
+    "title": "Jasrasar Green Power Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Jasrasar-Green-Power-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3424431
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Jasrasar-Green-Power-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-kaithal-renewable-energy-private-limited",
+    "title": "Kaithal Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Kaithal-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3434660
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Kaithal-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sael-limited",
+    "title": "SAEL Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 6191737
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sael-re-power-private-limited",
+    "title": "SAEL RE Power Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-RE-Power-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2702024
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-RE-Power-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sael-solar-mgf-private-limited",
+    "title": "SAEL Solar MGF Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-MGF-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 4550156
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-MGF-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sael-solar-mhp1-private-limited",
+    "title": "SAEL Solar MHP1 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-MHP1-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2743107
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-MHP1-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sael-solar-mhp2-private-limited",
+    "title": "SAEL Solar MHP2 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-MHP2-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2850984
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-MHP2-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sael-solar-p10-private-limited",
+    "title": "SAEL Solar P10 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-P10-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2641327
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-P10-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sael-solar-p4-private-limited",
+    "title": "SAEL Solar P4 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-P4-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2847530
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-P4-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sael-solar-p5-private-limited",
+    "title": "SAEL Solar P5 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-P5-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2883894
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-P5-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sael-solar-p6-private-limited",
+    "title": "SAEL Solar P6 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-P6-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 29301710
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-P6-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sael-solar-p9-private-limited",
+    "title": "SAEL Solar P9 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-P9-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2625002
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-P9-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sael-solar-solutions-private-limited",
+    "title": "SAEL Solar Solutions Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-Solutions-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 30757560
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/SAEL-Solar-Solutions-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sardarshahar-agri-energy-private-limited",
+    "title": "Sardarshahar Agri Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Sardarshahar-Agri-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2984423
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Sardarshahar-Agri-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-kta-powers-private-limited",
+    "title": "KTA Powers Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/KTA-Powers-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2905213
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/KTA-Powers-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sunfree-energy-private-limited",
+    "title": "Sunfree Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Sunfree-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2041387
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Sunfree-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sunfree-energy-rjp1-private-limited",
+    "title": "Sunfree Energy RJP1 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Sunfree-Energy-RJP1-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 8770431
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Sunfree-Energy-RJP1-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sunfree-north-east-renewable-energy-private-limited",
+    "title": "Sunfree North East Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Sunfree-North-East-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3118125
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Sunfree-North-East-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-sunfree-paschim-renewable-energy-private-limited",
+    "title": "Sunfree Paschim Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Sunfree-Paschim-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3627557
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Sunfree-Paschim-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-tna-renewable-energy-private-limited",
+    "title": "TNA Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/TNA-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2806516
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/TNA-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-universal-biomass-energy-private-limited",
+    "title": "Universal Biomass Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Universal-Biomass-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3938627
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/Universal-Biomass-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2025-vca-power-private-limited",
+    "title": "VCA Power Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/VCA-Power-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2803965
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2025/VCA-Power-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-tna-renewable-energy-private-limited",
+    "title": "TNA Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/TNA-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2530227
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/TNA-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sardarshahar-agri-energy-private-limited",
+    "title": "Sardarshahar Agri Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Sardarshahar-Agri-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1869183
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Sardarshahar-Agri-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-jasrasar-green-power-energy-private-limited",
+    "title": "Jasrasar Green Power Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Jasrasar-Green-Power-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2055578
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Jasrasar-Green-Power-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sael-solar-mhp2-private-limited",
+    "title": "SAEL Solar MHP2 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-MHP2-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1576106
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-MHP2-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-kta-powers-private-limited",
+    "title": "KTA Powers Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/KTA-Powers-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2196794
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/KTA-Powers-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-vca-power-private-limited",
+    "title": "VCA Power Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/VCA-Power-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2209670
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/VCA-Power-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sael-solar-mhp1-private-limited",
+    "title": "SAEL Solar MHP1 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-MHP1-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1852541
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-MHP1-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-chattargarh-renewable-energy-private-limited",
+    "title": "Chattargarh Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Chattargarh-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2289516
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Chattargarh-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sael-re-power-private-limited",
+    "title": "SAEL RE Power Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-RE-Power-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 8365751
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-RE-Power-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sunfree-energy-rjp1-private-limited",
+    "title": "Sunfree Energy RJP1 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Sunfree-Energy-RJP1-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1920348
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Sunfree-Energy-RJP1-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sael-solar-mgf-private-limited",
+    "title": "SAEL Solar MGF Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-MGF-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 4053485
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-MGF-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sael-solar-solution-private-limited",
+    "title": "SAEL Solar Solution Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-Solution-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2385883
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-Solution-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sael-limited",
+    "title": "SAEL Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 30239905
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sunfree-paschim-renewable-energy-private-limited",
+    "title": "Sunfree Paschim Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Sunfree-Paschim-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 17061850
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Sunfree-Paschim-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-canal-solar-energy-private-limited",
+    "title": "Canal Solar Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Canal-Solar-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 16950419
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Canal-Solar-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sael-kaithal-renewable-energy-private-limited",
+    "title": "SAEL Kaithal Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Kaithal-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 21214269
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Kaithal-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sael-solar-p6-private-limited",
+    "title": "SAEL Solar P6 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-P6-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3292093
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-P6-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sael-solar-p4-private-limited",
+    "title": "SAEL Solar P4 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-P4-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 47858260
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-P4-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sael-solar-p5-private-limited",
+    "title": "SAEL Solar P5 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-P5-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 17835228
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-P5-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sael-solar-p9-private-limited",
+    "title": "SAEL Solar P9 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-P9-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3299814
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-P9-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sael-solar-p10-private-limited",
+    "title": "SAEL Solar P10 Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-P10-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3320371
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/SAEL-Solar-P10-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sunfree-energy-private-limited",
+    "title": "Sunfree Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Sunfree-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 10173524
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Sunfree-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-sunfree-north-east-renewable-energy-private-limited",
+    "title": "Sunfree North East Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Sunfree-North-East-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3405202
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Sunfree-North-East-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2024-universal-biomass-energy-private-limited",
+    "title": "Universal Biomass Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Universal-Biomass-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 18862143
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2024/Universal-Biomass-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-canal-solar-energy-private-limited",
+    "title": "Canal Solar Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Canal-Solar-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3054365
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Canal-Solar-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-chattargarh-renewable-energy-private-limited",
+    "title": "Chattargarh Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Chattargarh-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2328779
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Chattargarh-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-jasrasar-green-power-energy-private-limited",
+    "title": "Jasrasar Green Power Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Jasrasar-Green-Power-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 15361158
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Jasrasar-Green-Power-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-sael-kaithal-renewable-energy-private-limited",
+    "title": "SAEL Kaithal Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/SAEL-Kaithal-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 17336576
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/SAEL-Kaithal-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-kta-powers-private-limited",
+    "title": "KTA Powers Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/KTA-Powers-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2301472
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/KTA-Powers-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-sael-limited",
+    "title": "SAEL Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/SAEL-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 69843282
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/SAEL-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-sael-re-power-energy-private-limited",
+    "title": "SAEL RE Power Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/SAEL-RE-Power-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1721706
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/SAEL-RE-Power-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-sael-solar-mfg-energy-private-limited",
+    "title": "SAEL Solar MFG Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/SAEL-Solar-MFG-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2633696
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/SAEL-Solar-MFG-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-sael-solar-solutions-energy-private-limited",
+    "title": "SAEL Solar Solutions Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/SAEL-Solar-Solutions-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 6820762
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/SAEL-Solar-Solutions-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-sardarshahar-agri-energy-private-limited",
+    "title": "Sardarshahar Agri Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Sardarshahar-Agri-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1657664
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Sardarshahar-Agri-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-tna-renewable-energy-private-limited",
+    "title": "TNA Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/TNA-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2513704
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/TNA-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-vca-power-private-limited",
+    "title": "VCA Power Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/VCA-Power-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2198751
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/VCA-Power-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-sunfree-north-east-renewable-energy-private-limited",
+    "title": "Sunfree North East Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Sunfree-North-East-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 2956413
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Sunfree-North-East-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-sunfree-paschim-renewable-energy-private-limited",
+    "title": "Sunfree Paschim Renewable Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Sunfree-Paschim-Renewable-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3136601
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Sunfree-Paschim-Renewable-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-universal-biomass-energy-private-limited",
+    "title": "Universal Biomass Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Universal-Biomass-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 3402970
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Universal-Biomass-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-standalone-financials-of-material-subsidiary-companies-fy-2023-sunfree-energy-private-limited",
+    "title": "Sunfree Energy Private Limited",
+    "section": "financials-and-reports",
+    "tile": "standalone-financials-of-material-subsidiary-companies",
+    "heading": "fy2023",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Sunfree-Energy-Private-Limited.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 12402209
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/standalone-financials-of-material-subsidiary-companies/FY-2023/Sunfree-Energy-Private-Limited.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-investor-downloads-fy-2027-sael-rg-financials-3m-fy-2027",
+    "title": "SAEL RG Financials 3M FY 2027",
+    "section": "financials-and-reports",
+    "tile": "investor-downloads",
+    "heading": "fy2027",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/investor-downloads/FY-2027/SAEL-RG-Financials-3M-FY-2027.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 918857
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/investor-downloads/FY-2027/SAEL-RG-Financials-3M-FY-2027.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-investor-downloads-fy-2026-sael-restricted-group-financials-march-2026",
+    "title": "SAEL Restricted Group Financials March 2026",
+    "section": "financials-and-reports",
+    "tile": "investor-downloads",
+    "heading": "fy2026",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/investor-downloads/FY-2026/SAEL-Restricted-Group-Financials-March-2026.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 5423060
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/investor-downloads/FY-2026/SAEL-Restricted-Group-Financials-March-2026.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-investor-downloads-fy-2026-sael-restricted-group-auditors-report-march-2026",
+    "title": "SAEL Restricted Group Auditor's Report March 2026",
+    "section": "financials-and-reports",
+    "tile": "investor-downloads",
+    "heading": "fy2026",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/investor-downloads/FY-2026/SAEL-Restricted-Group-Auditors-Report-March-2026.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 840675
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/investor-downloads/FY-2026/SAEL-Restricted-Group-Auditors-Report-March-2026.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-investor-downloads-fy-2026-sael-rg-financials-9m-fy-2026",
+    "title": "SAEL RG Financials 9M FY 2026",
+    "section": "financials-and-reports",
+    "tile": "investor-downloads",
+    "heading": "fy2026",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/investor-downloads/FY-2026/SAEL-RG-Financials-9M-FY-2026.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1295470
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/investor-downloads/FY-2026/SAEL-RG-Financials-9M-FY-2026.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-investor-downloads-fy-2025-sael-rg-financials-6m-fy-2026",
+    "title": "SAEL RG Financials 6M FY 2026",
+    "section": "financials-and-reports",
+    "tile": "investor-downloads",
+    "heading": "fy2026",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/investor-downloads/FY-2025/SAEL-RG-Financials-6M-FY-2026.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 10704971
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/investor-downloads/FY-2025/SAEL-RG-Financials-6M-FY-2026.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-investor-downloads-fy-2025-unaudited-rg-june-2025",
+    "title": "Unaudited RG June 2025",
+    "section": "financials-and-reports",
+    "tile": "investor-downloads",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/investor-downloads/FY-2025/Unaudited-RG-June-2025.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1839575
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/investor-downloads/FY-2025/Unaudited-RG-June-2025.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-investor-downloads-fy-2025-sael-restricted-group-financials-and-report-march-2025",
+    "title": "SAEL Restricted Group_Financials and Report_March",
+    "section": "financials-and-reports",
+    "tile": "investor-downloads",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/investor-downloads/FY-2025/SAEL-Restricted-Group-Financials-and-Report-March-2025.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 4129897
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/investor-downloads/FY-2025/SAEL-Restricted-Group-Financials-and-Report-March-2025.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-investor-downloads-fy-2025-compliance-certificate-2025",
+    "title": "Compliance Certificate 2025",
+    "section": "financials-and-reports",
+    "tile": "investor-downloads",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/investor-downloads/FY-2025/Compliance-Certificate-2025.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 494196
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/investor-downloads/FY-2025/Compliance-Certificate-2025.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-investor-downloads-fy-2025-h1-fy2025-presentation-updated",
+    "title": "H1 FY25 Earnings Presentation",
+    "section": "financials-and-reports",
+    "tile": "investor-downloads",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/investor-downloads/FY-2025/H1-FY2025-presentation-updated.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1960821
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/investor-downloads/FY-2025/H1-FY2025-presentation-updated.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-investor-downloads-fy-2024-financial-results-dec-24",
+    "title": "Financial Report 2024",
+    "section": "financials-and-reports",
+    "tile": "investor-downloads",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/investor-downloads/FY-2024/Financial-Results-Dec-24.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 603774
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/investor-downloads/FY-2024/Financial-Results-Dec-24.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-investor-downloads-fy-2024-financial-performance-december-2024",
+    "title": "Financial Performance 2024",
+    "section": "financials-and-reports",
+    "tile": "investor-downloads",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/investor-downloads/FY-2024/Financial-Performance-December-2024.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 1812679
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/investor-downloads/FY-2024/Financial-Performance-December-2024.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "financials-and-reports-investor-downloads-fy-2024-rg-financials-september-24-v1-updated-21nov24",
+    "title": "RG Financials September 2024",
+    "section": "financials-and-reports",
+    "tile": "investor-downloads",
+    "heading": "fy2024",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/financials-and-reports/investor-downloads/FY-2024/RG-Financials-September-24_V1-updated-21nov24.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 604751
+    },
+    "legacyPath": "/documents/investors/financials-and-reports/investor-downloads/FY-2024/RG-Financials-September-24_V1-updated-21nov24.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "notifications-fy-2026-resignation-letter-of-ms-kainaat-awla-dated-12-09-2025",
+    "title": "Resignation letter of Ms. Kainaat Awla dt. 12.09.2025",
+    "section": "notifications",
+    "tile": "notifications",
+    "heading": "fy2026",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/notifications/FY-2026/Resignation-letter-of-Ms-Kainaat-Awla-dated-12-09-2025.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 50770
+    },
+    "legacyPath": "/documents/investors/notifications/FY-2026/Resignation-letter-of-Ms-Kainaat-Awla-dated-12-09-2025.pdf",
+    "externalUrl": null
+  },
+  {
+    "id": "notifications-fy-2025-resignation-letter-of-mr-inge-karsten-stoelen-dt-08-08-2024",
+    "title": "Resignation Letter of Mr. Inge Karsten Stoelen dt. 08.08.2024",
+    "section": "notifications",
+    "tile": "notifications",
+    "heading": "fy2025",
+    "subheading": null,
+    "kind": "file",
+    "publishedAt": null,
+    "financialYear": null,
+    "file": {
+      "path": "web-assets/documents/investors/notifications/FY-2025/Resignation-Letter-of-Mr-Inge-Karsten-Stoelen-dt-08-08-2024.pdf",
+      "mimeType": "application/pdf",
+      "sizeBytes": 56969
+    },
+    "legacyPath": "/documents/investors/notifications/FY-2025/Resignation-Letter-of-Mr-Inge-Karsten-Stoelen-dt-08-08-2024.pdf",
+    "externalUrl": null
+  }
+]

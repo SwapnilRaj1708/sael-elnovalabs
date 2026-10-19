@@ -1,0 +1,70 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# lockfiles from other package managers (this project uses pnpm)
+package-lock.json
+yarn.lock
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+/dist
+
+# release archives produced by `pnpm package`
+/release
+
+# transient fixtures written by scripts/verify-guardrails.mjs
+/src/__verify__/
+
+# client handover staging. Raw supplied assets land here and are processed into
+# src/assets/ — see docs/asset-inventory.md §7. Nothing here is committed: the
+# folder holds the licensed DIN desktop originals (TTF/OTF), which must never
+# enter the repository. /CLAUDE.md §8, docs/asset-inventory.md §5.
+/assets/
+
+# testing
+/coverage
+
+# env
+.env
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# os
+.DS_Store
+Thumbs.db
+
+# certificates
+*.pem
+
+# editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+.claude/settings.local.json
+
+# Cursor keeps per-machine hook state here. Editor state, not project code.
+.cursor/

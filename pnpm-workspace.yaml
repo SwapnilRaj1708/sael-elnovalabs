@@ -1,0 +1,31 @@
+# Next.js `output: 'standalone'` copies node_modules verbatim. Under pnpm's
+# default symlinked layout that output is not relocatable — the links point back
+# into the build machine's store — so `pnpm package` would produce an archive
+# that only runs on the machine that built it. A hoisted (flat) layout makes
+# .next/standalone genuinely self-contained, which is what the client's VM
+# deployment needs, and makes packaging work identically on Windows and Linux.
+#
+# Trade-off: this gives up pnpm's protection against phantom dependencies.
+# See docs/architecture.md §8.
+nodeLinker: hoisted
+
+allowBuilds:
+  # sharp powers next/image optimisation on the deployment target — its install
+  # script must run so the platform binaries are present.
+  sharp: true
+  # native resolver used by the TypeScript ESLint import resolver
+  unrs-resolver: true
+
+minimumReleaseAgeExclude:
+  - '@next/env@16.3.0'
+  - '@next/eslint-plugin-next@16.3.0'
+  - '@next/swc-darwin-arm64@16.3.0'
+  - '@next/swc-darwin-x64@16.3.0'
+  - '@next/swc-linux-arm64-gnu@16.3.0'
+  - '@next/swc-linux-arm64-musl@16.3.0'
+  - '@next/swc-linux-x64-gnu@16.3.0'
+  - '@next/swc-linux-x64-musl@16.3.0'
+  - '@next/swc-win32-arm64-msvc@16.3.0'
+  - '@next/swc-win32-x64-msvc@16.3.0'
+  - eslint-config-next@16.3.0
+  - next@16.3.0

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="27 27 66 66" width="120" height="120">
+<defs><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="31" y1="56.7" x2="89" y2="63.300000000000004"><stop offset="0" stop-color="#e40f14"/><stop offset="1" stop-color="#45258d"/></linearGradient></defs>
+
+<g fill="none" stroke="url(#g)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" transform="translate(60 60) scale(1) translate(-60 -59)">
+
+<path pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M52 36h34v24H52zM69 60v8"><animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0;0.1286;1" dur="3.5s" repeatCount="indefinite"/></path>
+<g transform="translate(40 50)"><g transform="scale(0.001)"><animateTransform attributeName="transform" type="scale" values="0.001;0.001;1.15;1;1" keyTimes="0;0.0857;0.1607;0.1929;1" dur="3.5s" repeatCount="indefinite"/><path d="M4.5 0a4.5 4.5 0 1 1-9 0a4.5 4.5 0 1 1 9 0M-8.55 16.2a8.55 8.55 0 0 1 17.1 0"/></g></g>
+<path pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M46 60l6-6"><animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.1929;0.2571;1" dur="3.5s" repeatCount="indefinite"/></path><path pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M58 52l7-6 5 3 10-7"><animate attributeName="stroke-dashoffset" values="1;1;0;0" keyTimes="0;0.2357;0.3429;1" dur="3.5s" repeatCount="indefinite"/></path>
+</g></svg>
