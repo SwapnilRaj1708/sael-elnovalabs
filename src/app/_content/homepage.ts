@@ -423,7 +423,7 @@ export const presenceSummary = {
   map: { image: dottedMap },
   title: ['SAEL Pan India', 'Green Footprint'] as [string, string],
   primaryStat: '11 States',
-  secondaryStat: '60 Projects Sites',
+  secondaryStat: '60 Project Sites',
 };
 
 /**

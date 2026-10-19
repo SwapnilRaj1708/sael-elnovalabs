@@ -67,7 +67,7 @@ export const stories: readonly Omit<StorySplitProps, 'snap'>[] = [
     title: 'Empowering Local Communities through Employment and Economic Growth',
     body: "In the heart of rural Punjab, Rajasthan, and Haryana, where the shadow of agricultural waste looms large, SAEL's presence has become a beacon of hope. Being instrumental in transforming lives, SAEL began purchasing agricultural waste from local farmers. Not only did this initiative provide them with a steady income, but it also offered a lifeline to the fragile ecosystems surrounding the villages. With biodiversity rapidly declining due to climate change and habitat destruction, SAEL's commitment to waste management not only empowers the community but also serves as a vital lifeline for countless species that call these fields home.",
     media: {
-      image: storyImage('community.jpg', 1024, 848),
+      image: storyImage('community.webp', 1679, 2304),
       alt: 'Two women harvesting wheat by hand in a sunlit field',
       pending: 'story-of-our-influence/community',
     },
@@ -79,8 +79,8 @@ export const stories: readonly Omit<StorySplitProps, 'snap'>[] = [
     title: 'Protecting Biodiversity and Ecosystems through Waste Management',
     body: 'At SAEL, we value and seek to protect the ecosystems that we work in. We strive to be good environmental stewards and take pride in our efforts to help these ecosystems thrive, while maintaining high standards of service for our customers. At our power generation and manufacturing facilities, we collaborate with biologists to actively monitor and protect local and migratory species, ensuring strict adherence to environmental permits and deploying adaptive mitigation strategies to maintain high environmental standards. We adhere to IFC Performance Standards, notably "PS 6 - Biodiversity Conservation," conducting thorough Environmental and Social Screening to preemptively avoid selecting lands with biodiversity sensitivities. If identified, we actively seek alternative locations for our projects.',
     media: {
-      image: storyImage('biodiversity.webp', 500, 375),
-      alt: 'A Great Indian Bustard standing in dry grassland',
+      image: storyImage('biodiversity.webp', 2378, 2299),
+      alt: 'A rhinoceros and its calf standing in grassland',
       pending: 'story-of-our-influence/biodiversity',
     },
     side: 'end',
@@ -91,8 +91,8 @@ export const stories: readonly Omit<StorySplitProps, 'snap'>[] = [
     title: 'Improving Public Health and Mitigating Air Pollution',
     body: "In the villages of Haryana, where the air once hung heavy with the acrid scent of burning waste, the Kumar family's story is one of resilience and renewal. Amidst the looming threat of respiratory ailments and compromised health, SAEL's Waste-to-Energy Plants emerged as beacons of clean air and hope. Today, as the Kumar family breathes in the crisp, pollution-free air, they bear witness to the transformative power of SAEL's commitment to environmental stewardship. In an era defined by climate crisis and ecological upheaval, SAEL's efforts not only safeguard public health but also serve as a bulwark against the tide of biodiversity loss, ensuring that future generations inherit a world teeming with life and possibility.",
     media: {
-      image: storyImage('public-health.webp', 700, 586),
-      alt: 'A power plant with blue buildings and a tall chimney under a clear sky',
+      image: storyImage('public-health.webp', 2419, 1892),
+      alt: 'An elderly woman laughing among her neighbours in a village lane',
       pending: 'story-of-our-influence/public-health',
     },
     side: 'start',

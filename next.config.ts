@@ -78,6 +78,43 @@ function devBackendRewrites() {
   return [{ source: '/app/v1/:path*/', destination: `${base.replace(/\/+$/, '')}/app/v1/:path*` }];
 }
 
+/**
+ * sharp's native binaries that the standalone output leaves out: those for every
+ * platform except the build machine and the client's VM (linux-x64, glibc).
+ *
+ * pnpm-workspace.yaml's `supportedArchitectures` makes pnpm install the VM's
+ * binaries on a Mac. That setting is a cross-product of os × cpu × libc, so it
+ * also brings darwin-x64, linux-arm64 and both musl builds, and Next traces
+ * every one of them, because sharp's loader names each platform in a literal
+ * `require`. Those builds are about 110 MB that nothing loads. The VM needs
+ * linux-x64. The build machine's own binaries keep `node server.js` working on
+ * the machine that built it. scripts/package-release.mjs fails if the linux-x64
+ * binaries are missing, so a pattern that is too broad cannot go unnoticed.
+ *
+ * The candidates are exactly what that setting can install, in sharp's naming
+ * (`linuxmusl-<arch>` for musl). Widen the setting and the new platforms ship
+ * until they are added here. They make the archive larger but do not break it.
+ * The patterns name each package, because Turbopack's tracer does not support
+ * picomatch's `!(…)` negation.
+ *
+ * `process.platform` and `process.arch` name the build machine. On a musl build
+ * host they read `linux-<arch>`, so that host's own binaries are left out too.
+ * The archive is still right for the VM.
+ */
+const SHARP_CANDIDATE_PLATFORMS = ['darwin', 'linux', 'linuxmusl'].flatMap((os) =>
+  ['arm64', 'x64'].map((cpu) => `${os}-${cpu}`),
+);
+
+function sharpTraceExcludes(): string[] {
+  const shipped = new Set([`${process.platform}-${process.arch}`, 'linux-x64']);
+  return SHARP_CANDIDATE_PLATFORMS.filter((platform) => !shipped.has(platform)).flatMap(
+    (platform) => [
+      `node_modules/@img/sharp-${platform}/**`,
+      `node_modules/@img/sharp-libvips-${platform}/**`,
+    ],
+  );
+}
+
 const nextConfig: NextConfig = {
   // `next dev` only — the LAN address a phone on the same network uses to
   // reach the dev server, which Next otherwise refuses as a cross-origin
@@ -100,6 +137,10 @@ const nextConfig: NextConfig = {
   // once standalone has relocated that tree — Vercel's own guidance is not to
   // set `output` there.
   output: process.env.STANDALONE_OUTPUT === 'false' ? undefined : 'standalone',
+  // `**` applies the patterns to every trace, the server's own included: that
+  // is the trace that reaches sharp, through the image optimiser.
+  // See sharpTraceExcludes().
+  outputFileTracingExcludes: { '**': sharpTraceExcludes() },
   // URL parity with the legacy site — see docs/accessibility-and-seo.md.
   trailingSlash: true,
   reactStrictMode: true,

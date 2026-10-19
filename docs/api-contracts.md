@@ -734,9 +734,18 @@ a static one (Next 16 docs, `revalidatePath`; checked against a running producti
 2026-10-02: a document published in the panel was on the cached tile page 27 seconds later, with
 no rebuild). For Notifications the backend sends `/investors/notifications/` and
 `/investors/notifications/notifications/`; the second is not a route and refreshes nothing, which
-is harmless because the first is the page. Each tile page's side list is built from the section's
-tiles, so a retitled or new tile reaches the side list of its *sibling* pages at their next
-time-based regeneration (five minutes), not at once.
+is harmless because the first is the page.
+
+**Sibling pages are refreshed by tag, not by path.** Every page of an investor section (its index,
+each tile page, Corporate Governance's two static pages) shows the section's tile list, and
+`paths` names only the index and the tile that changed. The site tags its
+`GET /app/v1/documents-live?section=…` fetch `investor-tiles:{section}`, and for every path that
+lies under a section's `basePath` it also calls `revalidateTag('investor-tiles:{section}',
+{ expire: 0 })`, which expires every cached page rendered from that list
+(`src/lib/revalidation/tags.ts`). The section is read from `paths`, so this needs nothing more
+from the backend than the section `basePath` it already sends. It covers only events that are
+sent: a tile reorder sends none today (backend `DocumentServiceImpl.reorder`), so a reorder reaches
+no page, the index included, until its five-minute regeneration.
 
 ### 7.2 Verification (required)
 

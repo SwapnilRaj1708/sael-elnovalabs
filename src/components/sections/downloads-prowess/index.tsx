@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils/cn';
 export interface DownloadsProwessProps {
   /** The product datasheets: heading and list. */
   downloads: ProductDownloadsLayoutProps;
-  /** The cards under them — "Manufacturing Prowess". */
+  /** The cards under them — "Manufacturing Process". */
   prowess: ValueGridLayoutProps;
   /**
    * The section's ground, and both halves' — set here once rather than on
@@ -25,7 +25,7 @@ export interface DownloadsProwessProps {
 }
 
 /**
- * Module Manufacturing's Product Downloads and Manufacturing Prowess, as one
+ * Module Manufacturing's Product Downloads and Manufacturing Process, as one
  * section — the client's request of 2026-10-12. Each was a screen of its own
  * until then, and both are short, so the page snapped onto two screens that
  * were mostly empty. Merged, they share one, with no change to either's

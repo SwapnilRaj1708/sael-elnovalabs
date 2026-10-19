@@ -27,7 +27,8 @@ import { SIZES_BUSINESS_OVERVIEW_MEDIA } from '@/lib/utils/image-sizes';
  *
  * There is no "How do we work?" list here, on the live page or in the
  * screenshot. The page goes hero → overview → projects → the three product
- * sheets → the three "Manufacturing Prowess" cards.
+ * sheets → the three "Manufacturing Process" cards (titled "Manufacturing
+ * Prowess" until 2026-10-19).
  *
  * ## Where the screenshot and the live page disagree
  *
@@ -65,14 +66,8 @@ import { SIZES_BUSINESS_OVERVIEW_MEDIA } from '@/lib/utils/image-sizes';
  * There is no second photograph, and correctly so — this is the page without
  * a capability section. The map is the homepage's, recoloured to this business's ramp (`solar-module-map.svg`).
  *
- * **The photograph was briefly a pre-shaped asset and is not one now.** The
- * first export, `mask1Image.webp`, arrived 700 x 613 with the cut already in
- * its alpha channel, so it was drawn unmasked at its own ratio — the one
- * business-page photograph that did not take `--mask-solar-overview`. The
- * client replaced it on 2026-09-21 with an opaque 501 x 501 JPEG, which is
- * what the other five assets are, so this page now takes the shared mask
- * like every other and the bespoke `--aspect-module-overview` token is gone.
- * The `.webp` is superseded and can be deleted from the container.
+ * **The photograph arrives pre-cut.** `mask1Image.webp` carries its shape in
+ * its alpha channel, so it is drawn unmasked at its own ratio (`intrinsic`).
  */
 
 export type ProwessCopy = Omit<ValueGridItem, 'mark'>;
@@ -119,13 +114,13 @@ export const moduleOverview: ProseSplitProps = {
     "Our dedication to sustainability extends beyond products; it's ingrained in every aspect of our operations.",
   ],
   media: {
-    image: moduleAsset('mask1Image.jpg', 501, 501),
+    image: moduleAsset('mask1Image.webp', 2478, 2123),
     // The live page's slot carries no alt. Written from the photograph
     // itself.
     alt: 'A robotic arm lifting a solar module by vacuum cups on an assembly line inside a factory',
     orientation: 'landscape',
     frame: 'aspect-(--aspect-solar-overview) max-w-(--business-overview-media-w)',
-    mask: 'mask-(--mask-solar-overview)',
+    intrinsic: true,
     sizes: SIZES_BUSINESS_OVERVIEW_MEDIA,
   },
 };
@@ -181,7 +176,7 @@ export const moduleProwess: {
 } = {
   // No label on the live page or in the screenshot — the one section on the
   // four business pages that opens straight on its heading.
-  title: 'Manufacturing Prowess',
+  title: 'Manufacturing Process',
   items: [
     {
       body: 'ISO 9001, ISO 45001 and ISO 27001 certifications for Module Manufacturing Assembly',

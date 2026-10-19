@@ -34,18 +34,23 @@ import { ContentUnavailableError } from '../repository';
  *  - `isr` — the response may be reused for `revalidateSeconds`, and the page
  *    built from it is regenerated in the background after that, or at once
  *    when the backend's revalidation webhook names its path (§7). For live
- *    content.
+ *    content. `tags` reach every page rendered from the response, so the
+ *    webhook can expire pages it was not given the paths of
+ *    (`lib/revalidation/tags.ts`).
  *  - `no-store` — fetched on every request, never cached. For anything that
  *    must not be shared between visitors: preview, and the preview-session
  *    exchange.
  */
 export type CachePolicy =
-  { readonly mode: 'isr'; readonly revalidateSeconds: number } | { readonly mode: 'no-store' };
+  | { readonly mode: 'isr'; readonly revalidateSeconds: number; readonly tags?: readonly string[] }
+  | { readonly mode: 'no-store' };
 
 export const NO_STORE: CachePolicy = { mode: 'no-store' };
 
-export function isr(revalidateSeconds: number): CachePolicy {
-  return { mode: 'isr', revalidateSeconds };
+export function isr(revalidateSeconds: number, tags?: readonly string[]): CachePolicy {
+  return tags === undefined
+    ? { mode: 'isr', revalidateSeconds }
+    : { mode: 'isr', revalidateSeconds, tags };
 }
 
 /** The served page size the paging loop asks for — the backend's maximum. */
@@ -376,7 +381,12 @@ export class ApiClient {
         signal: AbortSignal.timeout(this.options.timeoutMs),
         ...(cache.mode === 'no-store'
           ? { cache: 'no-store' }
-          : { next: { revalidate: cache.revalidateSeconds } }),
+          : {
+              next: {
+                revalidate: cache.revalidateSeconds,
+                ...(cache.tags === undefined ? {} : { tags: [...cache.tags] }),
+              },
+            }),
       });
     } catch (cause) {
       throw new ContentUnavailableError(endpoint, undefined, { cause });

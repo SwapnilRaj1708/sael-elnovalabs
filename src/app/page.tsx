@@ -6,8 +6,7 @@ import { NewsCarousel } from '@/components/sections/news-carousel';
 import { HeroCarousel } from '@/components/sections/hero-carousel';
 import { IntroSplit } from '@/components/sections/intro-split';
 import { PresenceMap } from '@/components/sections/presence-map';
-// Solutions is withdrawn at the client's request (2026-10-01) but expected back.
-// import { SolutionsCarousel } from '@/components/sections/solutions-carousel';
+import { SolutionsCarousel } from '@/components/sections/solutions-carousel';
 import { newsCardLabels } from '@/app/_content/newsroom';
 import { TODO_CONTENT } from '@/lib/config/site';
 import { getContentRepository, type NewsItem } from '@/lib/content';
@@ -20,7 +19,7 @@ import {
   ourEndeavour,
   ourGoals,
   presenceSummary,
-  // solutions,
+  solutions,
 } from './_content/homepage';
 
 /**
@@ -63,7 +62,7 @@ function resolveNewsItems(): Promise<NewsItem[]> {
  * down with the static content, and only the hero carousel and the two rails'
  * arrows opt into the client.
  *
- * Nine sections, against the twelve `docs/features/04` lists: its §2 (stats
+ * Ten sections, against the twelve `docs/features/04` lists: its §2 (stats
  * band) and §4 (business tiles) are one section in the client's design, §9
  * (the SDG marquee) is skipped at the client's request, and §7 and §8 appear
  * in neither the PDF nor this page. See docs/frontend-progress.md.
@@ -95,8 +94,7 @@ export default async function HomePage() {
       <BusinessTiles eyebrow="Business Portfolio" tiles={businessTiles} snap />
       <PresenceMap {...presenceSummary} sites={presenceSites} snap />
       <EndeavourSplit {...ourEndeavour} snap />
-      {/* Withdrawn 2026-10-01 at the client's request; expected back.
-      <SolutionsCarousel {...solutions} snap /> */}
+      <SolutionsCarousel {...solutions} snap />
       <GoalsGrid {...ourGoals} snap />
       <NewsCarousel title="In the News" items={news} newTabNote={newsCardLabels.newTab} snap />
     </div>

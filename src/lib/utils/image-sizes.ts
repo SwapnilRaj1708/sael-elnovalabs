@@ -134,12 +134,11 @@ export const SIZES_PROSE_MEDIA_PORTRAIT = '(min-width: 50rem) 420px, 88vw';
 
 /**
  * A business page's two shaped photographs, which run wider than the prose
- * split's own caps — `--business-overview-media-w` (704px) and
- * `--business-execution-media-w` (544px). Same hinge as the prose split,
- * since they sit in the same grid. The caps and these hints move together.
+ * split's own caps — both to `--business-overview-media-w` (704px). Same
+ * hinge as the prose split, since they sit in the same grid. The cap and this
+ * hint move together.
  */
 export const SIZES_BUSINESS_OVERVIEW_MEDIA = '(min-width: 50rem) 704px, 88vw';
-export const SIZES_BUSINESS_EXECUTION_MEDIA = '(min-width: 50rem) 544px, 88vw';
 
 /**
  * A portrait on a team card. The grid's floor is `--team-grid-col-min` (250px)

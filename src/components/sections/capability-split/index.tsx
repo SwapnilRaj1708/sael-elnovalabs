@@ -6,8 +6,9 @@ import { Eyebrow, type EyebrowTone } from '@/components/ui/eyebrow';
 import { MediaFrame } from '@/components/ui/media-frame';
 import { Reveal } from '@/components/ui/reveal';
 import { Section, type SectionProps } from '@/components/ui/section';
+import { imageAspectVar } from '@/lib/utils/image-aspect';
 import { cn } from '@/lib/utils/cn';
-import { SIZES_BUSINESS_EXECUTION_MEDIA } from '@/lib/utils/image-sizes';
+import { SIZES_BUSINESS_OVERVIEW_MEDIA } from '@/lib/utils/image-sizes';
 
 export interface CapabilityItem {
   /**
@@ -63,8 +64,8 @@ export interface CapabilitySplitProps {
    * and copy order and the one rule per card that the client asked for on
    * 2026-09-21. Three stay in one column: two-and-one would hang.
    *
-   * From `lg` the photograph is also no taller than the screen leaves under
-   * the heading, `--business-execution-media-w-snap`.
+   * The photograph is no taller than the list beside it at any width from
+   * `lg`, snapping or not — see the note at the photograph.
    */
   snap?: boolean;
 }
@@ -199,26 +200,32 @@ export function CapabilitySplit({
             ))}
           </Reveal>
 
-          {/* The photograph, clipped to the designer's notched panel
-              (`solarEnergy/mask2.svg`) by the same alpha-mask idiom
-              `intro-split` uses. The box takes the mask's own ratio so
-              --mask-fill stretches nothing. */}
+          {/* The photograph, pre-cut, under the overview's width cap and
+              no taller than the cards beside it (both 2026-10-19). From `lg`
+              the box drops its ratio and stretches to the row; its content is
+              absolutely placed, so it adds no height of its own and the list
+              alone sets the row. The photograph is fitted inside at its own
+              ratio. Below `lg` the two stack and the box keeps that ratio.
+              `--aspect-solar-execution` holds the box open while the asset is
+              pending. */}
           <Reveal
             order={3}
+            style={imageAspectVar(media.image)}
             className={cn(
-              'relative mx-auto w-full max-w-(--business-execution-media-w) justify-self-center',
-              // Snapping, no taller than the row the screen leaves it.
-              snap && 'lg:max-w-(--business-execution-media-w-snap)',
+              'relative mx-auto w-full max-w-(--business-overview-media-w) justify-self-center',
               'aspect-(--aspect-solar-execution)',
-              'mask-(--mask-solar-execution) mask-size-(--mask-fill) mask-no-repeat',
+              media.image !== null && 'aspect-(--media-aspect) lg:aspect-auto lg:self-stretch',
             )}
           >
             <MediaFrame
               image={media.image}
               alt={media.alt}
-              sizes={SIZES_BUSINESS_EXECUTION_MEDIA}
+              sizes={SIZES_BUSINESS_OVERVIEW_MEDIA}
               pending={media.pending}
-              className="absolute inset-0"
+              // Pre-cut: the transparent corners show the ground, not the
+              // frame's placeholder fill.
+              className="absolute inset-0 bg-transparent"
+              imageClassName="object-contain"
             />
           </Reveal>
         </div>

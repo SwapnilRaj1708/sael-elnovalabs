@@ -7,6 +7,7 @@ import { MediaFrame } from '@/components/ui/media-frame';
 import { Reveal } from '@/components/ui/reveal';
 import { Section } from '@/components/ui/section';
 import { cn } from '@/lib/utils/cn';
+import { imageAspectVar } from '@/lib/utils/image-aspect';
 import { SIZES_BELIEF_CUTOUT } from '@/lib/utils/image-sizes';
 
 /** A belief's accent — one of the bright ramps' stops. See --color-ramp-*. */
@@ -31,8 +32,18 @@ export interface BeliefCutout {
    * `lg` the figure stands at the card's foot, so `right` and `left` also
    * reach the bottom edge; from `lg` it is its half of the card, and
    * `bottom-flush` alone reaches the bottom. Omitted: centred, inside the padding.
+   *
+   * From `xl`, `right` also runs the figure over the top and bottom padding:
+   * it is the card's full height, at its own ratio, from the right edge, and
+   * spills left past its column when that ratio is wider than the column
+   * (Environmental Stewardship, 2026-10-19).
+   *
+   * `right-middle` and `left-middle` run out over that side's padding only,
+   * and keep the figure centred top to bottom (Sustainability Governance,
+   * 2026-10-19): a wide figure there is held by its width, so the extra width
+   * is what makes it larger.
    */
-  anchor?: 'right' | 'left' | 'bottom-flush';
+  anchor?: 'right' | 'left' | 'right-middle' | 'left-middle' | 'bottom-flush';
   /** Mirror the figure horizontally. */
   flip?: boolean;
 }
@@ -40,6 +51,8 @@ export interface BeliefCutout {
 const ANCHOR_BOX_CLASS = {
   right: '-mr-flow lg:mb-0',
   left: '-ml-flow lg:mb-0',
+  'right-middle': '-mr-flow lg:mb-0',
+  'left-middle': '-ml-flow lg:mb-0',
   'bottom-flush': '',
 } as const;
 
@@ -47,12 +60,32 @@ const ANCHOR_BOX_CLASS = {
 const MIRRORED = {
   right: 'left',
   left: 'right',
+  'right-middle': 'left-middle',
+  'left-middle': 'right-middle',
   'bottom-flush': 'bottom-flush',
+} as const;
+
+/**
+ * The frame inside the box. `right` from `xl`: top and bottom over the card's
+ * padding, pinned to the right edge (the box already runs out to it), and as
+ * wide as `--media-aspect` makes it — so the figure fills it exactly, and the
+ * card's own clip is the only thing that stops it. From `xl` rather than `lg`
+ * because between the two the copy column is too narrow, and the figure,
+ * spilling left, lands on the checklist; there it stays fitted in its column.
+ */
+const ANCHOR_FRAME_CLASS = {
+  right: 'xl:inset-auto xl:-inset-y-flow xl:right-0 xl:aspect-(--media-aspect)',
+  left: '',
+  'right-middle': '',
+  'left-middle': '',
+  'bottom-flush': '',
 } as const;
 
 const ANCHOR_IMAGE_CLASS = {
   right: 'object-right-bottom lg:object-right',
   left: 'object-left-bottom lg:object-left',
+  'right-middle': 'object-right',
+  'left-middle': 'object-left',
   'bottom-flush': 'object-bottom',
 } as const;
 
@@ -261,7 +294,11 @@ export function BeliefSection({
             sizes={SIZES_BELIEF_CUTOUT}
             pending={cutout.pending}
             // A cut-out has its own transparent ground: no fill behind it.
-            className="absolute inset-0 bg-transparent"
+            className={cn(
+              'absolute inset-0 bg-transparent',
+              cutout.anchor !== undefined && ANCHOR_FRAME_CLASS[cutout.anchor],
+            )}
+            style={cutout.anchor === 'right' ? imageAspectVar(cutout.image) : undefined}
             imageClassName={cn(
               'object-contain',
               cutout.anchor !== undefined

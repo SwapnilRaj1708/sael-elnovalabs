@@ -4,6 +4,7 @@ import { Eyebrow } from '@/components/ui/eyebrow';
 import { MediaFrame } from '@/components/ui/media-frame';
 import { Reveal } from '@/components/ui/reveal';
 import { Section } from '@/components/ui/section';
+import { imageAspect } from '@/lib/utils/image-aspect';
 import { cn } from '@/lib/utils/cn';
 import { SIZES_STORY_MEDIA } from '@/lib/utils/image-sizes';
 
@@ -60,8 +61,8 @@ export interface StorySplitProps {
  * stack on the photograph without either knowing the other's height. The
  * reading order — heading, story, then nothing else — is the same in both.
  *
- * The photograph is clipped to the client's `1.svg` shape
- * (`--mask-story-shape`) at that shape's own ratio, so it is never stretched.
+ * The photographs arrive already cut to their shape, so the box takes each
+ * asset's own ratio (`imageAspect`) and nothing is clipped here.
  *
  * Below `lg` the masthead overlays the page, so the section clears it with
  * padding rather than the page offsetting it — the homepage's arrangement.
@@ -105,9 +106,9 @@ export function StorySplit({
       >
         <Reveal
           order={0}
+          style={imageAspect(media.image)}
           className={cn(
             'relative aspect-(--aspect-story-shape) w-full',
-            'mask-(--mask-story-shape) mask-size-(--mask-fill) mask-no-repeat',
             'lg:row-span-4 lg:row-start-1 lg:h-(--story-media-h) lg:w-auto',
             side === 'start' ? 'lg:col-start-1' : 'lg:col-start-2',
           )}
@@ -117,7 +118,9 @@ export function StorySplit({
             alt={media.alt}
             sizes={SIZES_STORY_MEDIA}
             pending={media.pending}
-            className="absolute inset-0"
+            // Pre-cut: the transparent corners show the ground, not the
+            // frame's placeholder fill.
+            className="absolute inset-0 bg-transparent"
           />
         </Reveal>
 

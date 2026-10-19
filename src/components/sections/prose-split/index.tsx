@@ -5,6 +5,7 @@ import { Eyebrow, type EyebrowTone } from '@/components/ui/eyebrow';
 import { MediaFrame } from '@/components/ui/media-frame';
 import { Reveal } from '@/components/ui/reveal';
 import { Section, type SectionProps } from '@/components/ui/section';
+import { imageAspectVar } from '@/lib/utils/image-aspect';
 import { cn } from '@/lib/utils/cn';
 import { SIZES_PROSE_MEDIA_LANDSCAPE, SIZES_PROSE_MEDIA_PORTRAIT } from '@/lib/utils/image-sizes';
 
@@ -42,6 +43,13 @@ export interface ProseSplitMedia {
    * export briefly was not.
    */
   mask?: string;
+  /**
+   * The photograph arrives already cut to its shape, so the box takes the
+   * asset's own ratio instead of `frame`'s aspect (which stays as the
+   * fallback while the asset is pending). Use with no `mask`. From `lg` the
+   * photograph is also held to the copy's height; see `intrinsicFit`.
+   */
+  intrinsic?: boolean;
   /**
    * The `sizes` hint for the photograph. Defaults to the orientation's; a
    * `mask` that widens the box must supply the hint that matches it.
@@ -219,9 +227,26 @@ export function ProseSplitLayout({
       alt={media.alt}
       sizes={media.sizes ?? MEDIA_SIZES[media.orientation]}
       pending={media.pending}
-      className="absolute inset-0"
+      // A pre-cut asset's transparent corners must show the ground, not the
+      // frame's placeholder fill.
+      className={cn('absolute inset-0', media.intrinsic && 'bg-transparent')}
+      // Fitted, so it keeps its ratio when the box is the copy's height
+      // rather than its own (below). Identical to a cover at the own ratio.
+      imageClassName={media.intrinsic ? 'object-contain' : undefined}
     />
   );
+  /**
+   * A pre-cut photograph is no taller than the copy beside it — eyebrow to
+   * last paragraph — once the two sit side by side (the client's ask of
+   * 2026-10-19). From `lg` the box drops its ratio and stretches to the row,
+   * and since its content is absolutely placed it adds no height of its own,
+   * so the copy alone sets the row. Below `lg` it keeps its own ratio: stacked
+   * there is no copy beside it to measure against.
+   */
+  const intrinsicFit =
+    media?.intrinsic === true &&
+    media.image !== null &&
+    'aspect-(--media-aspect) lg:aspect-auto lg:self-stretch';
 
   return (
     <div
@@ -278,10 +303,12 @@ export function ProseSplitLayout({
           // `justify-self-center` and the auto margins keep the artwork
           // centred in its column once the cap binds, rather than pinned to
           // the column's start edge with the slack all on one side.
+          style={media.intrinsic ? imageAspectVar(media.image) : undefined}
           className={cn(
             'relative mx-auto w-full justify-self-center',
             media.frame ?? MEDIA_CLASS[media.orientation],
             media.mask !== undefined && [media.mask, 'mask-size-(--mask-fill) mask-no-repeat'],
+            intrinsicFit,
           )}
         >
           {frame}

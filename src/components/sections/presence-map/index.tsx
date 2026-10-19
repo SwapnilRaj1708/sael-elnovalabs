@@ -24,7 +24,7 @@ export interface PresenceMapProps {
   title: [string, string];
   /** "11 States" */
   primaryStat: string;
-  /** "60 Projects Sites" */
+  /** "60 Project Sites" */
   secondaryStat: string;
   /** The dotted India artwork. `null` until it is supplied. */
   map: { image: StaticImageData | null };

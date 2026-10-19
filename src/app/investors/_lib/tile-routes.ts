@@ -1,4 +1,5 @@
 import type { InvestorSection, InvestorTile } from '@/lib/content';
+import { INVESTOR_SECTION_PATHS } from '@/lib/revalidation/tags';
 
 /**
  * Which investor URLs the site serves, and the check that every live tile
@@ -19,7 +20,11 @@ import type { InvestorSection, InvestorTile } from '@/lib/content';
 
 export interface InvestorArea {
   section: InvestorSection;
-  /** The area's own URL. The backend's `section.basePath` must equal it. */
+  /**
+   * The area's own URL. The backend's `section.basePath` must equal it. One
+   * value with the path the revalidation webhook files the section's events
+   * under, so the two cannot drift.
+   */
   path: string;
   /**
    * How a tile's page is served. `slug-route` — each tile at
@@ -50,7 +55,7 @@ export interface InvestorArea {
 export const INVESTOR_AREAS = {
   'offer-documents': {
     section: 'offer-documents',
-    path: '/investors/offer-documents/',
+    path: INVESTOR_SECTION_PATHS['offer-documents'],
     pages: 'slug-route',
     staticPages: [],
     legacyTiles: [
@@ -66,7 +71,7 @@ export const INVESTOR_AREAS = {
   },
   'corporate-governance': {
     section: 'corporate-governance',
-    path: '/investors/corporate-governance/',
+    path: INVESTOR_SECTION_PATHS['corporate-governance'],
     pages: 'slug-route',
     // Not tiles in the backend either: descope note S1 withdrew the modules
     // that would have served them, and backend row 3.24 is the open question.
@@ -82,7 +87,7 @@ export const INVESTOR_AREAS = {
   },
   'financials-and-reports': {
     section: 'financials-and-reports',
-    path: '/investors/financials-and-reports/',
+    path: INVESTOR_SECTION_PATHS['financials-and-reports'],
     pages: 'slug-route',
     staticPages: [],
     legacyTiles: [
@@ -95,7 +100,7 @@ export const INVESTOR_AREAS = {
   },
   notifications: {
     section: 'notifications',
-    path: '/investors/notifications/',
+    path: INVESTOR_SECTION_PATHS.notifications,
     // One FY-grouped tile, never one per year (backend feature doc §3). Its
     // page is the section's page; the webhook's second path for it,
     // `/investors/notifications/notifications/`, is not a route and refreshes

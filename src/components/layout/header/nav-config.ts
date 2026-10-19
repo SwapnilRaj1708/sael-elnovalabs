@@ -109,7 +109,8 @@ export const NAV_ITEMS: readonly NavItem[] = [
  * It stays in `NAV_ITEMS` on purpose: the mobile drawer, the footer grid and
  * `sitemap.ts` all read that array, and a route lifted out of it would quietly
  * disappear from three places to gain a different style in one. The desktop
- * bar filters on this label instead.
+ * bar and the mobile drawer filter on this label instead, and each draws it
+ * as its own button.
  */
 export const NAV_CTA_LABEL = 'Contact Us';
 

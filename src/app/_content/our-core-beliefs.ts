@@ -25,8 +25,9 @@ import { GOVERNANCE_PATH } from './corporate-governance';
  * each is drawn: each belief's id for its cut-out (`obf-1.webp` is
  * `environmental-stewardship.webp`, `farmers-group.webp` is
  * `our-social-impact.webp`, and so on). Until then they were read from the
- * legacy site. Dimensions are read from the blobs themselves, and match the
- * legacy files'. See `cdnImage()`.
+ * legacy site. Dimensions are read from the blobs themselves. Environmental
+ * Stewardship and Sustainability Governance were replaced with new artwork
+ * on 2026-10-19; the other two still match the legacy files. See `cdnImage()`.
  *
  * **The hero is one photograph, in the repo** (`hero/our-core-beliefs.webp`,
  * 1672 × 941), supplied 2026-10-13 to replace the three-photograph collage so
@@ -92,8 +93,8 @@ export const beliefs: readonly BeliefCopy[] = [
       'Climate Resilience & Policy Advocacy',
     ],
     cutout: {
-      image: beliefsImage('environmental-stewardship.webp', 700, 719),
-      alt: 'Cupped hands holding a seedling in a mound of soil',
+      image: beliefsImage('environmental-stewardship.webp', 4133, 4480),
+      alt: 'Three hands cupped around a globe of crumpled blue and green paper',
       pending: 'our-core-beliefs/environmental-stewardship',
       anchor: 'right',
     },
@@ -132,10 +133,13 @@ export const beliefs: readonly BeliefCopy[] = [
       'Supply Chain Management',
     ],
     cutout: {
-      image: beliefsImage('sustainability-governance.webp', 700, 757),
-      alt: 'A light bulb with a tree growing inside it',
+      image: beliefsImage('sustainability-governance.webp', 1853, 991),
+      alt: 'A light bulb holding a mossy green globe, a vine trailing from its base',
       pending: 'our-core-beliefs/sustainability-governance',
-      anchor: 'bottom-flush',
+      // Centred top to bottom, the client's ask of 2026-10-19, and out over
+      // the right padding to the card's edge. It stood flush on the card's
+      // bottom edge until then.
+      anchor: 'right-middle',
     },
     accent: 'coral',
     side: 'end',

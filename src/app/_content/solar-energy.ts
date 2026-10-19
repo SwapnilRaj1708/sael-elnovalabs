@@ -117,14 +117,14 @@ export const solarOverview: ProseSplitProps = {
     'Each project commences with a meticulous analysis encompassing technology, land suitability, solar irradiation, and existing grid infrastructure. We also consider factors such as geographical location, climate conditions affecting equipment, local amenities, and potential maintenance requirements. This comprehensive approach ensures that all our capital investment endeavours are undertaken with thorough risk assessment and meticulous planning.',
   ],
   media: {
-    // 6.2 MB at source; next/image serves derived sizes, never the original.
-    image: solarAsset('mask1Image.jpg', 2730, 1529),
+    // Arrives already cut to its shape; next/image serves derived sizes.
+    image: solarAsset('mask1Image.webp', 2418, 1890),
     // The live page's slot carries no alt. Written from the photograph,
     // which shows what is described and nothing more.
-    alt: 'Aerial view of rows of solar panels stretching across flat farmland to the horizon',
+    alt: 'Rows of solar panels spread across green hillsides under a blue sky',
     orientation: 'landscape',
     frame: 'aspect-(--aspect-solar-overview) max-w-(--business-overview-media-w)',
-    mask: 'mask-(--mask-solar-overview)',
+    intrinsic: true,
     sizes: SIZES_BUSINESS_OVERVIEW_MEDIA,
   },
 };
@@ -275,9 +275,9 @@ export const solarCapabilities: {
     },
   ],
   media: {
-    image: solarAsset('mask2Image.webp', 800, 938),
+    image: solarAsset('mask2Image.webp', 2332, 2299),
     // The live page's slot carries no alt. Written from the photograph.
-    alt: 'Two people at a control desk watching a wall of plant monitoring dashboards',
+    alt: 'Two people in front of a wall of screens showing satellite weather imagery',
   },
 };
 

@@ -12,7 +12,8 @@
 import { cp, mkdir, readdir, readFile, readlink, realpath, rm, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
-import { isAbsolute, join, sep } from 'node:path';
+import { createRequire } from 'node:module';
+import { dirname, isAbsolute, join, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
@@ -29,6 +30,8 @@ const releaseDir = join(ROOT, 'release');
 const stageDir = join(releaseDir, name);
 
 await rm(stageDir, { recursive: true, force: true });
+// A previous archive goes first, so a run that fails below cannot leave one behind that looks current.
+await rm(join(releaseDir, `${name}.tar.gz`), { force: true });
 await mkdir(stageDir, { recursive: true });
 
 // Every copy keeps symlinks exactly as written. Without `verbatimSymlinks`, fs.cp rewrites a
@@ -61,7 +64,8 @@ await writeFile(
     `SAEL corporate website — ${name}`,
     '',
     'Requires Node.js 24 LTS or newer. No install step: dependencies are already',
-    'bundled, for the OS and CPU this archive was built on.',
+    'bundled. Native ones (sharp, for image optimisation) are bundled for',
+    'linux-x64 with glibc 2.28 or newer, and for the machine that built it.',
     '',
     'BEFORE THIS ARCHIVE WAS BUILT: it prerenders whatever content the build',
     'machine could see. It must have been built with CONTENT_SOURCE=api, after',
@@ -114,7 +118,51 @@ if (escaping.length > 0) {
   process.exit(1);
 }
 
-// 6. Compress. bsdtar ships with Windows 10+ and GNU tar with every Linux host.
+// 6. The VM's sharp binaries must be in the tree, where sharp resolves them. Without them sharp
+//    fails to load on the VM, and Next serves every image unoptimised without reporting an
+//    error: full-size JPEGs in place of AVIF and WebP. pnpm installs them on a Mac only because
+//    of `supportedArchitectures` in pnpm-workspace.yaml, so a node_modules installed before that
+//    setting, or a change to it, would otherwise produce a broken archive.
+//
+//    Resolved the way sharp itself does: `require('@img/sharp-linux-x64/sharp.node')` from
+//    sharp's own directory, through that package's exports map. That package's .node file then
+//    finds libvips through its ELF RUNPATH, `$ORIGIN/../../sharp-libvips-linux-x64/lib`, which
+//    is the location checked here.
+//
+//    release/ is inside the build tree, so Node's resolution would climb out of the staged copy
+//    and find the build machine's node_modules. Every path must therefore resolve inside it.
+const SHARP_TARGET = 'linux-x64';
+const sharpBinaries = [];
+try {
+  const staged = (path) => {
+    if (!path.startsWith(stageRoot + sep)) throw new Error(`${path} is outside the archive`);
+    return path;
+  };
+  const fromSharp = createRequire(join(stageDir, 'node_modules', 'sharp', 'dist', 'sharp.cjs'));
+  const shim = staged(fromSharp.resolve(`@img/sharp-${SHARP_TARGET}/sharp.node`));
+  const libDir = join(dirname(shim), 'lib');
+  const addon = (await readdir(libDir)).find((file) => file.endsWith('.node'));
+  if (addon === undefined) throw new Error(`no .node file in ${libDir}`);
+  const libvips = staged(createRequire(shim).resolve(`@img/sharp-libvips-${SHARP_TARGET}/binary`));
+  const runpath = join(libDir, '..', '..', `sharp-libvips-${SHARP_TARGET}`, 'lib');
+  if (dirname(libvips) !== runpath) {
+    throw new Error(`libvips resolves to ${libvips}, but the addon loads it from ${runpath}`);
+  }
+  sharpBinaries.push(join(libDir, addon), libvips);
+} catch (error) {
+  console.error(
+    [
+      `Refusing to archive: sharp's ${SHARP_TARGET} binaries are not in the standalone output.`,
+      `  ${error instanceof Error ? error.message : error}`,
+      `  Both @img/sharp-${SHARP_TARGET} and @img/sharp-libvips-${SHARP_TARGET} are needed for`,
+      '  image optimisation on the VM. Check supportedArchitectures in pnpm-workspace.yaml, then',
+      '  reinstall from scratch (rm -rf node_modules && pnpm install --frozen-lockfile) and rebuild.',
+    ].join('\n'),
+  );
+  process.exit(1);
+}
+
+// 7. Compress. bsdtar ships with Windows 10+ and GNU tar with every Linux host.
 //    macOS's bsdtar records extended attributes (com.apple.provenance on every file) as pax
 //    headers, and GNU tar on the VM prints a warning for each one it does not recognise:
 //    thousands of lines on an extraction that has in fact succeeded.
@@ -127,6 +175,23 @@ const tar = spawnSync('tar', [...noXattrs, '-czf', archive, name], {
 
 if (tar.status !== 0) {
   console.error(`\nStaged at release/${name}, but tar failed — archive it manually.`);
+  process.exit(1);
+}
+
+// 8. The same binaries, as they appear in the archive itself.
+const listing = spawnSync('tar', ['-tzf', archive], {
+  cwd: releaseDir,
+  encoding: 'utf8',
+  maxBuffer: 256 * 1024 * 1024,
+});
+const archived = new Set(listing.stdout?.split('\n'));
+const missing = sharpBinaries
+  .map((file) => [name, ...relative(stageRoot, file).split(sep)].join('/'))
+  .filter((entry) => !archived.has(entry));
+if (listing.status !== 0 || missing.length > 0) {
+  console.error(`\nRefusing release/${archive}: sharp's ${SHARP_TARGET} binaries are not in it:`);
+  for (const entry of missing) console.error(`  ${entry}`);
+  await rm(join(releaseDir, archive), { force: true });
   process.exit(1);
 }
 

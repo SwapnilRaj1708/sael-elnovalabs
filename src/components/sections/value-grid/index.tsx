@@ -11,7 +11,7 @@ export interface ValueGridItem {
   /**
    * The card's heading. Rendered as `<h3>` under the section's `<h2>`. Omit
    * for a card that is a numbered or marked paragraph with no heading of its
-   * own — Module Manufacturing's "Manufacturing Prowess" cards.
+   * own — Module Manufacturing's "Manufacturing Process" cards.
    */
   name?: string;
   /** A numeral above the copy — "01". Meta type, not a heading. */

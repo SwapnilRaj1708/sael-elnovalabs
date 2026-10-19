@@ -30,7 +30,7 @@ const ROOT_MARGIN = '0px 0px -10% 0px';
  */
 const ALREADY_SEEN = 0.75;
 
-export interface RevealProps extends Omit<ComponentPropsWithoutRef<'div'>, 'style'> {
+export interface RevealProps extends ComponentPropsWithoutRef<'div'> {
   children: ReactNode;
   /**
    * Applied to the element itself, not to a wrapper — `Reveal` **is** the box.
@@ -77,7 +77,7 @@ export interface RevealProps extends Omit<ComponentPropsWithoutRef<'div'>, 'styl
  * stylesheet, so the whole effect is inert for anyone who has asked for less
  * of it. /CLAUDE.md §5.
  */
-export function Reveal({ children, className, order = 0, ...props }: RevealProps) {
+export function Reveal({ children, className, order = 0, style, ...props }: RevealProps) {
   const element = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -133,7 +133,10 @@ export function Reveal({ children, className, order = 0, ...props }: RevealProps
     <div
       ref={element}
       data-reveal="pending"
-      style={{ '--reveal-order': order } as CSSProperties & Record<string, number>}
+      style={{
+        ...style,
+        ...({ '--reveal-order': order } as CSSProperties & Record<string, number>),
+      }}
       className={cn('anim-reveal', className)}
       {...props}
     >

@@ -9,6 +9,20 @@
 # See docs/architecture.md §8.
 nodeLinker: hoisted
 
+# The archive is built on a developer's Mac and run on the client's Ubuntu
+# linux-x64 VM with no install step, so node_modules must carry the VM's native
+# binaries as well as the build machine's. pnpm installs a platform-specific
+# optional dependency only for the platforms listed here, and by default that is
+# just the current one: without the linux/x64/glibc entries, sharp ships with
+# only its darwin-arm64 binaries, fails to load on the VM, and Next silently
+# serves every image unoptimised. `current` keeps the build machine's own
+# binaries, so `next dev` and `next build` still work locally.
+# scripts/package-release.mjs refuses to package without the Linux binaries.
+supportedArchitectures:
+  os: [current, linux]
+  cpu: [current, x64]
+  libc: [current, glibc]
+
 allowBuilds:
   # sharp powers next/image optimisation on the deployment target — its install
   # script must run so the platform binaries are present.

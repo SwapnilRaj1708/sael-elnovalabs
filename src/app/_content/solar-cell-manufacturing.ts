@@ -92,12 +92,12 @@ export const solarCellOverview: ProseSplitProps = {
     "The facility will feature state-of-the-art automation and focus on high-efficiency N-Type TOPCon cell technology, enabling SAEL to support both its own module production and the broader market's evolving needs. Sustainability and operational excellence will remain central to all processes, in line with SAEL's commitment to responsible growth and innovation.",
   ],
   media: {
-    image: cellAsset('mask1Image.jpg', 503, 503),
+    image: cellAsset('mask1Image.webp', 2332, 2299),
     // The live page's slot carries no alt. Written from the photograph.
-    alt: 'Stacks of blue solar cells resting in foam trays on an automated production line',
+    alt: 'Close-up of rows of dark solar panels, their cell lines catching the light',
     orientation: 'landscape',
     frame: 'aspect-(--aspect-solar-overview) max-w-(--business-overview-media-w)',
-    mask: 'mask-(--mask-solar-overview)',
+    intrinsic: true,
     sizes: SIZES_BUSINESS_OVERVIEW_MEDIA,
   },
 };
@@ -155,8 +155,8 @@ export const solarCellHighlights: {
     },
   ],
   media: {
-    image: cellAsset('mask2Image.webp', 800, 1054),
+    image: cellAsset('mask2Image.webp', 2418, 1889),
     // The live page's slot carries no alt. Written from the photograph.
-    alt: 'A row of solar cells under red inspection light on a stringing machine',
+    alt: 'A stack of solar cells held between orange clamps on a production machine',
   },
 };

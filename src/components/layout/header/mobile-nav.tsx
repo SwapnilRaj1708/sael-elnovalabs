@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { createPortal } from 'react-dom';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { SOCIAL_ICONS } from '@/components/icons/social';
-import { isNavItemActive, NAV_ITEMS } from '@/components/layout/header/nav-config';
+import { isNavItemActive, NAV_CTA_LABEL, NAV_ITEMS } from '@/components/layout/header/nav-config';
 import { Accordion, AccordionItem } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
@@ -189,7 +189,10 @@ export function MobileNav() {
 
               <nav aria-label="Main" className="flex-1">
                 <Accordion>
-                  {NAV_ITEMS.map((item) => {
+                  {/* Contact Us is the full-width button under the list, so
+                      it is not also a row in it (client, 2026-10-19) — the
+                      desktop bar's arrangement. */}
+                  {NAV_ITEMS.filter((item) => item.label !== NAV_CTA_LABEL).map((item) => {
                     const active = isNavItemActive(item, pathname);
                     const children = item.children ?? [];
 

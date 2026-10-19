@@ -1,5 +1,6 @@
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 import { env } from '@/lib/config/env';
+import { revalidationTagsFor } from '@/lib/revalidation/tags';
 import { verifySignature, webhookPayloadSchema } from '@/lib/revalidation/webhook';
 
 /**
@@ -19,6 +20,12 @@ import { verifySignature, webhookPayloadSchema } from '@/lib/revalidation/webhoo
  * the one this site runs (/CLAUDE.md §7), that write is in memory and
  * synchronous, so the 2xx follows it. A custom `cacheHandler` would make the
  * write asynchronous, and this would need revisiting.
+ *
+ * **Plus the section's tile-list tag**, for any path in an investor section:
+ * every page of the section shows its tiles, and the backend names only the
+ * index and the tile that changed (`lib/revalidation/tags.ts`). `expire: 0`
+ * is what `revalidatePath` does — the next request renders afresh rather
+ * than being served the stale page while it does.
  *
  * Idempotent: revalidating a path that is not cached, or twice, does nothing
  * further. CONTENT_DELETED fires for records that were never published.
@@ -65,15 +72,20 @@ export async function POST(request: Request): Promise<Response> {
   }
 
   const { event, screenCode, itemPublicId, paths } = payload.data;
+  const tags = revalidationTagsFor(paths);
   try {
     for (const path of paths) revalidatePath(path);
+    for (const tag of tags) revalidateTag(tag, { expire: 0 });
   } catch (error) {
-    console.error(`[revalidate] 500: revalidatePath failed for ${itemPublicId ?? '?'}.`, error);
+    console.error(
+      `[revalidate] 500: revalidatePath or revalidateTag failed for ${itemPublicId ?? '?'}.`,
+      error,
+    );
     return new Response('revalidation failed', { status: 500 });
   }
 
   console.info(
-    `[revalidate] ${event ?? '?'} ${screenCode ?? '?'} ${itemPublicId ?? '?'}: ${paths.join(' ')}`,
+    `[revalidate] ${event ?? '?'} ${screenCode ?? '?'} ${itemPublicId ?? '?'}: ${[...paths, ...tags].join(' ')}`,
   );
   return Response.json({ revalidated: paths });
 }

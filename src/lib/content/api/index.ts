@@ -1,6 +1,7 @@
 import 'server-only';
 
 import { z } from 'zod';
+import { investorTilesTag } from '@/lib/revalidation/tags';
 import {
   ContentUnavailableError,
   type ContentRepository,
@@ -72,7 +73,9 @@ const NEWS_LIVE = '/app/v1/news-live';
  * minutes, and at once when the webhook names the section or the tile
  * (docs/api-contracts.md §7.1).
  */
-const DOCUMENTS_CACHE = isr(300);
+const DOCUMENTS_REVALIDATE_SECONDS = 300;
+
+const DOCUMENTS_CACHE = isr(DOCUMENTS_REVALIDATE_SECONDS);
 
 const DOCUMENTS_LIVE = '/app/v1/documents-live';
 
@@ -232,6 +235,10 @@ export class ApiContentRepository implements ContentRepository {
    * `GET /app/v1/documents-live?section=…` — every page of it, in the
    * panel's order. docs/api-contracts.md §4.2. A tile that fails the schema
    * or the mapping is handled by {@link rejectItem}, as a news card is.
+   *
+   * **Tagged with the section**, so a webhook for any tile of the section
+   * refreshes every page whose side list or grid shows the list, not only
+   * the pages it names (`lib/revalidation/tags.ts`).
    */
   async getInvestorTiles(section: InvestorSection): Promise<InvestorTile[]> {
     const params = { section: sectionCodeOf(section) };
@@ -240,7 +247,7 @@ export class ApiContentRepository implements ContentRepository {
       DOCUMENTS_LIVE,
       params,
       documentCategorySchema,
-      DOCUMENTS_CACHE,
+      isr(DOCUMENTS_REVALIDATE_SECONDS, [investorTilesTag(section)]),
     );
 
     return bodies.flatMap((body) => {

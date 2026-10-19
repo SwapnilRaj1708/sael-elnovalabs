@@ -68,7 +68,7 @@ Rules:
 | Prototype path | Repository path | Format | Notes |
 |---|---|---|---|
 | `uploads/pasted-1784663527717-0.png` | `src/assets/images/sael-logo.png` | PNG | **Interim, by decision on 2026-08-04.** See below. |
-| *(footer variant)* | `src/assets/images/sael-logo-dark.svg` | SVG | **Supplied 2026-08-27**, and the first vector of the wordmark we have. Drawn for a dark ground: white strapline, the SAEL wordmark on its own red→purple gradient. Consumed by the footer at `--spacing-footer-logo`. **38% of its height is empty** — the ink is 1293 × 329 inside a 1521.67 × 530.77 viewBox — so size the box from the ink, and re-measure if it is re-exported |
+| *(footer variant)* | `src/assets/images/sael-logo-dark.svg` | SVG | **Supplied 2026-08-27**, and the first vector of the wordmark we have. Drawn for a dark ground: white strapline, the SAEL wordmark on its own red→purple gradient. Consumed by the footer at `--spacing-footer-logo`. **38% of its height is empty** — the ink is 1293 × 329 inside a 1521.67 × 530.77 viewBox — so size the box from the ink, and re-measure if it is re-exported. **The empty strip left of the ink is trimmed** (2026-10-19, viewBox `123.95 0 1397.72 530.77`), so the stacked footer's logo starts on the address's edge; the top, bottom and right margins are as supplied |
 | — | `public/images/og-image.png` | PNG | 1200×630. Live site has `sael-thumbnail.png`. |
 | — | `public/favicon.ico` + `icon.png` + `apple-icon.png` | — | Generate from the logo mark |
 
