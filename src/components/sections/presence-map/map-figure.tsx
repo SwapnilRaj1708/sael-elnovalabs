@@ -5,6 +5,7 @@ import { Reveal } from '@/components/ui/reveal';
 import { cn } from '@/lib/utils/cn';
 import { SIZES_MAP } from '@/lib/utils/image-sizes';
 import { MAP_VIEWBOX } from './dots';
+import { MapPin } from './map-pin';
 
 type StyleWithVars = CSSProperties & Record<`--${string}`, string | number>;
 
@@ -148,26 +149,30 @@ export interface PresenceMapFigureProps {
  * and their hover/focus contract are one thing and now live in one place; the
  * two sections compose their own copy around it.
  *
- * Two things carry over from the earlier build unchanged, because both were
- * right:
+ * Two things carry over from the earlier build:
  *
- * 1. **No JavaScript at all.** Hover and focus are things CSS already knows,
- *    so the tooltips are `group-hover` / `group-focus-within` and this is a
- *    Server Component. It also means the map works before hydration.
+ * 1. **CSS opens the tooltips, wherever it can.** Hover and focus are things
+ *    CSS already knows, so the tooltips are `group-hover` /
+ *    `group-focus-within`, this is a Server Component, and a mouse or a
+ *    keyboard works before hydration. A tap is the exception: on an iPhone
+ *    it produces neither hover nor focus. Since 2026-10-21 each pin is a
+ *    `<MapPin>`, a small client leaf that adds `data-open` on a tap. That
+ *    is the one piece of JavaScript here. See the note there.
  *
  * 2. **Each pin is a real control** whose accessible name carries everything
  *    the tooltip shows, so a keyboard user hears "Jalore (Rajasthan), 298 MW"
  *    on focus and sees the same tooltip a pointer would. The tooltip itself
  *    is `aria-hidden` — it is the visual echo of the control's name, and
  *    announcing both would say it twice. Focus, not just hover, is what
- *    reveals it, which is also what makes the map work on touch. The pins
- *    are therefore also the map's text equivalent: every figure is real text
- *    in the DOM, reachable in document order.
+ *    reveals it. The pins are therefore also the map's text equivalent:
+ *    every figure is real text in the DOM, reachable in document order.
  *
  * A pin with an `href` is an `<a>` to that location in a new tab, and says so
  * in its name; one without is a `<button>` that does nothing but reveal its
  * callout. The design's "Visit Location" line only renders on the former.
- * Until 2026-09-18 that line rendered as text with nothing behind it.
+ * Until 2026-09-18 that line rendered as text with nothing behind it. On a
+ * touch screen a link pin's first tap opens its callout, and the second
+ * follows the link.
  */
 export function PresenceMapFigure({
   map,
@@ -224,7 +229,7 @@ export function PresenceMapFigure({
                 dotClass,
                 'rounded-none bg-white',
                 'transition-transform duration-(--duration-micro)',
-                'group-focus-within:scale-175 group-hover:scale-175',
+                'group-focus-within:scale-175 group-hover:scale-175 group-data-open:scale-175',
                 'motion-reduce:transition-none',
               )}
             />
@@ -236,9 +241,9 @@ export function PresenceMapFigure({
         );
 
         return (
-          <div
+          <MapPin
             key={site.id}
-            className="group absolute size-0"
+            link={site.href !== undefined}
             style={
               {
                 left: `${String((site.x / MAP_VIEWBOX.width) * 100)}%`,
@@ -271,9 +276,9 @@ export function PresenceMapFigure({
                 // callout reads as opening from the site rather than
                 // appearing over it.
                 'scale-90 opacity-0 transition duration-(--duration-micro)',
-                'group-focus-within:scale-105 group-hover:scale-105',
+                'group-focus-within:scale-105 group-hover:scale-105 group-data-open:scale-105',
                 'motion-reduce:scale-100 motion-reduce:transition-none',
-                'group-focus-within:opacity-100 group-hover:opacity-100',
+                'group-focus-within:opacity-100 group-hover:opacity-100 group-data-open:opacity-100',
                 towardsLeft ? 'right-0 mr-4 origin-right' : 'left-0 ml-4 origin-left',
                 towardsBottom ? 'top-0 mt-2' : 'bottom-0 mb-2',
               )}
@@ -331,7 +336,7 @@ export function PresenceMapFigure({
                 </p>
               )}
             </div>
-          </div>
+          </MapPin>
         );
       })}
     </Reveal>
