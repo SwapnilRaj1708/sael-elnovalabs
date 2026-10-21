@@ -24,6 +24,17 @@ if (!existsSync(STANDALONE)) {
   process.exit(1);
 }
 
+// The server-side deploy tooling: the deploy script that runs the release's warm-up, and the
+// warm-up itself, at the paths the deploy script and README.md name. Step 8 checks both are in the
+// archive too, because a release without the warm-up deploys fine and then converts every new
+// image on a visitor's request.
+const SHIPPED_TOOLS = ['scripts/warmup.mjs', 'deploy/sael-web-deploy.sh'];
+const missingTools = SHIPPED_TOOLS.filter((tool) => !existsSync(join(ROOT, tool)));
+if (missingTools.length > 0) {
+  console.error(`Refusing to archive: missing ${missingTools.join(', ')}.`);
+  process.exit(1);
+}
+
 const { version } = JSON.parse(await readFile(join(ROOT, 'package.json'), 'utf8'));
 const name = `sael-web-${version}`;
 const releaseDir = join(ROOT, 'release');
@@ -57,6 +68,12 @@ if (existsSync(join(ROOT, 'public'))) {
 //    so that `pm2 start` fails with the reason (see that file).
 await cp(join(ROOT, 'ecosystem.config.cjs'), join(stageDir, 'ecosystem.config.cjs'));
 await cp(join(ROOT, '.env.example'), join(stageDir, '.env.example'));
+
+// 4a. The server-side deploy tooling, checked for at the top (SHIPPED_TOOLS).
+for (const tool of SHIPPED_TOOLS) {
+  await mkdir(dirname(join(stageDir, tool)), { recursive: true });
+  await cp(join(ROOT, tool), join(stageDir, tool));
+}
 
 await writeFile(
   join(stageDir, 'DEPLOY.txt'),
@@ -93,6 +110,16 @@ await writeFile(
     '     See deploy/nginx.conf.sample in the repository.',
     '',
     'Health check: GET /api/health/ returns {"status":"ok"}.',
+    '',
+    'Upgrading a running VM: deploy/sael-web-deploy.sh does the whole swap in one',
+    'command (hash check, extract, image-cache link, swap, health check, automatic',
+    'rollback, image warm-up). Install it once, then deploy each release with it:',
+    `  tar -xzOf ${name}.tar.gz ${name}/deploy/sael-web-deploy.sh > sael-web-deploy`,
+    '  sudo install -m 0755 -o root -g root sael-web-deploy /usr/local/bin/sael-web-deploy',
+    `  sudo sael-web-deploy ${name}.tar.gz <sha256 from the build machine>`,
+    '  sudo sael-web-deploy --rollback',
+    'The image warm-up alone: sudo node /var/www/sael-web/scripts/warmup.mjs',
+    'See "Deployment" in README.md in the repository.',
     '',
   ].join('\n'),
   'utf8',
@@ -178,18 +205,19 @@ if (tar.status !== 0) {
   process.exit(1);
 }
 
-// 8. The same binaries, as they appear in the archive itself.
+// 8. The same binaries and the deploy tooling (4a), as they appear in the archive itself.
 const listing = spawnSync('tar', ['-tzf', archive], {
   cwd: releaseDir,
   encoding: 'utf8',
   maxBuffer: 256 * 1024 * 1024,
 });
 const archived = new Set(listing.stdout?.split('\n'));
-const missing = sharpBinaries
-  .map((file) => [name, ...relative(stageRoot, file).split(sep)].join('/'))
-  .filter((entry) => !archived.has(entry));
+const missing = [
+  ...sharpBinaries.map((file) => [name, ...relative(stageRoot, file).split(sep)].join('/')),
+  ...SHIPPED_TOOLS.map((tool) => `${name}/${tool}`),
+].filter((entry) => !archived.has(entry));
 if (listing.status !== 0 || missing.length > 0) {
-  console.error(`\nRefusing release/${archive}: sharp's ${SHARP_TARGET} binaries are not in it:`);
+  console.error(`\nRefusing release/${archive}: required files are not in it:`);
   for (const entry of missing) console.error(`  ${entry}`);
   await rm(join(releaseDir, archive), { force: true });
   process.exit(1);

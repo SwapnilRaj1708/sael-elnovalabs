@@ -16,8 +16,81 @@
  * These describe the *rendered* width of the image, not the asset's size.
  */
 
+import type { StaticImageData } from 'next/image';
+
+/** One box a cover image fills: the condition it holds under, and its size. */
+interface CoverBox {
+  /** A media condition. Omitted on the last box, which is the default. */
+  media?: string;
+  /** The box's width, as a CSS length. */
+  width: string;
+  /** The box's height, as a CSS length. */
+  height: string;
+}
+
+/**
+ * `sizes` for an `object-cover` image, described by the box it fills.
+ *
+ * **The box's width is not the width the image is drawn at.** `object-cover`
+ * scales an image until it covers the box, so an image wider than the box,
+ * as a ratio, is drawn at the box's height and runs past both sides. A
+ * landscape photograph that fills an upright phone screen is drawn about three
+ * screens wide. A hint that gives only the box's width fetches a third of the
+ * pixels that photograph needs, and the result is the blur seen on phones
+ * until 2026-10-21. The drawn width is `max(width, height × ratio)`, and that
+ * is what this writes, per box, from the asset's own ratio.
+ *
+ * `overscale` is a transform that enlarges the image beyond that size, such as a Ken
+ * Burns push or a parallax scale, so the hint covers its largest frame.
+ *
+ * **`fallback` is the box-width hint, written after them.** `max()` in `sizes`
+ * is a math function, and a browser that cannot read one there drops the
+ * entry as a parse error and moves on to the next. The last box carries no
+ * condition, so a browser that reads `max()` never reaches the fallback, and
+ * one that does not uses the fallback alone. A missing image takes it too.
+ */
+function coverSizes(
+  image: StaticImageData | null,
+  boxes: readonly CoverBox[],
+  fallback: string,
+  overscale = 1,
+): string {
+  if (image === null) return fallback;
+
+  const ratio = image.width / image.height;
+  const scaled = (length: string, factor: number): string =>
+    factor === 1 ? length : `${length} * ${String(+factor.toFixed(3))}`;
+
+  const entries = boxes.map(({ media, width, height }) => {
+    const drawn = `max(${scaled(width, overscale)}, ${scaled(height, ratio * overscale)})`;
+    return media === undefined ? drawn : `${media} ${drawn}`;
+  });
+
+  return [...entries, fallback].join(', ');
+}
+
 /** Edge to edge at every breakpoint — the hero, banners, the pixel strip. */
 export const SIZES_FULL_BLEED = '100vw';
+
+/**
+ * A `<PageHero>` banner — the full width, and `--page-hero-h` tall, which is
+ * `max(36rem, --spacing-viewport)`. `100vh` stands in for the viewport here.
+ * It is at least as tall as the `dvh` the token uses, so the hint errs large.
+ */
+export function pageHeroSizes(image: StaticImageData | null): string {
+  return coverSizes(image, [{ width: '100vw', height: 'max(36rem, 100vh)' }], SIZES_FULL_BLEED);
+}
+
+/**
+ * A homepage hero slide — the full width and the screen's height
+ * (`min-h-viewport`). The Ken Burns push ends at `scale(1.12)` and holds there
+ * (`saelKen`), and from `lg` the parallax wrapper adds `--hero-image-scale`
+ * (1.06) on top. The two scales are copied here, so change them together.
+ */
+export function heroSlideSizes(image: StaticImageData | null, crop: 'mobile' | 'desktop'): string {
+  const overscale = crop === 'desktop' ? 1.12 * 1.06 : 1.12;
+  return coverSizes(image, [{ width: '100vw', height: '100vh' }], SIZES_FULL_BLEED, overscale);
+}
 
 /**
  * The hero's mark, which in `SAEL Home v2` sits in the content column rather
@@ -56,12 +129,44 @@ export const SIZES_ABOUT_CUTOUT = '(min-width: 64rem) 16vw, 32vw';
 export const SIZES_SOLUTION_CARD = '(min-width: 90rem) 440px, (min-width: 52rem) 30vw, 250px';
 
 /**
+ * The same card as a cover box: `--spacing-solution-card` wide, written out
+ * here as the token's own clamp, and `--aspect-plate` (4:3) tall. The plant
+ * photographs are wider than 4:3, so they are drawn at the card's height.
+ */
+const SOLUTION_CARD_W = 'clamp(15.625rem, 12.8846rem + 12.1795vw, 27.5rem)';
+
+export function solutionCardSizes(image: StaticImageData | null): string {
+  return coverSizes(
+    image,
+    [{ width: SOLUTION_CARD_W, height: `${SOLUTION_CARD_W} * 0.75` }],
+    SIZES_SOLUTION_CARD,
+  );
+}
+
+/**
  * The "Our Endeavour" panel photograph — the layer masked into the chamfered
  * shape. The artwork box is capped at `--endeavour-media-w` (31rem) beside the
  * copy above `lg` and close to the full column below it; the panel is inset
  * `--endeavour-panel-inset-x` a side inside that, so 92% of both figures.
  */
 export const SIZES_ENDEAVOUR_PANEL = '(min-width: 64rem) 29rem, 82vw';
+
+/**
+ * The same panel as a cover box. `--endeavour-panel-aspect` is 498:491, so it
+ * is as tall as it is wide, near enough. Over-scaled by `saelKenMedia`'s
+ * `scale(1.16)`, the far end of its breathing.
+ */
+export function endeavourPanelSizes(image: StaticImageData | null): string {
+  return coverSizes(
+    image,
+    [
+      { media: '(min-width: 64rem)', width: '29rem', height: '29rem' },
+      { width: '82vw', height: '82vw' },
+    ],
+    SIZES_ENDEAVOUR_PANEL,
+    1.16,
+  );
+}
 
 /**
  * The "Our Endeavour" cut-out — the girl standing in front of the panel.
@@ -80,6 +185,28 @@ export const SIZES_ENDEAVOUR_FIGURE = '(min-width: 64rem) 38rem, 100vw';
  * above, the full column below it.
  */
 export const SIZES_GOAL_CARD = '(min-width: 48rem) 32vw, 92vw';
+
+/**
+ * The same card as a cover box. Its height is `min-h-goal-card` from `md` and
+ * `min-h-goal-card-sm` below it. The copy has not outgrown either floor at any
+ * width checked, so the floors, written out here as the tokens' own clamps,
+ * are the heights. Over-scaled by `--scale-goal-hover` (1.06).
+ */
+export function goalCardSizes(image: StaticImageData | null): string {
+  return coverSizes(
+    image,
+    [
+      {
+        media: '(min-width: 48rem)',
+        width: '32vw',
+        height: 'clamp(20rem, 17.4038rem + 11.5385vw, 31.25rem)',
+      },
+      { width: '92vw', height: 'clamp(13.125rem, 30vh, 18.125rem)' },
+    ],
+    SIZES_GOAL_CARD,
+    1.06,
+  );
+}
 
 /**
  * A news card's thumbnail — `--spacing-news-card` wide, 238 → 330px.
@@ -177,9 +304,13 @@ export const SIZES_GALLERY = '(min-width: 30rem) 48vw, 92vw';
  * A story's photograph on Story of Our Influence — sections/story-split.
  * From `lg` it is `--story-media-h` tall, 640px at most, and its width
  * follows from `--aspect-story-shape` (352 : 483.43): 466px at most, rounded
- * up. Below `lg` it is a `--spacing-story-thumb` (120px) thumbnail.
+ * up. Below `lg` it stands at the story's foot, two thirds of the column
+ * below `sm` and half of it from `sm`; the column is the viewport less the
+ * gutters, so 67vw and 50vw round outward. Until 2026-10-21 it was a 120px
+ * thumbnail there, and the 7.5rem that described it fetched a file a third
+ * the width of the new box — the blur on phones.
  */
-export const SIZES_STORY_MEDIA = '(min-width: 64rem) 30rem, 7.5rem';
+export const SIZES_STORY_MEDIA = '(min-width: 64rem) 30rem, (min-width: 30rem) 50vw, 67vw';
 
 /**
  * A belief card's cut-out — sections/belief-stack. From `lg` it is five

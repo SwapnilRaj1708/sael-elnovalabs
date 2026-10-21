@@ -233,7 +233,7 @@ export function BusinessTiles({ eyebrow, tiles, snap = false }: BusinessTilesPro
                         className={cn('mt-4 text-ledger-figure tabular-nums', tile.figureClassName)}
                       >
                         {/* One size for all four figures, at the client's
-                          request on 2026-10-01 — "3.6 GWp + 5 GW" no longer
+                          request on 2026-10-01 — "3.6 GW + 5 GW" no longer
                           steps down. A trailing asterisk is split off and set
                           at half size so it reads as a marker, not a digit. */}
                         <CountUp value={tile.value.replace(/\*$/, '')} />

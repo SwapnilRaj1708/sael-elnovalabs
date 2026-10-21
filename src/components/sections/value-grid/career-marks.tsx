@@ -3,7 +3,7 @@ import empowermentIcon from '@/assets/icons/empowerment/animated/40b-empowerment
 import appreciationIcon from '@/assets/icons/appreciation/animated/41b-appreciation-hand-star-white-animated.svg';
 import teamworkIcon from '@/assets/icons/teamwork/animated/42c-team-venn-white-animated.svg';
 import integrityIcon from '@/assets/icons/integrity/animated/43c-integrity-hand-shield-white-animated.svg';
-import balanceIcon from '@/assets/icons/balance/animated/44c-balance-work-life-white-animated.svg';
+import balanceIcon from '@/assets/icons/balance/animated/44g-balance-handshake-laptop-home-white-animated.svg';
 import cultureIcon from '@/assets/icons/positive-work-culture/animated/45a-culture-handshake-people-white-animated.svg';
 import pathIcon from '@/assets/icons/long-term-career-paths/animated/46b-career-road-flag-white-animated.svg';
 import leadershipIcon from '@/assets/icons/people-oriented-leadership/animated/47b-leadership-leading-team-white-animated.svg';

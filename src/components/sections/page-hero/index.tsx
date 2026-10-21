@@ -8,7 +8,7 @@ import { VideoFrame } from '@/components/ui/video-frame';
 import type { BusinessGradient } from '@/components/ui/display-heading';
 import { cn } from '@/lib/utils/cn';
 import type { BreadcrumbTrailItem } from '@/lib/seo/json-ld';
-import { SIZES_FULL_BLEED } from '@/lib/utils/image-sizes';
+import { pageHeroSizes } from '@/lib/utils/image-sizes';
 
 export interface PageHeroProps {
   /** The page title. Rendered as the page's single `<h1>`. */
@@ -155,7 +155,7 @@ export function PageHero({
           <MediaFrame
             image={image}
             alt={imageAlt}
-            sizes={SIZES_FULL_BLEED}
+            sizes={pageHeroSizes(image)}
             priority
             pending={pending}
             className="absolute inset-0"
@@ -165,7 +165,7 @@ export function PageHero({
             src={video}
             poster={image}
             posterAlt={imageAlt}
-            sizes={SIZES_FULL_BLEED}
+            sizes={pageHeroSizes(image)}
             pending={pending}
             className="absolute inset-0"
           />

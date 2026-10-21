@@ -1,5 +1,5 @@
 import { MediaFrame } from '@/components/ui/media-frame';
-import { SIZES_FULL_BLEED } from '@/lib/utils/image-sizes';
+import { heroSlideSizes } from '@/lib/utils/image-sizes';
 import { cn } from '@/lib/utils/cn';
 import type { HeroSlide } from './types';
 
@@ -84,7 +84,7 @@ export function HeroBackdrop({ slide, isActive, position }: HeroBackdropProps) {
         <MediaFrame
           image={image.mobile ?? image.desktop}
           alt={image.alt}
-          sizes={SIZES_FULL_BLEED}
+          sizes={heroSlideSizes(image.mobile ?? image.desktop, 'mobile')}
           priority={position === 1}
           pending={`hero/${slide.id}-portrait`}
           className="absolute inset-0 lg:hidden"
@@ -93,7 +93,7 @@ export function HeroBackdrop({ slide, isActive, position }: HeroBackdropProps) {
         <MediaFrame
           image={image.desktop}
           alt={image.alt}
-          sizes={SIZES_FULL_BLEED}
+          sizes={heroSlideSizes(image.desktop, 'desktop')}
           priority={position === 1}
           pending={`hero/${slide.id}`}
           className="absolute inset-0 hidden lg:block"

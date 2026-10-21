@@ -4,7 +4,7 @@ import { Eyebrow } from '@/components/ui/eyebrow';
 import { Reveal } from '@/components/ui/reveal';
 import { Section } from '@/components/ui/section';
 import { cn } from '@/lib/utils/cn';
-import { SIZES_GOAL_CARD, SIZES_GOAL_ICON } from '@/lib/utils/image-sizes';
+import { SIZES_GOAL_ICON, goalCardSizes } from '@/lib/utils/image-sizes';
 
 export interface Goal {
   id: string;
@@ -112,7 +112,7 @@ export function GoalsGrid({ title, goals, snap = false }: GoalsGridProps) {
                 <MediaFrame
                   image={goal.image}
                   alt=""
-                  sizes={SIZES_GOAL_CARD}
+                  sizes={goalCardSizes(goal.image)}
                   pending={`goals/${goal.id}`}
                   className="absolute inset-0"
                   imageClassName={cn(

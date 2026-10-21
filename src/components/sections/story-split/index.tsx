@@ -31,7 +31,7 @@ export interface StorySplitProps {
   /**
    * Which side the photograph takes from `lg`. Stories alternate down the
    * page — start, end, start — so the eye zig-zags rather than running down
-   * one edge. Below `lg` the photograph always leads, beside the heading.
+   * one edge. Below `lg` the photograph always closes the story, under the copy.
    */
   side?: 'start' | 'end';
   /**
@@ -53,13 +53,13 @@ export interface StorySplitProps {
  * screen and the page snaps from one to the next, as the homepage does,
  * through the same `data-snap-sections` mechanism in globals.css.
  *
- * **One DOM, two compositions, on one grid.** Below `lg` the photograph is a
- * 120px thumbnail in the first column beside the eyebrow and heading, and
- * the paragraph runs the full width under both. From `lg` the photograph is
+ * **One DOM, two compositions, on one grid.** Below `lg` everything is one
+ * column — eyebrow, heading, paragraph, then the photograph at the foot, as
+ * on the business pages and Our Core Beliefs. From `lg` the photograph is
  * a column of its own, `--story-media-h` tall, and the heading and
  * paragraph stack beside it; the grid's `1fr auto auto 1fr` rows centre that
  * stack on the photograph without either knowing the other's height. The
- * reading order — heading, story, then nothing else — is the same in both.
+ * reading order — heading, story, photograph — is the same in both.
  *
  * The photographs arrive already cut to their shape, so the box takes each
  * asset's own ratio (`imageAspect`) and nothing is clipped here.
@@ -97,33 +97,13 @@ export function StorySplit({
       <div
         className={cn(
           'grid items-center gap-x-inset gap-y-flow',
-          'grid-cols-[var(--spacing-story-thumb)_minmax(0,1fr)]',
+          'grid-cols-1',
           'lg:grid-rows-[1fr_auto_auto_1fr] lg:gap-x-split-wide lg:gap-y-0',
           side === 'start'
             ? 'lg:grid-cols-[auto_minmax(0,1fr)]'
             : 'lg:grid-cols-[minmax(0,1fr)_auto]',
         )}
       >
-        <Reveal
-          order={0}
-          style={imageAspect(media.image)}
-          className={cn(
-            'relative aspect-(--aspect-story-shape) w-full',
-            'lg:row-span-4 lg:row-start-1 lg:h-(--story-media-h) lg:w-auto',
-            side === 'start' ? 'lg:col-start-1' : 'lg:col-start-2',
-          )}
-        >
-          <MediaFrame
-            image={media.image}
-            alt={media.alt}
-            sizes={SIZES_STORY_MEDIA}
-            pending={media.pending}
-            // Pre-cut: the transparent corners show the ground, not the
-            // frame's placeholder fill.
-            className="absolute inset-0 bg-transparent"
-          />
-        </Reveal>
-
         <div
           className={cn(
             'flex min-w-0 flex-col gap-stack lg:row-start-2',
@@ -140,8 +120,7 @@ export function StorySplit({
             <DisplayHeading
               id={titleId}
               ground={ground}
-              // The display size from `lg`; beside the thumbnail below it, a
-              // step down so the heading is not a column of single words.
+              // The display size from `lg`; a step down below it.
               className="w-fit text-story-title text-balance lg:text-display"
             >
               {title}
@@ -152,7 +131,7 @@ export function StorySplit({
         <Reveal
           order={headingOrder + 1}
           className={cn(
-            'col-span-2 lg:col-span-1 lg:row-start-3 lg:mt-flow',
+            'lg:row-start-3 lg:mt-flow',
             side === 'start' ? 'lg:col-start-2' : 'lg:col-start-1',
           )}
         >
@@ -164,6 +143,26 @@ export function StorySplit({
           >
             {body}
           </p>
+        </Reveal>
+
+        <Reveal
+          order={headingOrder + 2}
+          style={imageAspect(media.image)}
+          className={cn(
+            'relative mx-auto aspect-(--aspect-story-shape) w-2/3 sm:w-1/2',
+            'lg:row-span-4 lg:row-start-1 lg:mx-0 lg:h-(--story-media-h) lg:w-auto',
+            side === 'start' ? 'lg:col-start-1' : 'lg:col-start-2',
+          )}
+        >
+          <MediaFrame
+            image={media.image}
+            alt={media.alt}
+            sizes={SIZES_STORY_MEDIA}
+            pending={media.pending}
+            // Pre-cut: the transparent corners show the ground, not the
+            // frame's placeholder fill.
+            className="absolute inset-0 bg-transparent"
+          />
         </Reveal>
       </div>
     </Section>

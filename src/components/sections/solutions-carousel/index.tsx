@@ -8,7 +8,7 @@ import { RailTrack } from '@/components/ui/rail/rail-track';
 import { Reveal } from '@/components/ui/reveal';
 import { Section } from '@/components/ui/section';
 import { cn } from '@/lib/utils/cn';
-import { SIZES_SOLUTION_CARD } from '@/lib/utils/image-sizes';
+import { solutionCardSizes } from '@/lib/utils/image-sizes';
 import type { SolutionsCarouselProps } from './types';
 
 export type { SolutionSlide, SolutionsCarouselProps } from './types';
@@ -137,7 +137,7 @@ export function SolutionsCarousel({
                     <MediaFrame
                       image={slide.image}
                       alt={slide.alt}
-                      sizes={SIZES_SOLUTION_CARD}
+                      sizes={solutionCardSizes(slide.image)}
                       pending={`solutions/${slide.id}`}
                       className="aspect-plate w-full"
                     />

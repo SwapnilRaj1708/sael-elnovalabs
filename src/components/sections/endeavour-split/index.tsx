@@ -4,7 +4,7 @@ import { MediaFrame } from '@/components/ui/media-frame';
 import { Reveal } from '@/components/ui/reveal';
 import { Section } from '@/components/ui/section';
 import { cn } from '@/lib/utils/cn';
-import { SIZES_ENDEAVOUR_FIGURE, SIZES_ENDEAVOUR_PANEL } from '@/lib/utils/image-sizes';
+import { SIZES_ENDEAVOUR_FIGURE, endeavourPanelSizes } from '@/lib/utils/image-sizes';
 
 export interface EndeavourSplitProps {
   eyebrow: string;
@@ -111,7 +111,7 @@ export function EndeavourSplit({ eyebrow, body, media, snap = false }: Endeavour
                 <MediaFrame
                   image={media.image}
                   alt={media.alt}
-                  sizes={SIZES_ENDEAVOUR_PANEL}
+                  sizes={endeavourPanelSizes(media.image)}
                   pending="endeavour/solar-panel"
                   className="absolute inset-0"
                   imageClassName="anim-ken-burns-media grayscale"

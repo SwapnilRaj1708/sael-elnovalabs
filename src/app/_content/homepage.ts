@@ -243,7 +243,7 @@ export const businessTiles: BusinessTile[] = [
     title: 'Solar Module Manufacturing',
     description:
       'We produce bifacial solar modules engineered for performance, durability, and long-term reliability across diverse operating environments.',
-    value: '3.6 GWp + 5 GW*',
+    value: '3.6 GW + 5 GW*',
     footnote: 'Operational · *Upcoming',
     href: '/module-manufacturing/',
     ctaLabel: 'Know more about solar module manufacturing',

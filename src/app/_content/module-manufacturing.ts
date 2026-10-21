@@ -32,7 +32,7 @@ import { SIZES_BUSINESS_OVERVIEW_MEDIA } from '@/lib/utils/image-sizes';
  *
  * ## Where the screenshot and the live page disagree
  *
- * - **The portfolio figure is the homepage ledger's**, `3.6 GWp + 5 GW*`,
+ * - **The portfolio figure is the homepage ledger's**, `3.6 GW + 5 GW*`,
  *   since the client's request of 2026-10-07 that every business page's
  *   Projects figure match the Business Portfolio row. The ledger's footnote
  *   ("Operational · *Upcoming") is not carried: the client asked for the
