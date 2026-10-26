@@ -672,6 +672,12 @@
    * link around a disc stays --spacing-touch whatever the disc's size. */
   --spacing-fab-item: clamp(2.25rem, 1.95rem + 0.8vw, 2.75rem); /* 36 → 44 */
   --spacing-fab-offset: clamp(0.75rem, 0.45rem + 1.25vw, 2rem); /* 12 → 32 */
+  /* The green-hosting badge in the opposite corner
+   * (components/layout/green-hosting-fab): its width, on the site's 360 → 1920
+   * ramp. 200 is the artwork's own width, so it is never drawn larger than it
+   * is. 100 keeps its heading legible on a phone and keeps it clear of the
+   * hero's slide dots, which at 120 it covered on a 360px screen. */
+  --spacing-fab-badge: clamp(6.25rem, 4.8077rem + 6.4103vw, 12.5rem); /* 100 → 200 */
 
   /* A stacked link's row height where the pointer is fine — the footer's link
    * columns and nothing else so far. **Not a relaxation of --spacing-touch.**

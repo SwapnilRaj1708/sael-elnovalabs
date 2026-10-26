@@ -36,7 +36,6 @@ sael-web/
 ├── docs/                            # this folder
 ├── public/
 │   ├── favicon.ico
-│   ├── robots.txt
 │   └── images/                      # only truly static, non-optimised assets
 └── src/
     ├── app/
@@ -45,6 +44,7 @@ sael-web/
     │   ├── not-found.tsx
     │   ├── error.tsx
     │   ├── sitemap.ts
+    │   ├── robots.ts                # /robots.txt, from the same isPublicSite as noindex
     │   ├── about-us/page.tsx
     │   ├── our-team/page.tsx
     │   ├── solar-energy/page.tsx

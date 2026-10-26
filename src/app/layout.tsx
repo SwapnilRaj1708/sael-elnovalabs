@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { Footer } from '@/components/layout/footer/footer';
+import { GreenHostingFab } from '@/components/layout/green-hosting-fab/green-hosting-fab';
 import { Header } from '@/components/layout/header/header';
 import { SocialFab } from '@/components/layout/social-fab/social-fab';
 import { isPublicSite, siteConfig } from '@/lib/config/site';
 import { SOCIAL_LINKS } from '@/lib/content/static/footer';
+import { GREEN_HOSTING_BADGE } from '@/lib/content/static/green-hosting';
 import { din } from '@/lib/fonts';
 import { organizationJsonLd, webSiteJsonLd } from '@/lib/seo/json-ld';
 import '@/styles/globals.css';
@@ -66,6 +68,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
         {/* The social profiles, fixed to the corner of every page. */}
         <SocialFab links={SOCIAL_LINKS} newTabNote="opens in a new tab" />
+
+        {/* The green-hosting badge, fixed to the opposite corner. */}
+        <GreenHostingFab badge={GREEN_HOSTING_BADGE} />
 
         <script
           type="application/ld+json"

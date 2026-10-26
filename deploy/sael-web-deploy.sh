@@ -1,37 +1,61 @@
 #!/usr/bin/env bash
 #
-# Deploys a release archive of the SAEL website on the VM, or rolls the last one back.
+# Deploys a release archive of the SAEL website on the VM, or rolls the last one back. The VM
+# runs two copies of the site, production (the default) and UAT, and this script deploys either.
 #
 #   sudo sael-web-deploy <tarball> [expected-sha256]
 #   sudo sael-web-deploy --rollback
 #
+# UAT, each on one line, with --rollback in place of <tarball> <sha256> to roll back:
+#
+#   sudo env SAEL_DEPLOY_SERVICE=sael-web-uat SAEL_DEPLOY_BASE_URL=http://127.0.0.1:3001 SAEL_DEPLOY_USER=saeluat SAEL_DEPLOY_GROUP=saeluat SAEL_DEPLOY_IMAGE_CACHE=/var/lib/sael-web-uat/cache/images sael-web-deploy <tarball> <sha256>
+#
 # Installed once as /usr/local/bin/sael-web-deploy (see README.md, "Deployment"). It performs the
-# manual deploy steps in order: hash, extract into sael-web.new, ownership, image-cache link,
-# swap with the running release (kept as sael-web.prev), and a health check. An unhealthy start
-# is rolled back automatically. A healthy one is followed by the image warm-up, whose failure
-# is only a warning.
+# manual deploy steps in order: hash, extract into <unit>.new, ownership, image-cache link, swap
+# with the running release (kept as <unit>.prev), and a health check. An unhealthy start is
+# rolled back automatically. A healthy one is followed by the image warm-up, whose failure is
+# only a warning.
 #
-# It removes only sael-web.new, sael-web.prev and sael-web.failed-*. It never deletes anything
-# under /var/lib/sael-web, and does not touch nginx or the backend.
+# SAEL_DEPLOY_SERVICE names the systemd unit, default sael-web, and the release folder after it,
+# /var/www/<unit>. Any other unit must also be given its base URL, user, group and image cache,
+# and none of them may be production's; a production run refuses UAT's. The unit file must
+# exist. Every run prints its target first.
 #
-# The SAEL_DEPLOY_* variables below exist for testing this script on a workstation. sudo drops
-# them from the environment by default, so on the VM the production values always apply.
+# It removes only <unit>.new, <unit>.prev and <unit>.failed-* in /var/www. It never deletes
+# anything under /var/lib, and does not touch nginx, the backend or the other site's unit.
+#
+# SAEL_DEPLOY_WWW_DIR, SAEL_DEPLOY_SERVICE_CMD, SAEL_DEPLOY_NODE and SAEL_DEPLOY_REQUIRE_ROOT
+# exist for testing this script on a workstation. sudo drops every SAEL_DEPLOY_* variable unless
+# it is passed through `sudo env`, as above, so a plain `sudo sael-web-deploy` is production.
 
 set -euo pipefail
 
-readonly SERVICE=sael-web
+# Production's values: the defaults, and what a run for any other unit may not use.
+readonly PROD_SERVICE=sael-web
+readonly PROD_BASE_URL=http://127.0.0.1:3000
+readonly PROD_USER=saelapp
+readonly PROD_DATA_DIR=/var/lib/sael-web
+readonly PROD_IMAGE_CACHE="$PROD_DATA_DIR/cache/images"
+
+# UAT's values, which a production run refuses.
+readonly UAT_SERVICE=sael-web-uat
+readonly UAT_PORT=3001
+readonly UAT_USER=saeluat
+
+readonly SERVICE="${SAEL_DEPLOY_SERVICE:-$PROD_SERVICE}"
 readonly WWW_DIR="${SAEL_DEPLOY_WWW_DIR:-/var/www}"
-readonly IMAGE_CACHE="${SAEL_DEPLOY_IMAGE_CACHE:-/var/lib/sael-web/cache/images}"
+readonly IMAGE_CACHE="${SAEL_DEPLOY_IMAGE_CACHE:-$PROD_IMAGE_CACHE}"
 readonly SERVICE_CMD="${SAEL_DEPLOY_SERVICE_CMD:-systemctl}"
-readonly BASE_URL="${SAEL_DEPLOY_BASE_URL:-http://127.0.0.1:3000}"
+readonly BASE_URL="${SAEL_DEPLOY_BASE_URL:-$PROD_BASE_URL}"
 readonly NODE_BIN="${SAEL_DEPLOY_NODE:-/usr/bin/node}"
-readonly APP_USER="${SAEL_DEPLOY_USER:-saelapp}"
-readonly APP_GROUP="${SAEL_DEPLOY_GROUP:-saelapp}"
+readonly APP_USER="${SAEL_DEPLOY_USER:-$PROD_USER}"
+readonly APP_GROUP="${SAEL_DEPLOY_GROUP:-$PROD_USER}"
 readonly REQUIRE_ROOT="${SAEL_DEPLOY_REQUIRE_ROOT:-1}"
 
-readonly CURRENT="$WWW_DIR/sael-web"
-readonly NEW="$WWW_DIR/sael-web.new"
-readonly PREV="$WWW_DIR/sael-web.prev"
+readonly CURRENT="$WWW_DIR/$SERVICE"
+readonly NEW="$CURRENT.new"
+readonly PREV="$CURRENT.prev"
+readonly FAILED_PREFIX="$CURRENT.failed-"
 readonly HEALTH_URL="$BASE_URL/api/health/"
 readonly HEALTH_DEADLINE_SECONDS=60
 readonly HEALTH_INTERVAL_SECONDS=2
@@ -49,19 +73,77 @@ usage() {
   cat >&2 <<'EOF'
 usage: sudo sael-web-deploy <tarball> [expected-sha256]
        sudo sael-web-deploy --rollback
+UAT: prefix either with the sudo env SAEL_DEPLOY_* line in README.md, "Deployment".
 EOF
   exit 2
 }
 
+announce_target() {
+  log "target: unit=$SERVICE folder=$CURRENT user=$APP_USER:$APP_GROUP base=$BASE_URL cache=$IMAGE_CACHE"
+}
+
 announce_overrides() {
   local name
-  for name in SAEL_DEPLOY_WWW_DIR SAEL_DEPLOY_IMAGE_CACHE SAEL_DEPLOY_SERVICE_CMD \
-    SAEL_DEPLOY_BASE_URL SAEL_DEPLOY_NODE SAEL_DEPLOY_USER SAEL_DEPLOY_GROUP \
+  for name in SAEL_DEPLOY_WWW_DIR SAEL_DEPLOY_SERVICE_CMD SAEL_DEPLOY_NODE \
     SAEL_DEPLOY_REQUIRE_ROOT; do
     if [[ -n "${!name:-}" ]]; then
       log "NOTE: test override in effect: $name=${!name}"
     fi
   done
+}
+
+# The port in a base URL, or nothing when it names none.
+port_of() {
+  local authority="${1#*://}"
+  authority="${authority%%/*}"
+  if [[ "$authority" == *:* ]]; then
+    printf '%s' "${authority##*:}"
+  fi
+}
+
+# Production is the default for every value, so a UAT run that left one out would deploy with
+# production's port, account or image cache. A UAT run must therefore name all four, and none
+# may be production's.
+check_other_target() {
+  local name missing=()
+  for name in SAEL_DEPLOY_BASE_URL SAEL_DEPLOY_USER SAEL_DEPLOY_GROUP SAEL_DEPLOY_IMAGE_CACHE; do
+    [[ -n "${!name:-}" ]] || missing+=("$name")
+  done
+  ((${#missing[@]} == 0)) ||
+    die "unit $SERVICE is not $PROD_SERVICE, so ${missing[*]} must be set too; nothing was changed"
+
+  [[ "$(port_of "$BASE_URL")" != "$(port_of "$PROD_BASE_URL")" ]] ||
+    die "base $BASE_URL is production's port, not $SERVICE's; nothing was changed"
+  [[ "$APP_USER" != "$PROD_USER" ]] ||
+    die "user $APP_USER is production's, not $SERVICE's; nothing was changed"
+  [[ "$APP_GROUP" != "$PROD_USER" ]] ||
+    die "group $APP_GROUP is production's, not $SERVICE's; nothing was changed"
+  case "${IMAGE_CACHE%/}/" in
+    "$PROD_DATA_DIR"/*) die "cache $IMAGE_CACHE is production's, not $SERVICE's; nothing was changed" ;;
+  esac
+}
+
+# The reverse: a production run carrying a value left over from a UAT command.
+check_production_target() {
+  [[ "$(port_of "$BASE_URL")" != "$UAT_PORT" ]] ||
+    die "base $BASE_URL is UAT's port in a run for $SERVICE; for UAT set SAEL_DEPLOY_SERVICE=$UAT_SERVICE; nothing was changed"
+  [[ "$APP_USER" != "$UAT_USER" && "$APP_GROUP" != "$UAT_USER" ]] ||
+    die "user $APP_USER:$APP_GROUP is UAT's in a run for $SERVICE; for UAT set SAEL_DEPLOY_SERVICE=$UAT_SERVICE; nothing was changed"
+  [[ "$IMAGE_CACHE" != *"$UAT_SERVICE"* ]] ||
+    die "cache $IMAGE_CACHE is UAT's in a run for $SERVICE; for UAT set SAEL_DEPLOY_SERVICE=$UAT_SERVICE; nothing was changed"
+}
+
+check_target() {
+  # Also keeps the release folders, which are named after it, inside $WWW_DIR.
+  [[ "$SERVICE" =~ ^[a-z][a-z0-9-]*$ ]] ||
+    die "SAEL_DEPLOY_SERVICE is not a unit name: $SERVICE; nothing was changed"
+  if [[ "$SERVICE" == "$PROD_SERVICE" ]]; then
+    check_production_target
+  else
+    check_other_target
+  fi
+  "$SERVICE_CMD" cat "$SERVICE.service" >/dev/null 2>&1 ||
+    die "no unit file for $SERVICE.service; nothing was changed"
 }
 
 require_root() {
@@ -74,7 +156,8 @@ require_root() {
 remove_release_dir() {
   local dir="$1"
   case "$dir" in
-    "$NEW" | "$PREV" | "$WWW_DIR"/sael-web.failed-*) rm -rf -- "$dir" ;;
+    /var/lib/*) die "refusing to remove $dir" ;;
+    "$NEW" | "$PREV" | "$FAILED_PREFIX"*) rm -rf -- "$dir" ;;
     *) die "refusing to remove $dir" ;;
   esac
 }
@@ -108,10 +191,10 @@ start_service() {
   fi
 }
 
-# Moves the running release aside as sael-web.failed-<timestamp> and puts sael-web.prev back.
+# Moves the running release aside as <unit>.failed-<timestamp> and puts <unit>.prev back.
 restore_previous() {
   local failed
-  failed="$WWW_DIR/sael-web.failed-$(date '+%Y%m%d-%H%M%S')"
+  failed="$FAILED_PREFIX$(date '+%Y%m%d-%H%M%S')"
   [[ -d "$PREV" ]] || die "no $PREV to roll back to; $CURRENT left in place"
   "$SERVICE_CMD" stop "$SERVICE" || log "WARNING: '$SERVICE_CMD stop $SERVICE' failed"
   if [[ -e "$CURRENT" ]]; then
@@ -138,7 +221,8 @@ rollback() {
 
 deploy() {
   local tarball="$1" expected="${2:-}"
-  local actual link_target cache_owner warm_output warm_status warm_summary
+  local actual link_target cache_owner line warm_status warm_summary
+  local -r warm_exit_marker="sael-web-deploy:warmup-exit:$$"
 
   [[ -f "$tarball" ]] || die "tarball not found: $tarball"
   if [[ -n "$expected" ]]; then
@@ -223,16 +307,28 @@ deploy() {
   log "healthy"
 
   log "warm-up: $NODE_BIN $CURRENT/scripts/warmup.mjs"
-  exec 3>&1
-  if warm_output="$("$NODE_BIN" "$CURRENT/scripts/warmup.mjs" --base "$BASE_URL" 2>&1 | tee /dev/fd/3; exit "${PIPESTATUS[0]}")"; then
-    warm_status=0
-  else
-    warm_status=$?
-  fi
-  exec 3>&-
-  warm_summary="$(printf '%s\n' "$warm_output" | grep '^warmup: pages=' | tail -n 1 || true)"
-  if [[ "$warm_status" -ne 0 || -z "$warm_summary" ]]; then
-    log "WARNING: the warm-up failed (exit $warm_status); the site is deployed, images will convert on first request"
+  # Each line is passed on as it arrives, to a terminal or the journal alike, and the exit status
+  # follows the output as a marker line. Not `tee /dev/fd/3`: under systemd-run the output is a
+  # socket, which /dev/fd cannot reopen, and the warm-up's lines were lost.
+  warm_status=""
+  warm_summary=""
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    if [[ "$line" == *"$warm_exit_marker "* ]]; then
+      warm_status="${line##*"$warm_exit_marker "}"
+      line="${line%"$warm_exit_marker "*}"
+      [[ -n "$line" ]] || continue
+    fi
+    printf '%s\n' "$line"
+    if [[ "$line" == 'warmup: pages='* ]]; then
+      warm_summary="$line"
+    fi
+  done < <(
+    status=0
+    "$NODE_BIN" "$CURRENT/scripts/warmup.mjs" --base "$BASE_URL" 2>&1 || status=$?
+    printf '%s %s\n' "$warm_exit_marker" "$status"
+  )
+  if [[ "$warm_status" != "0" || -z "$warm_summary" ]]; then
+    log "WARNING: the warm-up failed (exit ${warm_status:-unknown}); the site is deployed, images will convert on first request"
     warm_summary="${warm_summary:-warmup: failed, no summary line}"
   fi
 
@@ -242,7 +338,9 @@ deploy() {
 
 main() {
   [[ $# -ge 1 ]] || usage
+  announce_target
   announce_overrides
+  check_target
   require_root
   command -v curl >/dev/null || die "curl is required for the health check"
 

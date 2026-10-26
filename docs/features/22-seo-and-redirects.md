@@ -35,7 +35,20 @@ Commit the inventory as `docs/legacy-url-inventory.csv` so the decision for each
 
 ## 4. Robots
 
-`public/robots.txt`: allow all, reference `https://www.sael.co/sitemap.xml`.
+**Built (2026-10-23)** as `src/app/robots.ts`, a Next.js metadata route served at `/robots.txt`
+(no trailing-slash redirect; the proxy and the internal rewrites do not touch it). It is not
+`public/robots.txt`, because its content depends on the build. The rules are in
+`src/lib/seo/robots.ts`, tested in `robots.test.ts`, and driven by the same build-time decision as
+the layout's `noindex` (`isPublicSite`, `src/lib/config/site.ts`):
+
+- **Production build** (`NEXT_PUBLIC_SITE_URL` is `PRODUCTION_URL`): `User-agent: *`, `Allow: /`,
+  `Disallow:` `/admin/`, `/app/v1/`, `/api/` and the root of every Live Preview section in
+  `src/lib/preview/pages.ts` (the eight `…-preview/` paths), then
+  `Sitemap: https://www.sael.co/sitemap.xml`.
+- **Any other build** (staging, UAT, preview, localhost): `User-agent: *`, `Disallow: /`, and no
+  sitemap.
+
+A preview section added to `pages.ts` is disallowed with no edit to the robots route.
 
 **Staging must return `noindex`.** Gate on `NEXT_PUBLIC_SITE_URL` — if it is not the production host, emit `robots: { index: false, follow: false }` from the root layout. A staging environment indexed under the client's brand is a launch-day incident and it is easy to prevent.
 

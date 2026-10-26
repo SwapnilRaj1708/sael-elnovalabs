@@ -111,7 +111,7 @@ Validate with Google's Rich Results Test before launch.
 ## 4. Sitemap and robots
 
 - `src/app/sitemap.ts` generates from the same route array that drives the nav config, so a new page cannot be forgotten. Include `lastModified`.
-- `public/robots.txt`: allow all, point to `https://www.sael.co/sitemap.xml`.
+- `src/app/robots.ts` serves `/robots.txt` from the same `isPublicSite` decision as `noindex`: on `PRODUCTION_URL`, allow all but `/admin/`, `/app/v1/`, `/api/` and the Live Preview sections, and point to `https://www.sael.co/sitemap.xml`; on any other origin, `Disallow: /`. `docs/features/22-seo-and-redirects.md` §4.
 - **Any staging/preview environment must serve `noindex`.** Gate on `NEXT_PUBLIC_SITE_URL` — if it is not the production host, emit `robots: { index: false, follow: false }` from the root layout. A staging site indexed under the client's brand is a launch-day incident.
 - **The gate is announced, never silent.** `PRODUCTION_URL` and the comparison live in `src/lib/config/production-origin.ts`. The root layout reads it through `isPublicSite`, and `next.config.ts` prints the result in every `next build`'s output: one `Search indexing ON` line for `PRODUCTION_URL`, and a boxed `SEARCH INDEXING OFF` banner for any other origin. For an origin that is the production site under another name (the apex for `www`, `http:`, another port), the banner also says not to ship that build as the public site. It warns and does not fail, because preview builds are meant to be `noindex`.
 
