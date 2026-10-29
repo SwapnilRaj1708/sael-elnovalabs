@@ -11,9 +11,10 @@ export interface GreenHostingFabProps {
  * 2026-10-26 at the client's request; mounted once, in the root layout.
  *
  * **Sized to stay out of the way on a phone**, as the social column is. It
- * stands off the corner by the same `--spacing-fab-offset`, and is
- * `--spacing-fab-badge` wide — 100px on a phone, growing to the artwork's own
- * 200px at 1920. The height follows the artwork's ratio.
+ * is `--spacing-fab-badge` wide — 70px on a phone, growing to 140px at 1920 —
+ * and the height follows the artwork's ratio. It stands off the corner by
+ * `--spacing-fab-badge-offset`, 85% of the social column's
+ * `--spacing-fab-offset`, which it leaves alone.
  *
  * **Not a link, and not a target.** Green Web's snippet is the image alone, so
  * this is too, and `pointer-events-none` passes a tap through to whatever the
@@ -39,7 +40,7 @@ export function GreenHostingFab({ badge }: GreenHostingFabProps) {
       width={badge.width}
       height={badge.height}
       unoptimized
-      className="anim-fab-in pointer-events-none fixed bottom-fab-offset left-fab-offset z-(--z-fab) h-auto w-fab-badge shadow-fab-item print:hidden"
+      className="anim-fab-in pointer-events-none fixed bottom-fab-badge-offset left-fab-badge-offset z-(--z-fab) h-auto w-fab-badge shadow-fab-item print:hidden"
     />
   );
 }

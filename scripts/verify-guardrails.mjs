@@ -123,6 +123,25 @@ const ENV_CASES = [
     shouldPass: false,
     expect: 'CONTENT_SOURCE',
   },
+  {
+    name: 'env: a storage-account AZURE_BLOB_BASE_URL loads',
+    vars: {
+      NEXT_PUBLIC_SITE_URL: VALID_SITE_URL,
+      AZURE_BLOB_BASE_URL: 'https://example.blob.core.windows.net',
+    },
+    shouldPass: true,
+  },
+  {
+    // The format before 2026-10-29: account plus container. The code adds the
+    // container now, so this value would name it twice in every URL.
+    name: 'env: an AZURE_BLOB_BASE_URL that names a container is rejected',
+    vars: {
+      NEXT_PUBLIC_SITE_URL: VALID_SITE_URL,
+      AZURE_BLOB_BASE_URL: 'https://example.blob.core.windows.net/sael-website',
+    },
+    shouldPass: false,
+    expect: 'AZURE_BLOB_BASE_URL',
+  },
 ];
 
 for (const testCase of ENV_CASES) {

@@ -1,4 +1,7 @@
 import { z } from 'zod';
+// With its extension: scripts/verify-guardrails.mjs loads this file in plain
+// Node, which resolves no alias and adds no extension.
+import { BLOB_CONTAINERS, endsInContainer } from './blob-storage.ts';
 
 /**
  * The single sanctioned reader of `process.env`.
@@ -23,7 +26,14 @@ const envSchema = z
     CONTENT_SOURCE: z.enum(['mock', 'api']).default('mock'),
     API_BASE_URL: optionalUrl,
     API_TIMEOUT_MS: z.coerce.number().int().positive().default(8000),
-    AZURE_BLOB_BASE_URL: optionalUrl,
+    // The storage account, not a container: the containers are named in
+    // lib/config/blob-storage.ts. A value that still ends in one, the format
+    // before 2026-10-29, fails the build rather than every blob URL.
+    AZURE_BLOB_BASE_URL: optionalUrl.refine(
+      (value) => value === undefined || !endsInContainer(value),
+      `Set the storage account only, e.g. https://<account>.blob.core.windows.net. ` +
+        `The containers (${Object.values(BLOB_CONTAINERS).join(', ')}) are added in code.`,
+    ),
     // Temporary: the legacy site's origin, while the Offer Documents files are
     // not yet in the container. See .env.example and the mock repository.
     LEGACY_ASSET_BASE_URL: optionalUrl,

@@ -50,9 +50,8 @@ const prowessItems: ValueGridItem[] = moduleProwess.items.map((item, index) => (
  * beside a masked photograph, the projects map with its three state pins and
  * portfolio figure, the three product datasheets, and the three numbered
  * "Manufacturing Process" cards. There is no "How do we work?" list on this
- * page anywhere, so none is built. The datasheets link to the legacy site's
- * files for now — see `moduleDownloads` in `_content/module-manufacturing.ts`
- * for the cutover consequence.
+ * page anywhere, so none is built. The datasheets are in blob storage — see
+ * `moduleDownloads` in `_content/module-manufacturing.ts`.
  *
  * **The page snaps**, as Solar Energy does. See the note there.
  *

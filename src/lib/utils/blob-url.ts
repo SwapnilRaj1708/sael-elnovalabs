@@ -1,42 +1,50 @@
+import { composeBlobUrl, type BlobContainer } from '@/lib/config/blob-storage';
 import { env } from '@/lib/config/env';
 
 /**
- * Compose an absolute URL for an asset in Azure Blob Storage.
+ * Compose an absolute URL for an asset in the site's own container,
+ * `sael-website`.
  *
  * News images, investor PDFs and team photos all live in Blob Storage and the
  * backend refers to them by path. Concatenating the base at each call site is
  * how you end up with `//` in half the URLs and a missing slash in the other
  * half, so it happens exactly here. docs/asset-inventory.md §8.
  *
- * `AZURE_BLOB_BASE_URL` is not a `NEXT_PUBLIC_` variable, so this is
- * server-only — which is fine, because every consumer composes its URLs during
- * server rendering.
+ * `AZURE_BLOB_BASE_URL` is the storage account; the container is added here,
+ * from lib/config/blob-storage.ts. It is not a `NEXT_PUBLIC_` variable, so
+ * this is server-only — which is fine, because every consumer composes its
+ * URLs during server rendering.
  *
  * Values that are already absolute pass through untouched. That matters during
  * the mock-to-API cutover (FE-23): a fixture can carry a full URL and a real
  * API response can carry a bare path, and neither needs a special case.
  */
 export function blobUrl(path: string): string {
+  return containerUrl('site', path);
+}
+
+/** `blobUrl()` for any container: the one place a blob URL is put together. */
+function containerUrl(container: BlobContainer, path: string): string {
   const trimmed = path.trim();
 
   if (trimmed === '') {
-    throw new Error('blobUrl() was called with an empty path.');
+    throw new Error('A blob URL was asked for with an empty path.');
   }
 
   if (/^https?:\/\//i.test(trimmed)) {
     return trimmed;
   }
 
-  const base = env.AZURE_BLOB_BASE_URL;
+  const account = env.AZURE_BLOB_BASE_URL;
 
-  if (base === undefined) {
+  if (account === undefined) {
     throw new Error(
       `Cannot resolve the blob path "${trimmed}": AZURE_BLOB_BASE_URL is not set. ` +
         'Add it to .env.local — see .env.example.',
     );
   }
 
-  return `${base.replace(/\/+$/, '')}/${trimmed.replace(/^\/+/, '')}`;
+  return composeBlobUrl(account, container, trimmed);
 }
 
 /**
@@ -49,6 +57,22 @@ export function tryBlobUrl(path: string | null | undefined): string | null {
 
   try {
     return blobUrl(path);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * `tryBlobUrl()` for the backend's public media container,
+ * `sael-media-public` — on the same account, beside the site's container
+ * rather than inside it. The module datasheets live there. Same rules: the
+ * data carries the path, the account comes from `AZURE_BLOB_BASE_URL`, and an
+ * unset account or an empty path gives `null` rather than a broken link.
+ * docs/asset-inventory.md §8.
+ */
+export function tryMediaUrl(path: string): string | null {
+  try {
+    return containerUrl('media', path);
   } catch {
     return null;
   }

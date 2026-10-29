@@ -225,7 +225,7 @@ Notes:
 CONTENT_SOURCE=mock                  # mock | api
 API_BASE_URL=                        # Spring Boot gateway, required when CONTENT_SOURCE=api
 API_TIMEOUT_MS=8000
-AZURE_BLOB_BASE_URL=                 # e.g. https://<account>.blob.core.windows.net/public
+AZURE_BLOB_BASE_URL=                 # the storage account, e.g. https://<account>.blob.core.windows.net — containers are added in code
 NEXT_PUBLIC_SITE_URL=https://www.sael.co
 CAREER_REDIRECT_URL=                 # Oracle recruiting system — client to confirm
 ```

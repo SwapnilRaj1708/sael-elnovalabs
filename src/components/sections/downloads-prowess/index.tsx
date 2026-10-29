@@ -60,7 +60,10 @@ export function DownloadsProwess({
       className={cn('overflow-x-clip', snap && 'flex min-h-viewport snap-start items-center')}
     >
       <div className="flex w-full flex-col gap-section-y-tight">
-        <ProductDownloadsLayout {...downloads} ground={ground} />
+        {/* No datasheets, no heading for them: an item without a URL is left
+            out upstream, and a "Product Downloads" title over an empty list
+            reads as broken. */}
+        {downloads.items.length > 0 && <ProductDownloadsLayout {...downloads} ground={ground} />}
         <ValueGridLayout {...prowess} ground={ground} />
       </div>
     </Section>

@@ -8,8 +8,8 @@ import type { ProjectsMapProps } from '@/components/sections/projects-map';
 import type { ProseSplitProps } from '@/components/sections/prose-split';
 import type { ValueGridItem, ValueGridProps } from '@/components/sections/value-grid';
 import { cdnImage } from '@/lib/assets/cdn';
-import { PRODUCTION_URL, TODO_CONTENT } from '@/lib/config/site';
-import { tryBlobUrl } from '@/lib/utils/blob-url';
+import { TODO_CONTENT } from '@/lib/config/site';
+import { tryBlobUrl, tryMediaUrl } from '@/lib/utils/blob-url';
 import { SIZES_BUSINESS_OVERVIEW_MEDIA } from '@/lib/utils/image-sizes';
 
 /**
@@ -45,10 +45,10 @@ import { SIZES_BUSINESS_OVERVIEW_MEDIA } from '@/lib/utils/image-sizes';
  *   page's own wording, which the rounded figure agrees with.
  * - **"Product Downloads."** The live page lists three product-sheet PDFs
  *   between the map and the prowess cards; the screenshot has no such block.
- *   Left out at first, because the PDFs live under the legacy site's
+ *   Left out at first, because the PDFs lived under the legacy site's
  *   `/documents/`, which the new site does not serve; **built on the
- *   client's ask of 2026-09-21**, linking to the legacy files where they are.
- *   See `moduleDownloads` for what that means at cutover.
+ *   client's ask of 2026-09-21**. The files are in blob storage since
+ *   2026-10-29; see `moduleDownloads`.
  * - **"More Details" on the Punjab pin** links to `/firozpur-project-details/`,
  *   a page the new site does not have. Only the "Visit Location" link is
  *   carried.
@@ -194,33 +194,41 @@ export const moduleProwess: {
  * "Product Downloads" — the three module datasheets, titles verbatim from the
  * live page.
  *
- * **The hrefs point at the legacy site's files, on purpose and for now.** The
- * PDFs are served by the current sael.co under `/documents/product-downloads/`
- * and nowhere else; they are not committed here (/CLAUDE.md §8) and have not
- * been uploaded to the blob container. The client's instruction of 2026-09-21
- * was to link to where they are today. Composed on `PRODUCTION_URL` rather
- * than a bare path so the links work from a staging host — and so that it is
- * plain that **the day the new site takes over www.sael.co, these become
- * 404s** unless the three files have been moved to blob storage and the hrefs
- * rebuilt with `tryBlobUrl()`. That is a cutover task.
+ * **The files are in the backend's public media container** since
+ * 2026-10-29, under `documents/module-manufacturing/`. Only the paths are
+ * committed; `tryMediaUrl()` puts the account from `AZURE_BLOB_BASE_URL` and
+ * the media container, `sael-media-public`, in front at render time, so no
+ * hostname is in the repository (/CLAUDE.md §7) and each environment's account
+ * is used. Until then the hrefs were the legacy
+ * site's `/documents/product-downloads/` files, written out on
+ * `PRODUCTION_URL`, which would have broken at cutover.
+ *
+ * With the variable unset a datasheet has no URL, and it is left out rather
+ * than linked to nothing; with none left, `<DownloadsProwess>` drops the
+ * heading too.
  *
  * No sizes: the legacy page shows none and the files were not fetched to
  * measure them.
  */
+const MODULE_DATASHEETS = [
+  {
+    title: 'SAEL Solar TOPCon Bifacial G12R 615 635 Wp',
+    path: 'documents/module-manufacturing/SAEL-Solar-TOPCon-Bifacial-G12R-615-635-Wp.pdf',
+  },
+  {
+    title: 'SAEL Solar TOPCon Bifacial M10R 580 600 Wp',
+    path: 'documents/module-manufacturing/SAEL-Solar-TOPCon-Bifacial-M10R-580-600-Wp.pdf',
+  },
+  {
+    title: 'SAEL Solar Mono PERC Bifacial M10R 540 560 Wp',
+    path: 'documents/module-manufacturing/SAEL-Solar-Mono-PERC-Bifacial-M10R-540-560-Wp.pdf',
+  },
+] as const;
+
 export const moduleDownloads = {
   title: 'Product Downloads',
-  items: [
-    {
-      title: 'SAEL Solar TOPCon Bifacial G12R 615 635 Wp',
-      href: `${PRODUCTION_URL}/documents/product-downloads/sael-solar-topcon-bifacial-g12r-615-635-wp.pdf`,
-    },
-    {
-      title: 'SAEL Solar TOPCon Bifacial M10R 580 600 Wp',
-      href: `${PRODUCTION_URL}/documents/product-downloads/sael-solar-topcon-bifacial-m10r-580-600-wp.pdf`,
-    },
-    {
-      title: 'SAEL Solar Mono PERC Bifacial M10R 540 560 Wp',
-      href: `${PRODUCTION_URL}/documents/product-downloads/sael-solar-mono-perc-bifacial-m10r-540-560-wp.pdf`,
-    },
-  ],
+  items: MODULE_DATASHEETS.flatMap(({ title, path }) => {
+    const href = tryMediaUrl(path);
+    return href === null ? [] : [{ title, href }];
+  }),
 } satisfies Pick<ProductDownloadsProps, 'title' | 'items'>;
